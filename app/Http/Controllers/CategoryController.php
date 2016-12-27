@@ -49,6 +49,8 @@ class CategoryController extends Controller {
             'slug'=> $aInputs['slug'],
             'description'=>$aInputs['description']
         ]);
+      Session::flash('flash_mes', ['Success!']);
+      Session::flash('flash_ok', 1);
         return redirect()->action('CategoryController@show',['id'=>$root->id]);
       }else{
         return view('admin/blog_categories')->with('mes',$validator->errors()->all());
