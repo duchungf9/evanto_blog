@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
+Route::group(['prefix'=>'admin'],function(){
+    Route::get('/dashboard','Admin\AdminController@index');
+    Route::resource('category', 'CategoryController');
+    Route::resource('post', 'PostController');
+    Route::resource('comment', 'CommentController');
+    Route::resource('posttag', 'PostTagController');
+    Route::resource('tag', 'TagController');
+});
