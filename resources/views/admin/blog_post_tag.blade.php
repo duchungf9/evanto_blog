@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" ng-app="myApp" ng-controller="categoryController">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ng-app="myApp" ng-controller="categoryController">
 		<h5>Creat Category</h5>
 		@if(isset($mes))
 			<div class="alert alert-success">

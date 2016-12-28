@@ -13,6 +13,7 @@
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <!-- CSRF Token -->
+    @yield('head_style')
     <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body>
@@ -30,71 +31,45 @@
                 </button>
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="assets/img/logo.png" />
+                    <img src="{{URL::to('/')}}/img/tree-logo.jpg" class="logo"/>
                 </a>
             </div>
-            @if (Auth::guest())
-                <li><a href="{{ url('/login') }}">Login</a></li>
-                <li><a href="{{ url('/register') }}">Register</a></li>
-            @else
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                        {{ Auth::user()->name }} <span class="caret"></span>
-                    </a>
-
-                    <ul class="dropdown-menu" role="menu">
-                        <li>
-                            <a href="{{ url('/logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                Logout
-                            </a>
-
-                            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                {{ csrf_field() }}
-                            </form>
-                        </li>
-                    </ul>
-                </li>
-            @endif
         </div>
     </div>
     <!-- /. NAV TOP  -->
     <nav class="navbar-default navbar-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
+                @if (Auth::guest())
+                    <li><a href="{{ url('/login') }}">Login</a></li>
+                    <li><a href="{{ url('/register') }}">Register</a></li>
+                @else
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
 
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{{ url('/logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
 
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
                 <li >
-                    <a href="index.html" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
+                    <a href="/admin/dashboard" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
                 </li>
 
-
-                <li>
-                    <a href="ui.html"><i class="fa fa-table "></i>UI Elements  <span class="badge">Included</span></a>
-                </li>
-                <li class="active-link">
-                    <a href="blank.html"><i class="fa fa-edit "></i>Blank Page  <span class="badge">Included</span></a>
                 </li>
 
-
-
-                <li>
-                    <a href="#"><i class="fa fa-qrcode "></i>My Link One</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-bar-chart-o"></i>My Link Two</a>
-                </li>
-
-                <li>
-                    <a href="#"><i class="fa fa-edit "></i>My Link Three </a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-table "></i>My Link Four</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa fa-edit "></i>My Link Five </a>
-                </li>
             </ul>
         </div>
 

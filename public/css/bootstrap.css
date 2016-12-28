@@ -3506,7 +3506,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   line-height: 1;
   color: #555;
   text-align: center;
-  background-color: #eee;
+  background-color: #d9edf7;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
@@ -6201,3 +6201,6 @@ button.close {
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
+.logo{
+  width:80px;
+}

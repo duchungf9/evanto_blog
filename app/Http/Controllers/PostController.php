@@ -1,9 +1,26 @@
 <?php 
 
 namespace App\Http\Controllers;
+use Response;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Validator;
+use \App\Http\Model\Category;
+use \App\Http\Model\Post;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Validation\Rule;
+use App\Http\Controllers\Admin\AdminController;
+use Request,stdClass;
+class PostController extends AdminController {
 
-class PostController extends Controller {
-
+  private $aRules = [
+      'category_id'=>'required',
+      'title'=>'required',
+      'slug'=>'required|unique:blog_posts',
+      'content'=>'required',
+      'status'=>'required',
+      'featured'=>'required'
+  ];
+  private $sViewPath = "/admin/post/";
   /**
    * Display a listing of the resource.
    *
@@ -11,7 +28,12 @@ class PostController extends Controller {
    */
   public function index()
   {
-    
+      $nCountCat = Category::select('id')->count();
+      if($nCountCat<=0){
+        Session::flash('flash_mes', ['you need to create at least one category before posting a new post']);
+        return redirect()->action('CategoryController@index');
+      }
+      return view($this->sViewPath.'blog_posts');
   }
 
   /**
@@ -31,7 +53,25 @@ class PostController extends Controller {
    */
   public function store()
   {
-    
+    $aInputs = Input::except('_token');
+    if(isset($aInputs['slug'])){
+      $aInputs['slug'] = str_slug($aInputs['slug'],'-');
+    }
+    $validator = Validator::make($aInputs,$this->aRules);
+    if($validator->passes()){
+      $root = Post::create($aInputs);
+      Session::flash('flash_mes', ['Success!']);
+      Session::flash('flash_ok', 1);
+      return redirect()->action('PostController@show',['id'=>$root->id]);
+    }else{
+      $oInput = new stdClass();
+      foreach ($aInputs as $key => $value)
+      {
+        $oInput->$key = $value;
+      }
+      Session::flash('oldInput',$oInput);
+      return view($this->sViewPath.'blog_posts')->with('mes',$validator->errors()->all());
+    }
   }
 
   /**
@@ -42,7 +82,8 @@ class PostController extends Controller {
    */
   public function show($id)
   {
-    
+      $cdbCategory = Post::find($id);
+      return view($this->sViewPath.'blog_posts',['post'=>$cdbCategory]);
   }
 
   /**
@@ -64,7 +105,28 @@ class PostController extends Controller {
    */
   public function update($id)
   {
-    
+      $cdbPost = Post::find($id);
+      $aRules = [
+          'category_id'=>'required',
+          'title'=>'required',
+          'slug'=>['required',Rule::unique('blog_posts')->ignore($cdbPost->id)],
+          'content'=>'required',
+          'status'=>'required',
+          'featured'=>'required'
+      ];
+      $aInputs = Input::except('_token');
+      if(isset($aInputs['slug'])){
+        $aInputs['slug'] = str_slug($aInputs['slug'],'-');
+      }
+      $validator = Validator::make($aInputs,$aRules);
+      if($validator->passes()){
+        $cdbPost->update($aInputs);
+        Session::flash('flash_mes', ['Success!']);
+        Session::flash('flash_ok', 1);
+      }else{
+        Session::flash('flash_mes', $validator->errors()->all());
+      }
+      return redirect()->action('PostController@show',['id'=>$cdbPost->id]);
   }
 
   /**
@@ -76,6 +138,13 @@ class PostController extends Controller {
   public function destroy($id)
   {
     
+  }
+
+  public function catIds(){
+    if(Request::wantsJson()){
+        $cdbCategories = Category::select('id','name')->get();
+        return Response::json($cdbCategories);
+    }
   }
   
 }
