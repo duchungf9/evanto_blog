@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="{{URL::to('/')}}/css/jquery-te-1.4.0.css">
 @endsection
 @section('content')
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-app="myApp" ng-controller="categoryController">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-app="myApp" ng-controller="postController">
 		<h5>Creat new Post.</h5>
 		@if(isset($mes))
 			<div class="alert alert-success">
@@ -103,7 +103,7 @@
 	<script src="{{URL::to('/')}}/js/angular.min.js"></script>
 	<script>
 		var app = angular.module('myApp',[]);
-		app.controller('categoryController',function($scope,$http){
+		app.controller('postController',function($scope,$http){
 			$("textarea").jqte();
 			$scope.category_ids = [];
 			var token = '{!! csrf_token() !!}';

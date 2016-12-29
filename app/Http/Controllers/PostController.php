@@ -155,6 +155,21 @@ class PostController extends AdminController
         }
     }
 
+      public function listPosts(){
+            $cdbListCate = Post::select('id','title','slug')->paginate(10);
+            return view($this->sViewPath.'blog_posts_list',['list'=>$cdbListCate]);
+      }
+
+      public function delPosts(){
+          if(Request::ajax() || Request::wantsJson()){
+              $post = Post::find(Input::get('post')['id']);
+              if($post){
+                  $post->delete();
+                  return 'ok';
+              }
+          }
+      }
+
 }
 
 ?>
