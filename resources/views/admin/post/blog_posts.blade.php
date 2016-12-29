@@ -32,6 +32,11 @@
 		@endif
 		<form action='@{{ action }}' method="POST" enctype="multipart/form-data">
 			<div class="input-group">
+				<span class="input-group-addon">Image preview</span>
+				<img src="@{{ post.image }}" ng-model="post.image"/>
+			</div>
+			<br>
+			<div class="input-group">
 				<span class="input-group-addon">Category ID</span>
 				<select name="category_id" id="category_id" class="selectbox" ng-model="post.category_id">
 					<option value="null">--chose category--</option>
