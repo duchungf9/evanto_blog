@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
 use \App\Http\Model\Category;
 use \App\Http\Model\Post;
+use \App\Http\Lib\Common;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Admin\AdminController;
@@ -16,13 +17,13 @@ class PostController extends AdminController
 {
 
     private $aRules = [
-        'category_id' => 'required',
+        'category_id' => 'required|numeric',
         'title' => 'required',
         'slug' => 'required|unique:blog_posts',
         'content' => 'required',
-        'status' => 'required',
-        'featured' => 'required',
-        'image' => 'mimes:png'
+        'status' => 'required|numeric',
+        'featured' => 'required|numeric',
+        'image' => 'mimes:jpeg,bmp,png'
     ];
     private $sViewPath = "/admin/post/";
 
@@ -65,16 +66,13 @@ class PostController extends AdminController
         $validator = Validator::make($aInputs, $this->aRules);
         if ($validator->passes()) {
             $image = $aInputs['image'];
-            $imageName = $aInputs['slug'] . '.' . $image->getClientOriginalExtension();
+            $aInputs['image'] = Post::uploadImage($image,$aInputs['slug']);
             $root = Post::create($aInputs);
             Session::flash('flash_mes', ['Success!']);
             Session::flash('flash_ok', 1);
             return redirect()->action('PostController@show', ['id' => $root->id]);
         } else {
-            $oInput = new stdClass();
-            foreach ($aInputs as $key => $value) {
-                $oInput->$key = $value;
-            }
+            $oInput = Common::convertArrayToObj($aInputs);
             Session::flash('oldInput', $oInput);
             return view($this->sViewPath . 'blog_posts')->with('mes', $validator->errors()->all());
         }
@@ -119,7 +117,7 @@ class PostController extends AdminController
             'content' => 'required',
             'status' => 'required|numeric',
             'featured' => 'required|numeric',
-            'image' => 'mimes:png'
+            'image' => 'mimes:jpeg,bmp,png'
         ];
         $aInputs = Input::except('_token');
         if (isset($aInputs['slug'])) {
@@ -128,11 +126,7 @@ class PostController extends AdminController
         $validator = Validator::make($aInputs, $aRules);
         if ($validator->passes()) {
             $image = $aInputs['image'];
-            $imageName = $aInputs['slug'] . '.' . $image->getClientOriginalExtension();
-            $image->move(
-                base_path() . '/public/images/posts/', $imageName
-            );
-            $aInputs['image'] = base_path() . '/public/images/posts/'.$imageName;
+            $aInputs['image'] = Post::uploadImage($image,$aInputs['slug'],$cdbPost->id);
             $cdbPost->update($aInputs);
             Session::flash('flash_mes', ['Success!']);
             Session::flash('flash_ok', 1);

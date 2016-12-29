@@ -67,7 +67,9 @@
                 <li >
                     <a href="/admin/dashboard" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
                 </li>
-
+                <li >
+                    <a href="/admin/post/list" ><i class="fa fa-desktop "></i>Posts</a>
+                </li>
                 </li>
 
             </ul>
