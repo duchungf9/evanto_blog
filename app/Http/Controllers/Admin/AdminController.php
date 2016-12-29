@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Model\Category;
+use App\Http\Model\Post;
 
 class AdminController extends Controller
 {
@@ -24,6 +26,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin/admin');
+        $infos = [];
+        $infos['posts'] = Post::count();
+        $infos['cats'] = Category::count();
+
+        return view('admin/admin',['infos'=>$infos]);
     }
 }

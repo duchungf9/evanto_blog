@@ -65,10 +65,13 @@
                     </li>
                 @endif
                 <li >
-                    <a href="/admin/dashboard" ><i class="fa fa-desktop "></i>Dashboard <span class="badge">Included</span></a>
+                    <a href="/admin/dashboard" ><i class="fa fa-desktop"></i>Dashboard</a>
                 </li>
                 <li >
-                    <a href="/admin/post/list" ><i class="fa fa-desktop "></i>Posts</a>
+                    <a href="/admin/category/list" ><i class="fa fa-bars"></i>Categories</a>
+                </li>
+                <li >
+                    <a href="/admin/post/list" ><i class="fa fa-file-text-o"></i>Posts</a>
                 </li>
                 </li>
 
