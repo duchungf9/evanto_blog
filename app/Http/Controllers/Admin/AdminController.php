@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Model\Category;
 use App\Http\Model\Post;
+use Cache;
 
 class AdminController extends Controller
 {

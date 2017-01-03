@@ -78,8 +78,8 @@
 				<span class="input-group-addon">Status (hide or show)</span>
 				<select name="status" id="status" class="selectbox">
 					<option value="">--chose status--</option>
-					<option value="0" <?php echo (isset($post)and $post->status==0)?'selected':""; ?>>hide</option>
-					<option value="1" <?php echo (isset($post)and $post->status==1)?'selected':""; ?>>show</option>
+					<option value="draft" <?php echo (isset($post)and $post->status=='draft')?'selected':""; ?>>hide</option>
+					<option value="publish" <?php echo (isset($post)and $post->status=='publish')?'selected':""; ?>>show</option>
 				</select>
 			</div>
 			<br>

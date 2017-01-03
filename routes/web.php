@@ -23,6 +23,8 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('category/list','CategoryController@listCategories');
     Route::post('category/delete','CategoryController@delCategories');
     Route::get('post/list','PostController@listPosts');
+    Route::post('post/searchfilter','PostController@searchfilter');
+    Route::get('post/featured','PostController@featured');
     Route::post('post/delete','PostController@delPosts');
     Route::post('post/get_cat_ids','PostController@catIds');
     Route::resource('category', 'CategoryController');

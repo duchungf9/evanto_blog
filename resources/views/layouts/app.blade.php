@@ -73,6 +73,9 @@
                 <li >
                     <a href="/admin/post/list" ><i class="fa fa-file-text-o"></i>Posts</a>
                 </li>
+                <li >
+                    <a href="/admin/post/featured" ><i class="fa fa-heart"></i>Featured Posts</a>
+                </li>
                 </li>
 
             </ul>
