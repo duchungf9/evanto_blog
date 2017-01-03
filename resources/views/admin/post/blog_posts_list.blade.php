@@ -42,7 +42,7 @@
 			<tbody>
 				<tr ng-repeat="(key,category) in list">
 					<td>@{{ category.id }}</td>
-					<td>@{{ category.name }}</td>
+					<td>@{{ category.title }}</td>
 					<td>@{{ category.slug }}</td>
 					<td>
 						<button class="btn btn-block" ng-click="editCat(category)">Edit</button>
