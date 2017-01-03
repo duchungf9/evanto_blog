@@ -21,7 +21,7 @@ class PostController extends AdminController
         'title' => 'required',
         'slug' => 'required|unique:blog_posts',
         'content' => 'required',
-        'status' => 'required|numeric',
+        'status' => 'required',
         'featured' => 'required|numeric',
         'image' => 'mimes:jpeg,bmp,png'
     ];
