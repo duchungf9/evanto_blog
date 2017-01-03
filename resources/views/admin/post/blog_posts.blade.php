@@ -3,7 +3,7 @@
 	<link rel="stylesheet" href="{{URL::to('/')}}/css/jquery-te-1.4.0.css">
 @endsection
 @section('content')
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-app="myApp" ng-controller="categoryController">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-app="myApp" ng-controller="postController">
 		<h5>Creat new Post.</h5>
 		@if(isset($mes))
 			<div class="alert alert-success">
@@ -30,12 +30,17 @@
 				</ul>
 			</div>
 		@endif
-		<form action='@{{ action }}' method="POST">
+		<form action='@{{ action }}' method="POST" enctype="multipart/form-data">
+			<div class="input-group">
+				<span class="input-group-addon">Image preview</span>
+				<img src="@{{ post.image }}" ng-model="post.image"/>
+			</div>
+			<br>
 			<div class="input-group">
 				<span class="input-group-addon">Category ID</span>
 				<select name="category_id" id="category_id" class="selectbox" ng-model="post.category_id">
-					<option value="">--chose category--</option>
-					<option value="@{{ cat.id }}" ng-repeat="(key,cat) in category_ids">@{{ cat.name }}</option>
+					<option value="null">--chose category--</option>
+					<option value="@{{ cat.id }}" ng-repeat="(key,cat) in category_ids" ng-selected="post.category_id">@{{ cat.name }}</option>
 				</select>
 			</div>
 				<br>
@@ -49,6 +54,11 @@
 				<input type="text" class="form-control" name="slug" ng-model="post.slug"/>
 			</div>
 				<br>
+			<div class="input-group">
+				<span class="input-group-addon">Image</span>
+				<input type="file" class="form-control" name="image"/>
+			</div>
+			<br>
 			<div class="input-group">
 				<span class="input-group-addon">Description</span>
 				<input type="text" class="form-control" name="description" ng-model="post.description"/>
@@ -66,19 +76,19 @@
 			<br>
 			<div class="input-group">
 				<span class="input-group-addon">Status (hide or show)</span>
-				<select name="status" id="status" class="selectbox" ng-model="post.status">
+				<select name="status" id="status" class="selectbox">
 					<option value="">--chose status--</option>
-					<option value="0">hide</option>
-					<option value="1">show</option>
+					<option value="0" <?php echo (isset($post)and $post->status==0)?'selected':""; ?>>hide</option>
+					<option value="1" <?php echo (isset($post)and $post->status==1)?'selected':""; ?>>show</option>
 				</select>
 			</div>
 			<br>
 			<div class="input-group">
 				<span class="input-group-addon">Featured</span>
-				<select name="featured" id="featured" class="selectbox" ng-model="post.featured">
+				<select name="featured" id="featured" class="selectbox">
 					<option value="">--chose status--</option>
-					<option value="0">No</option>
-					<option value="1">Yes</option>
+					<option value="0" <?php echo (isset($post)and $post->featured==0)?'selected':""; ?>>No</option>
+					<option value="1" <?php echo (isset($post)and $post->featured==1)?'selected':""; ?>>Yes</option>
 				</select>
 			</div>
 			<br>
@@ -98,12 +108,13 @@
 	<script src="{{URL::to('/')}}/js/angular.min.js"></script>
 	<script>
 		var app = angular.module('myApp',[]);
-		app.controller('categoryController',function($scope,$http){
+		app.controller('postController',function($scope,$http){
 			$("textarea").jqte();
 			$scope.category_ids = [];
 			var token = '{!! csrf_token() !!}';
 			$scope.action = "/admin/post";
 			$scope.post = "";
+			$scope.post.category_id = 'null';
 			@if(isset($post))
 					$scope.method = "PUT";
 					$scope.post = {!! $post !!};

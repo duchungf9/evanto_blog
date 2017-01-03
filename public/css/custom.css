@@ -134,12 +134,13 @@ min-height: 80px;
  
  @media(min-width:768px) {
      #page-wrapper{
-               margin: 0 0 0 260px;
+        margin: 0 0 0 260px;
         padding: 15px 30px;
         min-height: 1050px;
-		
     }
-	
+	#page-inner>div{
+            float: none;
+        }
 	
     .navbar-side {
         z-index: 1;

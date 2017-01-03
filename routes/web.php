@@ -22,6 +22,8 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/dashboard','Admin\AdminController@index');
     Route::get('category/list','CategoryController@listCategories');
     Route::post('category/delete','CategoryController@delCategories');
+    Route::get('post/list','PostController@listPosts');
+    Route::post('post/delete','PostController@delPosts');
     Route::post('post/get_cat_ids','PostController@catIds');
     Route::resource('category', 'CategoryController');
     Route::resource('post', 'PostController');

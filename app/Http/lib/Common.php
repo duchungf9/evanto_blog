@@ -1,36 +1,31 @@
 <?php
 
-namespace App\Http\Model;
+namespace App\Http\Lib;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use File;
+use File,stdClass;
 
-class Post extends Model {
+class Common  {
 
-	protected $table = 'blog_posts';
-	public $timestamps = true;
+	/*
 
-	use SoftDeletes;
+		Function to convert an array to object
+		params: 
+		$array : the array needed to convert to object
+		
 
-	protected $dates = ['deleted_at'];
-	protected $guarded = array('id');
+		OUTPUT: (string): object
 
-	public function category()
-	{
-		return $this->belongsTo('Categories', 'category_id');
+	*/
+	public static function convertArrayToObj($array){
+        $oObject = new stdClass();
+        foreach ($array as $key => $value) {
+            $oObject->$key = $value;
+        }
+        return $oObject;
 	}
-
-	public function comments()
-	{
-		return $this->hasMany('Comment');
-	}
-
-	public function tags()
-	{
-		return $this->belongsToMany('PostTag');
-	}
-
+	
 	/*
 
 		Function to upload image to 'image' field of post
@@ -45,7 +40,7 @@ class Post extends Model {
 	public static function uploadImage($image,$prefix,$postId=null){
 		if($postId!=null){
 			$cdbPost = Self::find($postId);
-            $pathOldImageNeedDelete  = base_path() . '/public'.$cdbPost->image;
+            $pathOldImageNeedDelete  = $cdbPost->image;
             File::delete($pathOldImageNeedDelete);
 		}
         $imageName = $prefix . '.' . $image->getClientOriginalExtension();
