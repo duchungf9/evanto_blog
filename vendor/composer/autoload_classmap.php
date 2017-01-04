@@ -17,6 +17,7 @@ return array(
     'App\\Http\\Controllers\\CommentController' => $baseDir . '/app/Http/Controllers/CommentController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\HomeController' => $baseDir . '/app/Http/Controllers/HomeController.php',
+    'App\\Http\\Controllers\\MediasController' => $baseDir . '/app/Http/Controllers/MediasController.php',
     'App\\Http\\Controllers\\PostController' => $baseDir . '/app/Http/Controllers/PostController.php',
     'App\\Http\\Controllers\\PostTagController' => $baseDir . '/app/Http/Controllers/PostTagController.php',
     'App\\Http\\Controllers\\TagController' => $baseDir . '/app/Http/Controllers/TagController.php',

@@ -158,7 +158,7 @@ class PostController extends AdminController
     }
 
       public function listPosts(){
-            $cdbListCate = Post::select('id','title','slug')->paginate(10);
+            $cdbListCate = Post::select('id','title','slug','status','featured')->paginate(10);
             return view($this->sViewPath.'blog_posts_list',['list'=>$cdbListCate]);
       }
 
@@ -180,7 +180,7 @@ class PostController extends AdminController
       }
 
       public function featured(){
-          $cdbListCate = Post::select('id','title','slug')->where('featured',1)->where('status','publish')->paginate(10);
+          $cdbListCate = Post::select('id','title','slug','status','featured')->where('featured',1)->where('status','publish')->paginate(10);
           return view($this->sViewPath.'blog_posts_list',['list'=>$cdbListCate]);
       }
       public function delPosts(){
@@ -192,6 +192,26 @@ class PostController extends AdminController
               }
           }
       }
+
+    public function publish(){
+        $nPostId = Input::get('pid');
+        $cdbPost = Post::find($nPostId);
+        if($cdbPost){
+            $cdbPost->status = Input::get('status');
+            $cdbPost->save();
+            return 'ok';
+        }
+    }
+
+    public function setfeatured(){
+        $nPostId = Input::get('pid');
+        $cdbPost = Post::find($nPostId);
+        if($cdbPost){
+            $cdbPost->featured = Input::get('status');
+            $cdbPost->save();
+            return 'ok';
+        }
+    }
 
 }
 

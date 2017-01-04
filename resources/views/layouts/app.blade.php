@@ -64,18 +64,21 @@
                         </ul>
                     </li>
                 @endif
-                <li >
-                    <a href="/admin/dashboard" ><i class="fa fa-desktop"></i>Dashboard</a>
-                </li>
-                <li >
-                    <a href="/admin/category/list" ><i class="fa fa-bars"></i>Categories</a>
-                </li>
-                <li >
-                    <a href="/admin/post/list" ><i class="fa fa-file-text-o"></i>Posts</a>
-                </li>
-                <li >
-                    <a href="/admin/post/featured" ><i class="fa fa-heart"></i>Featured Posts</a>
-                </li>
+                    <li >
+                        <a href="/admin/dashboard" ><i class="fa fa-desktop"></i>Dashboard</a>
+                    </li>
+                    <li >
+                        <a href="/admin/category/list" ><i class="fa fa-bars"></i>Categories</a>
+                    </li>
+                    <li >
+                        <a href="/admin/post/list" ><i class="fa fa-file-text-o"></i>Posts</a>
+                    </li>
+                    <li >
+                        <a href="/admin/post/featured" ><i class="fa fa-heart"></i>Featured Posts</a>
+                    </li>
+                    <li >
+                        <a href="/admin/media/list" ><i class="fa fa-image"></i>Media Manager</a>
+                    </li>
                 </li>
 
             </ul>
