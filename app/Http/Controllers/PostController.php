@@ -11,7 +11,7 @@ use \App\Http\Lib\Common;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Admin\AdminController;
-use Request, stdClass;
+use Request, stdClass,Cache;
 
 class PostController extends AdminController
 {
@@ -21,7 +21,7 @@ class PostController extends AdminController
         'title' => 'required',
         'slug' => 'required|unique:blog_posts',
         'content' => 'required',
-        'status' => 'required|numeric',
+        'status' => 'required',
         'featured' => 'required|numeric',
         'image' => 'mimes:jpeg,bmp,png'
     ];
@@ -109,13 +109,14 @@ class PostController extends AdminController
      */
     public function update($id)
     {
+//        dump(Input::all());
         $cdbPost = Post::find($id);
         $aRules = [
             'category_id' => 'required|numeric',
             'title' => 'required',
             'slug' => ['required', Rule::unique('blog_posts')->ignore($cdbPost->id)],
             'content' => 'required',
-            'status' => 'required|numeric',
+            'status' => 'required',
             'featured' => 'required|numeric',
             'image' => 'mimes:jpeg,bmp,png'
         ];
@@ -123,10 +124,11 @@ class PostController extends AdminController
         if (isset($aInputs['slug'])) {
             $aInputs['slug'] = str_slug($aInputs['slug'], '-');
         }
+//        $aInput['image'] = (isset($aInput['image']))?$aInput['image']:"";
         $validator = Validator::make($aInputs, $aRules);
         if ($validator->passes()) {
-            $image = $aInputs['image'];
-            $aInputs['image'] = Post::uploadImage($image,$aInputs['slug'],$cdbPost->id);
+            $image = isset($aInputs['image'])?$aInputs['image']:$cdbPost->image;
+            $aInputs['image'] = ($image!=""&&$image!=$cdbPost->image)?Post::uploadImage($image,$aInputs['slug'],$cdbPost->id):$cdbPost->image;
             $cdbPost->update($aInputs);
             Session::flash('flash_mes', ['Success!']);
             Session::flash('flash_ok', 1);
@@ -160,6 +162,27 @@ class PostController extends AdminController
             return view($this->sViewPath.'blog_posts_list',['list'=>$cdbListCate]);
       }
 
+      public function searchfilter(){
+          $sSearchString = Input::get('string');
+//          $cacheGetResult = $john = Cache::tags(['searchString', $sSearchString])->get($sSearchString);
+//          if($cacheGetResult==null){
+              $cdbListPosts = Post::select('title','slug','id')
+                  ->where('slug','like',"%".$sSearchString."%")
+                  ->orWhere('title','like',"%".$sSearchString."%")
+                  ->orWhere('description','like',"%".$sSearchString."%")
+                  ->take(10)->orderBy('id','DESC')->get();
+
+//              Cache::tags(['searchString', $sSearchString])->put($sSearchString, $cdbListPosts, 1000);
+              return Response::json($cdbListPosts);
+//          }
+//          return Response::json($cacheGetResult);
+
+      }
+
+      public function featured(){
+          $cdbListCate = Post::select('id','title','slug')->where('featured',1)->where('status','publish')->paginate(10);
+          return view($this->sViewPath.'blog_posts_list',['list'=>$cdbListCate]);
+      }
       public function delPosts(){
           if(Request::ajax() || Request::wantsJson()){
               $post = Post::find(Input::get('post')['id']);

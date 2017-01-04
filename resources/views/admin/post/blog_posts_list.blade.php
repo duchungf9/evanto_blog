@@ -29,6 +29,7 @@
 			</div>
 		@endif
 		<button class="btn btn-group-lg btn-success" onclick="javascript:window.location = '/admin/post'">Create New Post</button>
+		<input type="text" ng-model="postFilter" ng-change="searchPost()">
 		<p></p>
 		<table class="table table-striped table-bordered table-hover">
 			<thead>
@@ -40,9 +41,9 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr ng-repeat="(key,category) in list">
+				<tr ng-repeat="(key,category) in list | filter:postFilter">
 					<td>@{{ category.id }}</td>
-					<td>@{{ category.name }}</td>
+					<td>@{{ category.title }}</td>
 					<td>@{{ category.slug }}</td>
 					<td>
 						<button class="btn btn-block" ng-click="editCat(category)">Edit</button>
@@ -51,6 +52,8 @@
 				</tr>
 			</tbody>
 		</table>
+		{{ $list->links() }}
+
 	</div>
 @endsection
 @section('footer_script')
@@ -86,6 +89,31 @@
 
 				}
 			}
+			$scope.httpStatus = 0;
+			$scope.searchPost = function(){
+                if($scope.httpStatus==1){
+                    return false;
+				}
+                $scope.httpStatus = 1;
+                var searchString  = $scope.postFilter;
+                if(searchString.length>=1){
+                    $http.post(
+                        '/admin/post/searchfilter',
+                        $.param({_token: token, string: searchString}),
+                        {headers : {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}}
+                    ).then(
+                        function(response){
+                            if(typeof response.data!='undefined'){
+                                $scope.httpStatus = 0;
+                                $scope.list = response.data;
+                            }
+
+                        },function(response){
+                            $scope.httpStatus = 0;
+                        }
+                    );
+				}
+            }
 		});
 
 	</script>
