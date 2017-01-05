@@ -79,6 +79,9 @@
                     <li >
                         <a href="/admin/media/list" ><i class="fa fa-image"></i>Media Manager</a>
                     </li>
+                    <li >
+                        <a href="/admin/media/list" ><i class="fa fa-th-list"></i>Home's Slider</a>
+                    </li>
                 </li>
 
             </ul>

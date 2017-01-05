@@ -37,7 +37,6 @@
                     <i class="fa fa-times" ng-click="delete(key,img)"> Delete This</i>
                 </div>
             </a>
-
             <div class="clear"></div>
         </div>
 
