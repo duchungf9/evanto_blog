@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Request;
 use App\Http\Model\Category;
 use App\Http\Model\Post;
@@ -65,6 +66,11 @@ class AdminController extends Controller
         $cdbList = Post::select('id','title','slug','description')->whereNotIn('id',$idsExcerpt)->where('status','publish')->orderBy('id','DESC')->paginate(10);
         $cdbSlider = Post::select('id','title','slug','description')->whereIn('id',$idsExcerpt)->get();
         return view('admin.settings.slider',['list'=>$cdbList,'slider'=>$cdbSlider]);
+    }
+
+    public function profile(){
+        $user = Auth::user();
+        dump($user);
     }
 
 }
