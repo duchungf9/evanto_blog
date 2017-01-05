@@ -70,7 +70,8 @@ class AdminController extends Controller
 
     public function profile(){
         $user = Auth::user();
-        dump($user);
+        return view('admin.settings.profile',['list'=>$cdbList,'slider'=>$cdbSlider]);
+
     }
 
 }
