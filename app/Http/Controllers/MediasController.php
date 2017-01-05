@@ -111,7 +111,9 @@ class MediasController extends AdminController
             foreach($files as $file){
                 $type = $file->getExtension();
                 if(in_array($type,$aAllowExtensions)){
-                    $list[] = '/images/'.$file->getRelativePath().'/'.$file->getFilename();
+                    $directoryPath = str_replace("\\","/",$file->getRelativePath());
+                    $list[] = '/images/'.$directoryPath.'/'.$file->getFilename();
+                    
                 }
             }
         }
