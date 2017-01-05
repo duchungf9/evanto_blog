@@ -24,6 +24,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('category/delete','CategoryController@delCategories');
     Route::get('post/list','PostController@listPosts');
     Route::get('media/list','MediasController@listMedias');
+    Route::post('media/deleteimage','MediasController@deleteimage');
     Route::post('post/searchfilter','PostController@searchfilter');
     Route::get('post/featured','PostController@featured');
     Route::post('post/delete','PostController@delPosts');

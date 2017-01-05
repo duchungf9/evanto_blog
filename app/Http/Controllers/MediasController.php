@@ -11,7 +11,7 @@ use \App\Http\Lib\Common;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Admin\AdminController;
-use Request, stdClass,Cache,File;
+use Request, stdClass,Cache,File,URL;
 
 class MediasController extends AdminController
 {
@@ -105,17 +105,26 @@ class MediasController extends AdminController
 
     public function listMedias(){
         $list = [];
-        $files = File::allFiles(public_path().'\img');
+        $files = File::allFiles(public_path().'\images');
         $aAllowExtensions = ['png','jpg','gif','bmp'];
         if(count($files)>=0){
             foreach($files as $file){
                 $type = $file->getExtension();
                 if(in_array($type,$aAllowExtensions)){
-                    $list[] = "/img/".$file->getFilename();
+                    $list[] = '/images/'.$file->getRelativePath().'/'.$file->getFilename();
                 }
             }
         }
         return view('admin.media.list',compact('list'));
+    }
+
+    public function deleteimage(){
+        $image = Input::get('image');
+        if(File::exists(public_path().$image)){
+            File::delete(public_path().$image);
+            return 'ok';
+        }
+        return 'false';
     }
 
 

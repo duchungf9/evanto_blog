@@ -34,7 +34,7 @@
             <a title="@{{ img }}" href="javascript:void(0);" ng-repeat="(key,img) in list">
                 <img alt="@{{ img }}" src="@{{ img }}"/>
                 <div class="task__actions">
-                    <i class="fa fa-times" ng-click="delete(img)"> Delete This</i>
+                    <i class="fa fa-times" ng-click="delete(key,img)"> Delete This</i>
                 </div>
             </a>
 
@@ -53,11 +53,22 @@
                 '{!!  $row !!}',
                 @endforeach
             ];
-            $scope.delete = function(image){
-                var index = $scope.list.indexOf(image);
-                console.log(index);
-                $scope.list.slice(index,1);
-                console.log($scope.list);
+            var token = '{{csrf_token()}}';
+            $scope.delete = function(key,image){
+                $http.post(
+                    '/admin/media/deleteimage',
+                    $.param({_token: token,image:image}),
+                    {headers : {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}}
+                ).then(
+                    function(response){
+                        if(response.data=='ok'){
+                            $scope.list.splice(key,1);
+                        }
+                    },function(response){
+                    }
+                );
+
+
             }
         });
     </script>

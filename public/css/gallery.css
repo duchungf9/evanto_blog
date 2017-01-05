@@ -19,8 +19,9 @@ p {
     border: 2px solid rgba(0, 0, 0, 0.47);
     display: block;
     height: auto;
-    /*width: 100%;*/
+    width: 100%;
     max-width: 200px;
+    /*display: flex;*/
 }
 
 .arrow::after {
