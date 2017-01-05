@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-app="myApp" ng-controller="profileController">
-        <h5>Media Manager</h5>
+        <h5>Edit Profile</h5>
         @if(isset($mes))
             <div class="alert alert-success">
                 <strong>Error!</strong> You have fix these error(s):</a>.
@@ -30,6 +30,35 @@
                 </ul>
             </div>
         @endif
+        <form action='/admin/settings/profile' method="POST" enctype="multipart/form-data">
+            <div class="input-group">
+                <span class="input-group-addon">Avatar</span>
+                <img src="@{{ user.avatar }}" ng-model="user.avatar"/>
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon">display name</span>
+                <input type="text" class="form-control" name="name" ng-model="user.name"/>
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon">email</span>
+                <input type="text" class="form-control" name="email" ng-model="user.email"/>
+            </div>
+            <br>
+            <div class="input-group">
+                <span class="input-group-addon">Avatar</span>
+                <input type="file" class="form-control" name="avatar"/>
+            </div>
+            {{ csrf_field() }}
+            @if(isset($post))
+                {{ method_field('PUT') }}
+            @endif
+            <br>
+            <br>
+
+            <button class="btn btn-info">Submit</button>
+        </form>
 
 
     </div>
@@ -39,35 +68,9 @@
     <script>
         var app = angular.module('myApp',[]);
         app.controller('profileController',function($scope,$http){
-            $scope.list = [
-                @foreach($list as $row)
-                {!!  $row !!},
-                @endforeach
-            ];
-            $scope.slider = [
-                @foreach($slider as $row)
-                {!!  $row !!},
-                @endforeach
-            ];
-            $scope.setslider = function(slider,key){
-                $http.post(
-                        window.location.href,
-                        $.param({_token: token,setslider:1,pid:slider.id}),
-                        {headers : {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}}
-                ).then(
-                        function(response){
-                            if(response.data=='ok_add'){
-                                $scope.list.splice(key,1);
-                                $scope.slider.push(slider);
-                            }
-                            if(response.data=='ok_remove'){
-                                $scope.slider.splice(key,1);
-                                $scope.list.push(slider);
-                            }
-                        },function(response){
-                        }
-                );
-            }
+            $scope.user = {!! $user !!};
+
+
             var token = '{{csrf_token()}}';
         });
     </script>

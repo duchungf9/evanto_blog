@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Request;
 use App\Http\Model\Category;
@@ -69,9 +70,45 @@ class AdminController extends Controller
     }
 
     public function profile(){
-        $user = Auth::user();
-        return view('admin.settings.profile',['list'=>$cdbList,'slider'=>$cdbSlider]);
+        $cdbUser =  User::find(Auth::user()->id);
+        if(Request::method()=='POST'){
+
+            $aRules = ['email'=>'required|email|unique:users,id,'.Auth::user()->id,'name'=>'required','avatar'=>'mimes:jpeg,bmp,png'];
+            $aInputs = Input::except('_token');
+            $validator = \Validator::make($aInputs,$aRules);
+            if($validator->passes()){
+
+                $image = isset($aInputs['avatar'])?$aInputs['avatar']:"";
+                if($image!=""){
+                    $avatar = Self::uploadImage($image,Auth::user()->id,Auth::user()->id);
+                    $aInputs['avatar']= $avatar;
+                }
+               $cdbUser->update($aInputs);
+            }else{
+                \Session::flash('flash_mes', $validator->errors()->all());
+            }
+        }
+        \Session::flash('flash_mes', ['Success!']);
+        \Session::flash('flash_ok', 1);
+
+        $user = $cdbUser;
+        return view('admin.settings.profile',['user'=>$user]);
 
     }
+
+    public static function uploadImage($image,$prefix=null,$Id=null){
+        if($Id!=null){
+            $cdbUser = User::find($Id);
+            $pathOldImageNeedDelete  = base_path() . '/public/images/users/u_'.$cdbUser->id.'_id/'.$cdbUser->avatar;
+            \File::delete($pathOldImageNeedDelete);
+        }
+        $imageName = $prefix . '.' . $image->getClientOriginalExtension();
+        $image->move(
+            base_path() . '/public/images/users/u_'.$cdbUser->id.'_id/', $imageName
+        );
+        $result = '/images/users/u_'.$cdbUser->id.'_id/'.$imageName;
+        return $result;
+    }
+
 
 }

@@ -49,7 +49,7 @@
         app.controller('mediaController',function($scope,$http){
             $scope.list = [
                 @foreach($list as $row)
-                '{!!  $row !!}',
+                '{{  $row }}',
                 @endforeach
             ];
             var token = '{{csrf_token()}}';
