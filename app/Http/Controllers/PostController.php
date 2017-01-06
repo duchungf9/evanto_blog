@@ -158,7 +158,14 @@ class PostController extends AdminController
     {
 
     }
-
+    /*
+    |--------------------------------------------------------------------------
+    | Get all  Categories's id - AJAX - ANGULARJS
+    |--------------------------------------------------------------------------
+    | Get all  Categories's id
+    | return : JSON.
+    |
+    */
     public function catIds()
     {
         if (Request::wantsJson()) {
@@ -166,33 +173,57 @@ class PostController extends AdminController
             return Response::json($cdbCategories);
         }
     }
-
+    /*
+    |--------------------------------------------------------------------------
+    | Get all  Posts
+    |--------------------------------------------------------------------------
+    | Get list of  posts .
+    | return : render to VIEW.
+    |
+    */
       public function listPosts(){
             $cdbListCate = Post::select('id','title','slug','status','featured')->paginate(10);
             return view($this->sViewPath.'blog_posts_list',['list'=>$cdbListCate]);
       }
-
+    /*
+    |--------------------------------------------------------------------------
+    | Search for a speacial Post -  AJAX - Angiular
+    |--------------------------------------------------------------------------
+    | Search for a speacial Post in List by keywords
+    | return : JSON
+    |
+    */
       public function searchfilter(){
           $sSearchString = Input::get('string');
-//          $cacheGetResult = $john = Cache::tags(['searchString', $sSearchString])->get($sSearchString);
-//          if($cacheGetResult==null){
               $cdbListPosts = Post::select('title','slug','id')
                   ->where('slug','like',"%".$sSearchString."%")
                   ->orWhere('title','like',"%".$sSearchString."%")
                   ->orWhere('description','like',"%".$sSearchString."%")
                   ->take(10)->orderBy('id','DESC')->get();
 
-//              Cache::tags(['searchString', $sSearchString])->put($sSearchString, $cdbListPosts, 1000);
               return Response::json($cdbListPosts);
-//          }
-//          return Response::json($cacheGetResult);
 
       }
-
+    /*
+    |--------------------------------------------------------------------------
+    | Get all featured Post
+    |--------------------------------------------------------------------------
+    | Get list of featured posts .
+    | return : render to VIEW.
+    |
+    */
       public function featured(){
           $cdbListCate = Post::select('id','title','slug','status','featured')->where('featured',1)->where('status','publish')->paginate(10);
           return view($this->sViewPath.'blog_posts_list',['list'=>$cdbListCate]);
       }
+    /*
+    |--------------------------------------------------------------------------
+    | Delete a Post - AJAX Request
+    |--------------------------------------------------------------------------
+    | Delate a post by ID
+    | return : string.
+    |
+    */
       public function delPosts(){
           if(Request::ajax() || Request::wantsJson()){
               $post = Post::find(Input::get('post')['id']);
@@ -202,7 +233,14 @@ class PostController extends AdminController
               }
           }
       }
-
+    /*
+    |--------------------------------------------------------------------------
+    | Set a Post as Publish status
+    |--------------------------------------------------------------------------
+    | Change status of Post as publish or draft
+    | return : string.
+    |
+    */
     public function publish(){
         $nPostId = Input::get('pid');
         $cdbPost = Post::find($nPostId);
@@ -212,7 +250,14 @@ class PostController extends AdminController
             return 'ok';
         }
     }
-
+    /*
+    |--------------------------------------------------------------------------
+    | Set a Post as Featured Post or Unset featured Post
+    |--------------------------------------------------------------------------
+    | Configs for Featured Post
+    | return : string.
+    |
+    */
     public function setfeatured(){
         $nPostId = Input::get('pid');
         $cdbPost = Post::find($nPostId);
@@ -222,7 +267,14 @@ class PostController extends AdminController
             return 'ok';
         }
     }
-
+    /*
+    |--------------------------------------------------------------------------
+    | Save Tags  in a Post
+    |--------------------------------------------------------------------------
+    | save Tag of Post for friendly SEO.
+    | return : Json.
+    |
+    */
     public function savetags(){
         $stringTags = Input::get('tags');
         $aTags = explode(",",$stringTags);
@@ -257,7 +309,14 @@ class PostController extends AdminController
         }
         return Response::json($aTags);
     }
-
+    /*
+    |--------------------------------------------------------------------------
+    | Get all Tags content in a Post
+    |--------------------------------------------------------------------------
+    |
+    | return : arrray.
+    |
+    */
     public function savemeta(){
         $cdbPost = Post::find(Input::get('pid'));
         $arrayMetas = Input::except('_token','pid');
@@ -271,7 +330,14 @@ class PostController extends AdminController
         }
         return 'false';
     }
-
+    /*
+    |--------------------------------------------------------------------------
+    | Get all Tags content in a Post
+    |--------------------------------------------------------------------------
+    |
+    | return : arrray.
+    |
+    */
     private function gettagsinpost($id){
         $arrayTags = [];
         $cdbTags = PostTag::select('tag_id')->where('post_id',$id)->get()->toArray();

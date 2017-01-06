@@ -2,7 +2,7 @@
 
 @section('content')
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-app="myApp" ng-controller="siteController">
-		<h5>Creat Category</h5>
+		<h5>Site Settings</h5>
 		@if(isset($mes))
 			<div class="alert alert-success">
 				<strong>Error!</strong> You have fix these error(s):</a>.
