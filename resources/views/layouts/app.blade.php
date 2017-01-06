@@ -31,7 +31,7 @@
                 </button>
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{URL::to('/')}}/img/tree-logo.jpg" class="logo"/>
+                    <img src="/logo.png" class="logo"/>
                 </a>
             </div>
         </div>
@@ -84,6 +84,9 @@
                     </li>
                     <li >
                         <a href="/admin/settings/profile" ><i class="fa fa-user"></i>Edit Profile</a>
+                    </li>
+                    <li >
+                        <a href="/admin/settings/site" ><i class="fa fa-cog"></i>Site settings</a>
                     </li>
                 </li>
 

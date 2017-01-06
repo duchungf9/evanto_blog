@@ -16,6 +16,7 @@ class CreateBlogPostsTable extends Migration {
 			$table->text('summary');
 			$table->text('content');
 			$table->text('image');
+			$table->text('json_params');
 			$table->enum('status', array('draft', 'publish'))->index();
 			$table->boolean('comments')->index();
 			$table->boolean('featured')->index();

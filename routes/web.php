@@ -23,9 +23,12 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('category/list','CategoryController@listCategories');
     Route::post('category/delete','CategoryController@delCategories');
     Route::get('post/list','PostController@listPosts');
+    Route::post('post/savetags','PostController@savetags');
+    Route::post('post/savemeta','PostController@savemeta');
     Route::get('media/list','MediasController@listMedias');
     Route::any('settings/slider','Admin\AdminController@slider');
     Route::any('settings/profile','Admin\AdminController@profile');
+    Route::any('settings/site','Admin\AdminController@site');
     Route::post('media/deleteimage','MediasController@deleteimage');
     Route::post('post/searchfilter','PostController@searchfilter');
     Route::get('post/featured','PostController@featured');

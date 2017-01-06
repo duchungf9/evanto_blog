@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Model\PostTag;
+use App\Http\Model\Tag;
 use Response;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
@@ -87,7 +89,15 @@ class PostController extends AdminController
     public function show($id)
     {
         $cdbCategory = Post::find($id);
-        return view($this->sViewPath . 'blog_posts', ['post' => $cdbCategory]);
+        $tags = $this->gettagsinpost($id);
+        $aTags = [];
+        foreach($tags as $tag){
+            if(isset($tag->name)){
+                $aTags[] =  $tag->name;
+            }
+        }
+
+        return view($this->sViewPath . 'blog_posts', ['post' => $cdbCategory,'tags'=>$aTags]);
     }
 
     /**
@@ -211,6 +221,64 @@ class PostController extends AdminController
             $cdbPost->save();
             return 'ok';
         }
+    }
+
+    public function savetags(){
+        $stringTags = Input::get('tags');
+        $aTags = explode(",",$stringTags);
+        foreach($aTags as $tag){
+            if(trim($tag)!=""){
+                $tagSlug = str_slug($tag,"-");
+                $findTag  = Tag::where('slug',$tagSlug)->first();
+                if(count($findTag)<=0){
+                    $TagModel = new Tag;
+                    $TagModel->name = $tag;
+                    $TagModel->slug = $tagSlug;
+                    $saveResult = $TagModel->save();
+                    if($saveResult){
+                        $findTagPost =  PostTag::where('post_id',Input::get('pid'))->where('tag_id',$TagModel->id)->first();
+                        if(count($findTagPost)<=0){
+                            $tagPostModel = new PostTag;
+                            $tagPostModel->tag_id = $TagModel->id;
+                            $tagPostModel->post_id = Input::get('pid');
+                            $tagPostModel->save();
+                        }
+                    }
+                }
+            }
+
+        }
+        $arrayTags = $this->gettagsinpost(Input::get('pid'));
+        $aTags = [];
+        foreach($arrayTags as $tag){
+            if(isset($tag->name)){
+                $aTags[] =  $tag->name;
+            }
+        }
+        return Response::json($aTags);
+    }
+
+    public function savemeta(){
+        $cdbPost = Post::find(Input::get('pid'));
+        $arrayMetas = Input::except('_token','pid');
+        if($cdbPost!=null){
+            $cdbPost->update(['json_params'=>json_encode($arrayMetas)]);
+            if($cdbPost->save()){
+                return 'ok';
+            }else{
+                return 'false';
+            }
+        }
+        return 'false';
+    }
+
+    private function gettagsinpost($id){
+        $arrayTags = [];
+        $cdbTags = PostTag::select('tag_id')->where('post_id',$id)->get()->toArray();
+        foreach($cdbTags as $tagid){
+            $arrayTags[] = Tag::select('name')->where('id',$tagid['tag_id'])->first();
+        }
+        return $arrayTags;
     }
 
 }
