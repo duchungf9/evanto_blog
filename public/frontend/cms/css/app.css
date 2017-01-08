@@ -128,7 +128,7 @@ body {
     display: flex;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    background: #424242
+    background: #faba34;
 }
 
 .hdTop .hdTopBox {
@@ -223,7 +223,7 @@ body {
     display: flex;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    background: #188490;
+    background: #a70e1a;
     height: 40px
 }
 
@@ -503,7 +503,7 @@ body {
 }
 
 .newFocus {
-    background: #024a4a;
+    background: #343434;
     padding: 20px;
     margin-right: 20px;
     border-radius: 3px;
@@ -513,7 +513,7 @@ body {
 .newFocus .titleNewFocus {
     color: #fff;
     font-size: 20px;
-    background: #074044;
+    background: #222;
     margin: -20px -20px 0;
     height: 40px;
     line-height: 40px;
@@ -589,7 +589,7 @@ body {
 }
 
 .nameCat a {
-    color: #28b374;
+    color: #ff5e34;
     font-size: 14px
 }
 

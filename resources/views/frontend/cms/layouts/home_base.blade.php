@@ -346,44 +346,11 @@
         </section>
         <aside class="mainRight">
             <div class="advbanner adv2">
-                <iframe src="./7_files/Moana_300x500_v2.html" width="300" frameborder="0" scrolling="no" height="500"></iframe>
+                <iframe src="http://placehold.it/300x500" width="300" frameborder="0" scrolling="no" height="500"></iframe>
             </div>
         </aside>
         <!--//aside-->
     </div>
-    <section class="videoBox">
-        <div class="videoBoxInner">
-            <div class="videoShow">
-                <iframe width="600" height="338" src="http://placehold.it/600x338" frameborder="0" allowfullscreen=""></iframe>
-            </div>
-            <ul class="videoList rs">
-                <li>
-                    <a class="active" href="https://top5l.com/?s_nozip&amp;s_update#" onclick="return false;">
-                        <img src="./7_files/thumb-friendzone-1480074287030.jpg" alt="">
-                        <h5 class="videoTitle rs">Ngưng làm bạn và những cách vượt qua FriendZone</h5>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://top5l.com/?s_nozip&amp;s_update#" onclick="return false;">
-                        <img src="./7_files/thumb-1480130600679.png" alt="">
-                        <h5 class="videoTitle rs">Xe ôm truyền thống thời công nghệ</h5>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://top5l.com/?s_nozip&amp;s_update#" onclick="return false;">
-                        <img src="./7_files/sequence-01-00-00-04-14-still001-1480074361770.jpg" alt="">
-                        <h5 class="videoTitle rs">Câu nói "Chỉ 1 lần" khiến nhiều người suy ngẫm</h5>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://top5l.com/?s_nozip&amp;s_update#" onclick="return false;">
-                        <img src="./7_files/thumb-1480182295184.jpg" alt="">
-                        <h5 class="videoTitle rs">Đời người ngắn ngủi, chớ vì một câu nói của người khác mà làm mất đi niềm vui</h5>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </section>
     <div class="mainInner">
         <div class="mainLeft">
             <div class="boxCatMini">
