@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/dashboard','Admin\AdminController@index');
     Route::get('category/list','CategoryController@listCategories');

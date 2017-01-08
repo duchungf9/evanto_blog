@@ -1,0 +1,1763 @@
+.main .mainInner .boxCatMini .newCatMini h2.newCatMiniTitle a, .tagFocus .tagFocusInner a {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    font-weight: 700;
+    text-transform: uppercase
+}
+
+.cf:after, .cf:before {
+    content: "";
+    display: table
+}
+
+.cf:after {
+    clear: both
+}
+
+.cf {
+    zoom: 1
+}
+
+.rs {
+    margin: 0;
+    padding: 0
+}
+
+h1.rs, h2.rs, h3.rs, h4.rs {
+    font-size: 100%
+}
+
+ul.rs {
+    list-style: none
+}
+
+.rsbs, .rsbs:after, .rsbs:before {
+    box-sizing: content-box
+}
+
+img {
+    border: none
+}
+
+a, input {
+    outline: 0
+}
+
+a, a:focus {
+    text-decoration: none
+}
+
+a:hover {
+    color: #188490
+}
+
+.fadetext {
+    display: none;
+    background-image: -webkit-linear-gradient(left, rgba(255, 255, 255, 0), #fff);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #fff);
+    bottom: 0;
+    height: 25px;
+    max-height: 100%;
+    position: absolute;
+    right: 0;
+    width: 60px
+}
+
+a, a:active, a:hover {
+    text-decoration: none
+}
+
+.fixCen {
+    margin: 0 auto;
+    max-width: 1010px
+}
+
+.help3d {
+    transform: translate3d(0, 0, 0)
+}
+
+body {
+    color: #333;
+    font-size: 13px;
+    line-height: 1.4;
+    background: fixed #fff;
+    font-family: Roboto, UILanguageFont, Arial, sans-serif;
+    text-rendering: optimizeLegibility
+}
+
+.navLink {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background: #525252
+}
+
+.navLink .nlBox {
+    width: 1040px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 25px
+}
+
+.navLink .nlBox li a {
+    cursor: pointer;
+    color: #FFF;
+    text-transform: uppercase;
+    font-size: 11px
+}
+
+.navLink .nlBox li a:hover {
+    color: #fff300
+}
+
+.navLink .nlBox li.dotCircle {
+    display: block;
+    width: 5px;
+    height: 5px;
+    background: #ff6d15;
+    border-radius: 5px;
+    margin: 0 10px
+}
+
+.hdTop {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background: #424242
+}
+
+.hdTop .hdTopBox {
+    width: 1040px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 100px
+}
+
+.hdTop .hdTopBox .logo {
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    width: 250px
+}
+
+.hdTop .hdTopBox .logo a {
+    color: #fff;
+    opacity: .3;
+    text-transform: uppercase
+}
+
+.hdTop .hdTopBox .hashTag {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%
+}
+
+.hdTop .hdTopBox .hashTag a {
+    color: #fff;
+    display: block;
+    line-height: 30px;
+    height: 30px;
+    padding: 0 12px;
+    margin-right: 10px;
+    background: rgba(0, 0, 0, .02);
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 20px
+}
+
+.hdTop .hdTopBox .hashTag a:hover {
+    border-color: rgba(255, 255, 255, .8)
+}
+
+.hdTop .hdTopBox .searchBox {
+    height: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.hdTop .hdTopBox .searchBox input {
+    border: none;
+    height: 35px;
+    border-radius: 2px
+}
+
+.hdTop .hdTopBox .searchBox .txtSearch {
+    width: 220px;
+    padding: 0 10px
+}
+
+.hdTop .hdTopBox .searchBox .btnSearch {
+    background-image: linear-gradient(#fff, #dfdfdf);
+    margin-left: 5px;
+    width: 90px;
+    font-size: 15px
+}
+
+.line {
+    border-left: 1px solid #eee;
+    margin-bottom: 5px
+}
+
+.advbanner.mb, .newHot a.imgThumb {
+    margin-bottom: 10px
+}
+
+.nvTop {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background: #188490;
+    height: 40px
+}
+
+.nvTop .lstMenuTop {
+    width: 1040px;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.nvTop .lstMenuTop li a {
+    cursor: pointer;
+    color: #FFF;
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    font-size: 15px
+}
+
+.nvTop .lstMenuTop li a:hover {
+    background: #9a0f1a
+}
+
+.nvTop .lstMenuTop li a.home {
+    color: #a70e1a;
+    text-align: center;
+    width: 43px;
+    height: 44px;
+    background: #fff;
+    display: block;
+    border: 1px solid #dcdcdc;
+    border-radius: 2px;
+    overflow: hidden;
+    margin-top: -2px;
+    padding: 0
+}
+
+.nvTop .lstMenuTop li a.home:hover {
+    border-color: #dcd47e;
+    color: #3951a4
+}
+
+.nvTop .lstMenuTop li a.home img {
+    border-radius: 2px
+}
+
+.advbanner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    background: #f1f1f1;
+    min-height: 131px
+}
+
+.spaceBig {
+    height: 50px;
+    width: 100%
+}
+
+.main {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.main .mainInner {
+    width: 1040px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.main .mainInner .mainLeft {
+    width: 720px;
+    padding-top: 20px;
+    border-right: 1px solid #f6f6f6
+}
+
+.newHot {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: 20px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #fb512a
+}
+
+.newHot a.imgThumb {
+    display: block
+}
+
+.newHot .aNewHotBig {
+    width: 460px;
+    margin-bottom: 30px
+}
+
+.newHot .aNewHot h2, .newHot .aNewHot h4, .newHot .aNewHotBig h2 {
+    margin-bottom: 10px
+}
+
+.newHot .aNewHotBig.catPage {
+    width: 500px
+}
+
+.newHot .aNewHotBig.catPage a.imgThumb {
+    width: 500px;
+    height: 314px;
+    overflow: hidden
+}
+
+.newHot .aNewHotBig a.imgThumb {
+    width: 460px;
+    height: 290px;
+    overflow: hidden
+}
+
+.newHot .aNewHotBig a.imgThumb img {
+    width: 100%
+}
+
+.newHot .aNewHotBig h2 a {
+    color: #222;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 29px;
+    text-decoration: none
+}
+
+.newHot .aNewHotBig h2 a:hover {
+    color: #188490
+}
+
+.newHot .aNewHot {
+    width: 220px
+}
+
+.newHot .aNewHot.firstH a.imgThumb, .newHot .aNewHot.firstH a.imgThumb img {
+    height: 290px
+}
+
+.newHot .aNewHot a.imgThumb {
+    width: 220px;
+    height: 138px;
+    overflow: hidden
+}
+
+.newHot .aNewHot a.imgThumb img {
+    width: 100%
+}
+
+.newHot .aNewHot h2 a, .newHot .aNewHot h4 a {
+    color: #2d2d2d;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 21px;
+    text-decoration: none
+}
+
+.newHot .aNewHot h2 a:hover, .newHot .aNewHot h4 a:hover {
+    color: #188490
+}
+
+.newHot .newHotCol .aNewHot {
+    width: 180px
+}
+
+.newHot .newHotCol .aNewHot a.imgThumb {
+    width: 180px;
+    height: 113px;
+    overflow: hidden
+}
+
+.newHot .newHotCol .aNewHot a.imgThumb img {
+    width: 100%
+}
+
+.newHot .newHotRow {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%
+}
+
+.newLastest {
+    margin-right: 20px;
+    margin-bottom: 25px
+}
+
+.newLastest .aNewLastest {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 25px 0;
+    border-bottom: 1px solid #eee
+}
+
+.newLastest .aNewLastest a.imgThumb {
+    width: 250px;
+    height: 160px;
+    display: block;
+    overflow: hidden
+}
+
+.newLastest .aNewLastest a.imgThumb img {
+    width: 100%
+}
+
+.newLastest .aNewLastest .aNewLastestInfo {
+    color: #4d4d4d;
+    width: 425px
+}
+
+.newLastest .aNewLastest .aNewLastestInfo h3 {
+    margin-bottom: 10px;
+    margin-top: -4px
+}
+
+.newLastest .aNewLastest .aNewLastestInfo h3 a {
+    color: #222;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    text-decoration: none
+}
+
+.newLastest .aNewLastest .aNewLastestInfo h3 a:hover {
+    color: #188490
+}
+
+.newLastest .aNewLastest .aNewLastestInfo p {
+    margin: 0
+}
+
+.newLastest .aNewLastest .aNewLastestInfo .nameCat {
+    margin-bottom: 10px
+}
+
+.newLastest .aNewLastest .aNewLastestInfo .nameCat a {
+    color: #cc531b;
+    font-size: 14px
+}
+
+.newLastest .aNewLastest .aNewLastestInfo .nameCat .nameCatSpace {
+    margin: 0 5px
+}
+
+.newLastest .aNewLastest .aNewLastestInfo .nameCat .nameCatTime {
+    font-size: 12px
+}
+
+.newLastest.bdbn {
+    margin-bottom: 0
+}
+
+.newLastest.bdbn .aNewLastest {
+    border-bottom: none
+}
+
+.newLastest.pdtn .aNewLastest:first-child {
+    padding-top: 0
+}
+
+.newFocus {
+    background: #024a4a;
+    padding: 20px;
+    margin-right: 20px;
+    border-radius: 3px;
+    margin-bottom: 25px
+}
+
+.newFocus .titleNewFocus {
+    color: #fff;
+    font-size: 20px;
+    background: #074044;
+    margin: -20px -20px 0;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px 0 0 3px;
+    padding: 0 20px;
+    font-weight: 700;
+    position: relative
+}
+
+.newFocus .titleNewFocus:before {
+    display: block;
+    width: 4px;
+    height: 20px;
+    position: absolute;
+    top: 9px;
+    left: 0;
+    background-color: #ff5e34;
+    content: ''
+}
+
+.newFocus .aNewFocus {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 25px 0;
+    border-bottom: 1px solid #0d5858
+}
+
+.newFocus .aNewFocus:last-child {
+    border-bottom: none
+}
+
+.newFocus .aNewFocus a.imgThumb {
+    width: 230px;
+    display: block;
+    height: 150px;
+    overflow: hidden
+}
+
+.newFocus .aNewFocus a.imgThumb img {
+    width: 100%
+}
+
+.newFocus .aNewFocus .aNewFocusInfo {
+    color: #eee;
+    width: 405px
+}
+
+.newFocus .aNewFocus .aNewFocusInfo h2 {
+    margin-bottom: 10px;
+    margin-top: -4px
+}
+
+.newFocus .aNewFocus .aNewFocusInfo h2 a {
+    color: #eee;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    text-decoration: none
+}
+
+.newFocus .aNewFocus .aNewFocusInfo h2 a:hover {
+    color: #188490
+}
+
+.newFocus .aNewFocus .aNewFocusInfo p {
+    margin: 0
+}
+
+.nameCat {
+    margin-bottom: 10px
+}
+
+.nameCat a {
+    color: #28b374;
+    font-size: 14px
+}
+
+.nameCat .nameCatSpace {
+    margin: 0 5px
+}
+
+.nameCat .nameCatTime {
+    font-size: 12px
+}
+
+.main .mainInner .mainLeft .lineSpace {
+    border-bottom: 1px solid #eee;
+    margin-right: 20px
+}
+
+.main .mainInner .mainRight {
+    padding-top: 20px;
+    width: 300px
+}
+
+.main .mainInner .boxCat {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    border: 1px solid #eee;
+    border-left: none;
+    border-right: none;
+    width: 100%
+}
+
+.main .mainInner .boxCat .newCat {
+    width: 320px
+}
+
+.main .mainInner .boxCat .newCat .newCatTitle a {
+    color: #333;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    padding-left: 12px
+}
+
+.main .mainInner .boxCat .newCat .newCatTitle a:hover {
+    color: #188490
+}
+
+.main .mainInner .boxCat .newCat .newCatTitle a:before {
+    display: block;
+    width: 4px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    background-color: #ff5e34;
+    content: ''
+}
+
+.main .mainInner .boxCat .newCat .aNewCatBig {
+    padding-bottom: 30px;
+    margin-bottom: 17px;
+    border-bottom: 1px solid #eee;
+    min-height: 295px
+}
+
+.main .mainInner .boxCat .newCat .aNewCatBig a.imgThumb {
+    display: block;
+    margin-bottom: 10px;
+    width: 320px;
+    height: 206px;
+    overflow: hidden
+}
+
+.main .mainInner .boxCat .newCat .aNewCatBig a.imgThumb img {
+    width: 100%
+}
+
+.main .mainInner .boxCat .newCat .aNewCatBig h3 a {
+    color: #333;
+    font-size: 19px;
+    line-height: 26px;
+    font-weight: 700
+}
+
+.main .mainInner .boxCat .newCat .aNewCatBig h3 a:hover {
+    color: #188490
+}
+
+.main .mainInner .boxCat .newCat .aNewCat {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 17px
+}
+
+.main .mainInner .boxCat .newCat .aNewCat a {
+    color: #2d2d2d;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    width: 245px
+}
+
+.main .mainInner .boxCat .newCat .aNewCat a:hover {
+    color: #188490
+}
+
+.main .mainInner .boxCat .newCat .aNewCat a.imgThumb {
+    margin-right: 15px;
+    width: 60px;
+    height: 60px;
+    overflow: hidden
+}
+
+.main .mainInner .boxCat .newCat .aNewCat a.imgThumb img {
+    width: 60px;
+    height: 60px
+}
+
+.main .mainInner .boxCat .newCat .aNewCat:first-child {
+    margin-bottom: 10px
+}
+
+.main .mainInner .boxCatMini {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-top: solid 1px #eee
+}
+
+.main .mainInner .boxCatMini .newCatMini {
+    width: 210px;
+    margin-bottom: 5px
+}
+
+.main .mainInner .boxCatMini .newCatMini h2.newCatMiniTitle a {
+    color: #333;
+    font-size: 24px;
+    line-height: 30px;
+    position: relative;
+    padding-left: 12px;
+    width: 100%;
+    display: block
+}
+
+.main .mainInner .boxCatMini .newCatMini h2.newCatMiniTitle a:hover {
+    color: #188490
+}
+
+.main .mainInner .boxCatMini .newCatMini h2.newCatMiniTitle a:before {
+    display: block;
+    width: 4px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    background-color: #ff5e34;
+    content: ''
+}
+
+.main .mainInner .boxCatMini .newCatMini .aNewCatMiniBig {
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    height: 214px;
+    overflow: hidden
+}
+
+.main .mainInner .boxCatMini .newCatMini .aNewCatMiniBig a.imgThumb {
+    display: block;
+    margin-bottom: 10px;
+    height: 130px;
+    width: 210px;
+    overflow: hidden
+}
+
+.main .mainInner .boxCatMini .newCatMini .aNewCatMiniBig a.imgThumb img {
+    width: 100%
+}
+
+.main .mainInner .boxCatMini .newCatMini .aNewCatMiniBig h3 a {
+    color: #333;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 700
+}
+
+.main .mainInner .boxCatMini .newCatMini .aNewCatMiniBig h3 a:hover {
+    color: #188490
+}
+
+.main .mainInner .boxCatMini .newCatMini .aNewCatMini {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    height: 60px;
+    overflow: hidden
+}
+
+.main .mainInner .boxCatMini .newCatMini .aNewCatMini:last-child {
+    margin-bottom: 0
+}
+
+.main .mainInner .boxCatMini .newCatMini .aNewCatMini a {
+    color: #2d2d2d;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px
+}
+
+.main .mainInner .boxCatMini .newCatMini .aNewCatMini a:hover {
+    color: #188490
+}
+
+.main .mainInner .boxCatMini .newCatMini .aNewCatMini:first-child {
+    margin-bottom: 10px
+}
+
+.main .videoBox {
+    background: #222;
+    width: 100%;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.main .videoBox .videoBoxInner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 25px 0;
+    width: 1040px
+}
+
+.main .videoBox .videoBoxInner .videoShow {
+    width: 600px;
+    min-height: 328px
+}
+
+.main .videoBox .videoBoxInner .videoList {
+    width: 415px;
+    min-height: 328px
+}
+
+.main .videoBox .videoBoxInner .videoList li {
+    padding: 13px 0;
+    border-top: 1px solid #2b2b2b
+}
+
+.main .videoBox .videoBoxInner .videoList li:first-child {
+    padding-top: 0;
+    border-top: none
+}
+
+.main .videoBox .videoBoxInner .videoList li:last-child {
+    padding-bottom: 0;
+    border-bottom: none
+}
+
+.main .videoBox .videoBoxInner .videoList li a {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.main .videoBox .videoBoxInner .videoList li a.active h5.videoTitle {
+    color: #058cff
+}
+
+.main .videoBox .videoBoxInner .videoList li a.active:hover h5.videoTitle, .main .videoBox .videoBoxInner .videoList li a:hover h5.videoTitle {
+    color: #fff56c
+}
+
+.main .videoBox .videoBoxInner .videoList li a img {
+    width: 124px;
+    height: 64px
+}
+
+.main .videoBox .videoBoxInner .videoList li a h5.videoTitle {
+    width: 275px;
+    line-height: 20px;
+    color: #eee
+}
+
+.tagFocus {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    border-bottom: 1px solid #ddd
+}
+
+.tagFocus .tagFocusInner {
+    width: 1040px
+}
+
+.tagFocus .tagFocusInner a {
+    display: block;
+    line-height: 48px;
+    color: #333;
+    max-width: 250px
+}
+
+.tagFocus .tagFocusInner a:hover {
+    color: #188490
+}
+
+.tagFocus .tagFocusInner li.active a {
+    border-bottom: 4px solid #248eb0
+}
+
+.tagFocus .tagFocusInner li.active:hover a, .tagFocus .tagFocusInner li:hover a {
+    border-bottom: 4px solid #b03b06
+}
+
+.tagFocus .tagFocusInner li {
+    float: left;
+    margin-right: 10px
+}
+
+.tagFocus .tagFocusInner li:nth-last-child(1), .tagFocus .tagFocusInner li:nth-last-child(2) {
+    float: right;
+    margin-right: 0;
+    margin-left: 10px
+}
+
+.aPost {
+    margin-right: 20px
+}
+
+.aPost h1.postTitle {
+    font-size: 34px;
+    line-height: 40px;
+    color: #222
+}
+
+.aPost .headInfo {
+    margin: 20px 0;
+    text-transform: uppercase
+}
+
+.aPost .headInfo .infoAuthor {
+    color: #188490
+}
+
+.aPost .headInfo .infoFollow {
+    color: #555
+}
+
+.aPost .headInfo .infoSource a {
+    color: #01841e
+}
+
+.aPost .headInfo .infoTime {
+    color: #666;
+    margin-right: 5px
+}
+
+.aPost .headInfo .infoSocial {
+    margin-right: 5px
+}
+
+.aPost .socialBox .btnShare {
+    float: right
+}
+
+.aPost .socialBox .btnShare span {
+    margin-left: 3px
+}
+
+.aPost .socialBox .btnLike {
+    float: left
+}
+
+.aPost .newContent {
+    padding: 10px 0;
+    margin: 17px 0;
+    border: 1px dotted #ccc;
+    border-left: none;
+    border-right: none;
+    list-style: none
+}
+
+.aPost .newContent li {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative
+}
+
+.aPost .newContent li:before {
+    width: 5px;
+    height: 5px;
+    background: #cc6e0b;
+    border-radius: 5px;
+    top: 3px;
+    left: 0;
+    content: ""
+}
+
+.aPost .newContent li:hover a {
+    color: #cc5201
+}
+
+.aPost .newContent li:hover:before {
+    background: #0780cc
+}
+
+.aPost .newContent li a {
+    color: #383e54;
+    font-size: 13px;
+    line-height: 20px;
+    margin-left: 5px
+}
+
+.aPost .aPostContent {
+    margin-bottom: 20px;
+    font-family: Noto Serif, serif;
+    font-size: 16px
+}
+
+.aPost .aPostContent .aPostData h2, .aPost .aPostContent .aPostData h3 {
+    font-size: 20px;
+    font-weight: 700
+}
+
+.aPost .boxTagFooter ul {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.aPost .boxTagFooter ul li {
+    margin-right: 10px;
+    margin-bottom: 10px
+}
+
+.aPost .boxTagFooter ul li a {
+    padding: 8px 10px;
+    display: block;
+    font-family: Arial;
+    font-size: 14px;
+    text-decoration: none;
+    background: #ebebeb;
+    color: #555;
+    border-radius: 3px;
+    transition: background .3s, color .3s
+}
+
+.boxSocial2 {
+    padding: 15px 0;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    margin-bottom: 20px
+}
+
+.boxSocial2 .infoSocial {
+    margin-right: 5px
+}
+
+.linkRate {
+    margin: 10px 0;
+    font-size: 20px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.linkRate span {
+    font-size: 45px;
+    margin-right: 5px;
+    color: #9a5205
+}
+
+.linkRate:hover span {
+    color: #12076d
+}
+
+.linkRate a {
+    color: #004370
+}
+
+.linkRate a:hover {
+    color: #912206
+}
+
+.newRelated {
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-top: 10px solid #f7f7f7;
+    border-bottom: 10px solid #f7f7f7
+}
+
+.newRelated .newRelatedTitle {
+    width: 100%;
+    font-size: 28px;
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 10px
+}
+
+.newRelated .newRelatedTitle:before {
+    width: 6px;
+    height: 28px;
+    content: '';
+    background: #fb6c27;
+    margin-right: 10px
+}
+
+.newRelated .newRelatedGroup {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.newRelated .newRelatedGroup .newRelatedBig {
+    width: 370px
+}
+
+.newRelated .newRelatedGroup .newRelatedBig a {
+    display: block
+}
+
+.newRelated .newRelatedGroup .newRelatedBig a span {
+    width: 370px;
+    overflow: hidden;
+    display: block
+}
+
+.newRelated .newRelatedGroup .newRelatedBig a span img {
+    width: 100%;
+    height: 232px;
+    margin-bottom: 5px
+}
+
+.newRelated .newRelatedGroup .newRelatedBig a strong {
+    font-size: 23px;
+    line-height: 30px;
+    color: #333
+}
+
+.newRelated .newRelatedGroup .newRelatedMid {
+    width: 240px
+}
+
+.newRelated .newRelatedGroup .newRelatedMid a {
+    display: block;
+    overflow: hidden
+}
+
+.newRelated .newRelatedGroup .newRelatedMid a span {
+    width: 240px;
+    height: 150px;
+    display: block;
+    overflow: hidden;
+    margin-bottom: 5px
+}
+
+.newRelated .newRelatedGroup .newRelatedMid a span img {
+    width: 100%;
+    display: block
+}
+
+.newRelated .newRelatedGroup .newRelatedMid a strong {
+    font-size: 18px;
+    line-height: 26px;
+    color: #333
+}
+
+.newRelated .newRelatedGroup .newRelatedChild {
+    width: 350px
+}
+
+.newRelated .newRelatedGroup .newRelatedChild .childNew {
+    width: 350px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 10px
+}
+
+.newRelated .newRelatedGroup .newRelatedChild .childNew a.thumbNail {
+    display: block;
+    width: 100px;
+    height: 62px;
+    overflow: hidden
+}
+
+.newRelated .newRelatedGroup .newRelatedChild .childNew a.thumbNail img {
+    width: 100%
+}
+
+.newRelated .newRelatedGroup .newRelatedChild .childNew div {
+    width: 240px
+}
+
+.newRelated .newRelatedGroup .newRelatedChild .childNew div a strong {
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+    color: #333;
+    text-decoration: none
+}
+
+.newRelated .newRelatedGroup .newRelatedChild .childNew div span {
+    color: #777;
+    font-size: 12px
+}
+
+.newFocusTitle {
+    color: #333;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    position: relative;
+    padding-left: 12px;
+    margin: 0
+}
+
+.newFocusTitle:hover {
+    color: #188490
+}
+
+.newFocusTitle:before {
+    display: block;
+    width: 4px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    background-color: #ff5e34;
+    content: ''
+}
+
+.navBot {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: #424242
+}
+
+.navBot a {
+    color: #eee;
+    padding: 0 10px;
+    border-left: 1px solid #555
+}
+
+.navBot a:hover {
+    color: #188490
+}
+
+.navBot a:first-child {
+    border-left: none
+}
+
+footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    padding: 20px 0
+}
+
+footer .footerInner {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 1040px
+}
+
+footer .footerInner .line {
+    margin-bottom: 0
+}
+
+footer .footerInner .infoBox {
+    width: 300px
+}
+
+footer .footerInner .infoBox .titleInfoBox {
+    font-size: 14px;
+    font-weight: 700;
+    color: #555;
+    text-transform: uppercase;
+    margin-bottom: 8px
+}
+
+footer .footerInner .infoBox .contentInfoBox {
+    color: #777
+}
+
+footer .footerInner .infoBox .contentInfoBox.taj {
+    text-align: justify
+}
+
+footer .footerInner .infoBox .contentInfoBox .linkFriend a {
+    line-height: 26px;
+    height: 23px;
+    font-size: 14px;
+    color: #029394
+}
+
+.headMobile {
+    display: none
+}
+
+.hideClick.hideNow {
+    display: none !important
+}
+
+@media (max-width: 1023px) {
+    .advbanner, .nvTop, .nvTopMobile {
+        overflow: hidden
+    }
+
+    body.rs {
+        padding-top: 50px;
+        overflow-x: hidden
+    }
+
+    .advbanner {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: auto;
+        padding: 10px 0;
+        text-align: center
+    }
+
+    .advbanner img {
+        max-width: 95%
+    }
+
+    .navLink .nlBox {
+        width: 95%
+    }
+
+    .hdTop .hdTopBox {
+        width: 95%;
+        height: auto;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 10px 0
+    }
+
+    .hdTop .hdTopBox .logo {
+        width: 100%;
+        text-align: center;
+        height: 50px;
+        display: none
+    }
+
+    .hdTop .hdTopBox .logo a {
+        width: 100%
+    }
+
+    .hdTop .hdTopBox .hashTag {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px
+    }
+
+    .hdTop .hdTopBox .hashTag a {
+        margin-right: 0
+    }
+
+    .hdTop .hdTopBox .searchBox {
+        width: 100%;
+        height: auto
+    }
+
+    .hdTop .hdTopBox .searchBox .txtSearch {
+        width: 100%
+    }
+
+    .hdTop .hdTopBox .searchBox .btnSearch {
+        display: none
+    }
+
+    .nvTopMobile {
+        position: fixed;
+        width: 100%;
+        height: 50px;
+        display: block;
+        top: 0;
+        left: 0;
+        background: #046873;
+        padding: 0 10px;
+        box-sizing: border-box;
+        z-index: 9999
+    }
+
+    .nvTopMobile .headMobile {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        -ms-flex-align: center;
+        align-items: center;
+        height: 50px
+    }
+
+    .nvTopMobile .headMobile .hmLeft {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        color: #f1f1f1
+    }
+
+    .nvTopMobile .headMobile .hmLeft img {
+        border-radius: 3px;
+        margin-right: 10px
+    }
+
+    .nvTopMobile .headMobile .navMenuBox {
+        -ms-flex-align: center;
+        align-items: center;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        height: 50px;
+        width: 50px;
+        display: -ms-flexbox;
+        display: flex;
+        box-sizing: border-box;
+        padding: 11px
+    }
+
+    .nvTopMobile .headMobile .navMenuBox .lmenu {
+        height: 2px;
+        background: #fff;
+        width: 100%;
+        display: block
+    }
+
+    .nvTop {
+        width: 100%;
+        height: auto;
+        display: none;
+        z-index: 99999
+    }
+
+    .nvTop.active {
+        display: block
+    }
+
+    .nvTop .lstMenuTop {
+        width: 100%;
+        display: block;
+        height: auto
+    }
+
+    .nvTop .lstMenuTop li a.home {
+        display: none
+    }
+
+    .nvTop .lstMenuTop li {
+        border-bottom: 1px solid #017a88
+    }
+
+    .main .mainInner {
+        width: 95%
+    }
+
+    .main .mainInner .mainLeft {
+        width: 100%;
+        border-right: none
+    }
+
+    .main .mainInner .mainLeft .newHot {
+        margin-right: 0;
+        border-bottom: none;
+        padding-bottom: 0
+    }
+
+    .main .mainInner .mainLeft .newHot .aNewHotBig {
+        width: 100%
+    }
+
+    .main .mainInner .mainLeft .newHot .aNewHotBig a.imgThumb {
+        width: 100%;
+        height: auto
+    }
+
+    .main .mainInner .mainLeft .newHot .aNewHot {
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+    .main .mainInner .mainLeft .newHot .aNewHot a.imgThumb {
+        width: 100%;
+        height: auto
+    }
+
+    .main .mainInner .mainLeft .newHot .aNewHot h2 a, .main .mainInner .mainLeft .newHot .aNewHot h4 a {
+        font-size: 20px
+    }
+
+    .main .mainInner .mainLeft .aPost, .main .mainInner .mainLeft .aPost .headInfo .infoTime {
+        margin-right: 0
+    }
+
+    .main .mainInner .mainLeft .aPost .headInfo .infoSocial {
+        margin-right: 0;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        display: inline-block
+    }
+
+    .main .mainInner .mainLeft .aPost .aPostContent .aPostData img {
+        max-width: 95%;
+        height: auto !important
+    }
+
+    .main .mainInner .mainLeft .aPost .boxSocial2 .infoSocial {
+        margin-right: 5px;
+        margin-bottom: 10px;
+        display: inline-block
+    }
+
+    .main .mainInner .boxCatMini, .newFocus, .newLastest {
+        margin-right: 0
+    }
+
+    .main .mainInner .boxCat .newCat .aNewCat a.imgThumb, .main .mainInner .mainRight {
+        display: none
+    }
+
+    .main .mainInner .boxCat, .main .mainInner .boxCat .newCat {
+        width: 100%
+    }
+
+    .main .mainInner .boxCat .newCat .aNewCatBig {
+        min-height: auto
+    }
+
+    .main .mainInner .boxCat .newCat .aNewCatBig a.imgThumb {
+        width: auto;
+        height: auto
+    }
+
+    .main .mainInner .boxCat .newCat .aNewCat a {
+        width: auto
+    }
+
+    .main .mainInner .boxCatMini .newCatMini {
+        width: 100%
+    }
+
+    .main .mainInner .boxCatMini .newCatMini .aNewCatMiniBig {
+        height: auto
+    }
+
+    .main .mainInner .boxCatMini .newCatMini .aNewCatMiniBig a.imgThumb {
+        width: 100%;
+        height: auto
+    }
+
+    .main .mainInner .boxCatMini .newCatMini .aNewCatMini {
+        height: auto
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup {
+        width: 100%;
+        display: block
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .line {
+        display: none
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedBig {
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedBig a span {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedBig a span img {
+        width: 100%;
+        height: auto
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedMid {
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedMid a span {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedMid a span img {
+        width: 100%;
+        height: auto
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedChild {
+        width: 100%
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedChild .childNew {
+        width: 100%;
+        display: block
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedChild .childNew .thumbNail {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedChild .childNew div {
+        width: 100%
+    }
+
+    .main .mainInner .newRelated .newRelatedGroup .newRelatedChild .childNew div a strong {
+        font-size: 18px;
+        line-height: 26px
+    }
+
+    .newLastest .aNewLastest {
+        display: block
+    }
+
+    .newLastest .aNewLastest a.imgThumb {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px
+    }
+
+    .newLastest .aNewLastest .aNewLastestInfo {
+        width: auto
+    }
+
+    .newFocus .aNewFocus {
+        display: block
+    }
+
+    .newFocus .aNewFocus a.imgThumb {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px
+    }
+
+    .newFocus .aNewFocus .aNewFocusInfo {
+        width: auto
+    }
+
+    .navBot {
+        height: auto;
+        line-height: 40px;
+        text-align: center;
+        background: #424242;
+        padding: 0 10px
+    }
+
+    .tagFocus .tagFocusInner {
+        width: 95%
+    }
+
+    .tagFocus .tagFocusInner li {
+        float: none
+    }
+
+    .tagFocus .tagFocusInner li:nth-last-child(1), .tagFocus .tagFocusInner li:nth-last-child(2) {
+        float: none;
+        margin-right: 0;
+        margin-left: 0
+    }
+
+    .main .videoBox .videoBoxInner {
+        display: block;
+        width: 95%;
+        padding: 20px 0
+    }
+
+    .main .videoBox .videoBoxInner .videoShow {
+        width: auto;
+        min-height: auto;
+        text-align: center;
+        margin: 0 0 15px
+    }
+
+    .main .videoBox .videoBoxInner .videoShow iframe {
+        width: 90%;
+        height: 300px
+    }
+
+    .main .videoBox .videoBoxInner .videoList {
+        width: 100%;
+        min-height: auto
+    }
+
+    .main .videoBox .videoBoxInner .videoList li a img {
+        display: none
+    }
+
+    footer {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: distribute;
+        justify-content: space-around
+    }
+
+    footer .footerInner {
+        display: block;
+        width: 95%
+    }
+
+    footer .footerInner .infoBox {
+        width: 100%;
+        margin-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 15px
+    }
+
+    footer .footerInner .line {
+        display: none
+    }
+
+    #google_translate_element {
+        position: relative !important;
+        text-align: center !important;
+        bottom: auto !important;
+        right: auto !important
+    }
+
+    iframe {
+        width: 90%
+    }
+}
