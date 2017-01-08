@@ -51,6 +51,7 @@
 				</tr>
 			</tbody>
 		</table>
+		{{$list->links()}}
 	</div>
 @endsection
 @section('footer_script')

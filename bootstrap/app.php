@@ -10,6 +10,7 @@
 | the IoC container for the system binding all of the various parts.
 |
 */
+$_ENV['DOMAIN_CURRENT'] = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
 
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')

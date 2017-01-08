@@ -40,6 +40,14 @@
 				<input type="file" class="form-control" name="logo" ng-model="site.logo"/>
 			</div>
 			<br>
+			<div ng-repeat="(key,config) in configs">
+				<div class="input-group">
+					<span class="input-group-addon">@{{config.key}}</span>
+					<input type="text" class="form-control" name="@{{config.key}}" ng-model="config.value"/>
+				</div>
+				<br>
+			</div>
+
 			{{ csrf_field() }}
 			<button class="btn btn-info">Submit</button>
 		</form>
@@ -55,6 +63,11 @@
 					$scope.site = '{!! json_encode($site) !!}';
 					$scope.site = (JSON.parse($scope.site));
 			@endif
+			$scope.configs = [
+				@foreach($configs as $row)
+					{!! $row !!},
+				@endforeach
+			];
 		});
 
 	</script>

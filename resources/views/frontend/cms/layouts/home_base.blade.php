@@ -3,43 +3,10 @@
 <html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link href="{{URL::to('/')}}/frontend/cms/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
-    <meta property="fb:app_id" content="">
-    <meta property="fb:pages" content="">
-    <title>CMS</title>
-    <meta name="description" content="">
-    <meta name="news-keywords" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
-    <meta name="generator" content="">
-    <meta name="robots" content="noodp,index,follow">
-    <meta name="Googlebot" content="noodp,index,follow">
-    <meta name="RATING" content="GENERAL">
-    <meta name="page-topic" content="">
-    <meta name="revisit-after" content="1 days">
-    <meta name="distribution" content="Global">
-    <meta name="copyright" content="Top5L">
-    <meta http-equiv="audience" content="General">
-    <meta name="resource-type" content="Document">
-    <meta property="og:site_name" content="">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="vi_VN">
-    <meta property="og:title" content="">
-    <meta property="og:description" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <meta property="og:rich_attachment" content="true">
-    <meta property="article:publisher" content="https://www.facebook.com/luongduchung">
-    <meta itemprop="name" content="">
-    <meta itemprop="description" content="">
-    <meta itemprop="image" content="">
-    <link rel="alternate" href="{{URL::to('/')}}" hreflang="en-US">
+    {!! \App\Http\Lib\Common::headGetMemcache() !!}
     <link href="{{URL::to('/')}}/frontend/cms/css/app.css" rel="stylesheet" type="text/css">
-    <!--[if lte IE 8]>
-    <script src="http://top5l.com/project/w/news/pc/js/html5.js" type="text/javascript"></script>
-    <![endif]-->
+    @yield('head_style')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body class="rs blog " style="position: relative; min-height: 100%; top: 0px;">
 <!-- Google Tag Manager -->
@@ -91,7 +58,10 @@
         <li><a href="http://top5l.com/tu-vi" title="Tử vi">Tử vi</a></li>
         <li><a href="http://top5l.com/top-suc-khoe" title="Sức khỏe">Sức khỏe</a></li>
         <li><a href="http://top5l.com/top-anh-dep" title="Ảnh đẹp">Ảnh đẹp</a></li>
-        <li><a href="http://top5l.com/top-game" title="Game">Game</a></li>
+        <li><a href="http://top5l.com/top-game" title="Game">Game Ảnh đẹp </a></li>
+        <li><a href="http://top5l.com/top-game" title="Game">Game Ảnh đẹp</a></li>
+        <li><a href="http://top5l.com/top-game" title="Game">Game Ảnh đẹp</a></li>
+        <li><a href="http://top5l.com/top-game" title="Game">Game Ảnh đẹp</a></li>
     </ul>
 </nav>
 <div class="advbanner adv1 hideClick"><img src="http://placehold.it/980x90" alt=""></div>

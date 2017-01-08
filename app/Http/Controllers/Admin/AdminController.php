@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Model\SConfigs;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -110,37 +111,19 @@ class AdminController extends Controller
         if(Request::method()=='POST'){
 
             $aInput  = Input::except('_token');
-            $aRule = [
-                'title'=>'required',
-                'logo'=>'mimes:png',
-                'favicon'=>'mimes:jpeg,png,gif'
-            ];
-            $v = Validator::make($aInput,$aRule);
-
-            if($v->passes()){
-                $logo = isset($aInput['logo'])?$aInput['logo']:"";
-                if($logo!=""){
-                    $logo->move(
-                        base_path() . '/public/', 'logo.'.$logo->getClientOriginalExtension()
-                    );
-                }
-                $settings = DB::table('blog_settings')->first();
-                if($settings==null){
-                    DB::table('blog_settings')->insert(['id'=>1]);
-                }
-                DB::table('blog_settings')->where('id',1)->update(['title'=>trim($aInput['title'])]);
-                \Session::flash('flash_mes', ['Success!']);
-                \Session::flash('flash_ok', 1);
-            }else{
-                \Session::flash('flash_mes', $v->errors()->all());
+            foreach($aInput as $key=>$value){
+                SConfigs::where('key',str_replace("_",".",$key))->update(['value'=>$value]);
             }
+            \Session::flash('flash_mes', ['Success!']);
+            \Session::flash('flash_ok', 1);
         }
         $getConfigs = DB::table('blog_settings')->where('id',1)->first();
         $site = [];
         if(count($getConfigs)>0){
             $site = $getConfigs;
         }
-        return view('admin.settings.site',['site'=>$site]);
+        $configs = SConfigs::where('state',1)->get();
+        return view('admin.settings.site',['site'=>$site,'configs'=>$configs]);
     }
     public static function uploadImage($image,$prefix=null,$Id=null){
         if($Id!=null){
