@@ -29,6 +29,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::any('settings/slider','Admin\AdminController@slider');
     Route::any('settings/profile','Admin\AdminController@profile');
     Route::any('settings/site','Admin\AdminController@site');
+    Route::any('settings/menu','Admin\AdminController@frontmenu');
     Route::post('media/deleteimage','MediasController@deleteimage');
     Route::post('post/searchfilter','PostController@searchfilter');
     Route::get('post/featured','PostController@featured');

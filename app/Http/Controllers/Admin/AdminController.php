@@ -13,6 +13,8 @@ use App\Http\Model\Post;
 use Cache,Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Schema;
 use DB;
+use App\Http\Lib\Common;
+use Response;
 
 class AdminController extends Controller
 {
@@ -141,6 +143,13 @@ class AdminController extends Controller
             }
         }
         $configs = SConfigs::where('state',1)->get();
+        $config = SConfigs::where('state', '=', 1)->get();
+        if(isset($config) && count($config) > 0){
+            foreach($config as $cfg){
+                \Config::set($cfg->key, $cfg->value);
+            }
+        }
+        Common::metaDefault();
         return view('admin.settings.site',['configs'=>$configs]);
     }
     public static function uploadImage($image,$prefix=null,$Id=null){
@@ -155,6 +164,32 @@ class AdminController extends Controller
         );
         $result = '/images/users/u_'.$cdbUser->id.'_id/'.$imageName;
         return $result;
+    }
+
+    public function frontmenu(){
+        if(Request::wantsJson() || Request::ajax()){
+            return $this::saveMenu(Input::get('menu'));
+        }
+        $categories = Category::select('id','name')->get();
+        if(isset($_GET['s_update'])){
+            Cache::forget('menu_front');
+        }
+        $menu = Cache::get('menu_front',[]);
+        //$menu = json_encode($menu);
+        $categories = Category::select('id','name')->whereNotIn('id',$menu)->get();
+        $ids_ordered = implode(',', $menu);
+        $menu = Category::whereIn('id',$menu)->orderByRaw(DB::raw("FIELD(id, $ids_ordered)"))->get();
+        return view('admin.settings.menu',['categories'=>$categories,'menu'=>$menu]);
+    }
+
+    private function saveMenu($aInput){
+        $aMenu = [];
+        foreach($aInput as $row){
+            $row = Common::convertArrayToObj($row);
+            $aMenu[] = $row->id;
+        }
+        Cache::forever('menu_front',$aMenu);
+        return Response::json($aInput);
     }
 
 

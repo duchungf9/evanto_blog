@@ -88,6 +88,9 @@
                     <li >
                         <a href="/admin/settings/site" ><i class="fa fa-cog"></i>Site settings</a>
                     </li>
+                    <li >
+                        <a href="/admin/settings/menu" ><i class="fa fa-star-o"></i>Menu (home page menu)</a>
+                    </li>
                 </li>
 
             </ul>
@@ -128,7 +131,6 @@
 <!-- CUSTOM SCRIPTS -->
 <script src="{{URL::to('/')}}/js/custom.js"></script>
 @yield('footer_script')
-
 </body>
 </html>
 
