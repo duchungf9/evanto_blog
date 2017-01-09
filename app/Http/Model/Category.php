@@ -14,7 +14,7 @@ class Category extends Node
      *
      * @var string
      */
-    protected $table = 'blog_categories';
+    protected $table = 'categories';
 
     public function posts()
     {

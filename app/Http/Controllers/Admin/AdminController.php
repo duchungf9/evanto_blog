@@ -16,6 +16,25 @@ use DB;
 
 class AdminController extends Controller
 {
+    private static $keysConfig = [
+            'app.seo.title'=>'SEO title',
+            'app.seo.description'=>'SEO Description',
+            'app.seo.keywords'=>'seo, keywords',
+            'app.seo.robots'=>'index,follow,archive',
+            'app.seo.page_topic'=>'Page topic',
+            'app.seo.fb_title'=>'SEO title on Facebook',
+            'app.seo.fb_description'=>'SEO description on Facebook',
+            'app.seo.fb_url'=>'http://yourdomain.com',
+            'app.seo.fb_image'=>'',
+            'app.seo.gg_name'=>'SEO title on Google',
+            'app.seo.gg_description'=>'SEO description on Google',
+            'app.seo.gg_image'=>'',
+            'app.seo.google'=>'your-google-verification-code',
+            'app.seo.bing'=>'your-bing-verification-code',
+            'app.seo.alexa'=>'your-alexa-verification-code',
+            'app.settings.logo'=>'',
+            'app.settings.description'=>'My Blog, My Travel',
+    ];
     /**
      * Create a new controller instance.
      *
@@ -100,16 +119,7 @@ class AdminController extends Controller
 
     }
     public function site(){
-        if(Schema::hasTable('blog_settings')==false){
-            Schema::create('blog_settings', function($table) {
-                $table->increments('id');
-                $table->string('title', 255);
-                $table->string('logo', 255);
-                $table->string('favicon', 255);
-            });
-        }
         if(Request::method()=='POST'){
-
             $aInput  = Input::except('_token');
             foreach($aInput as $key=>$value){
                 SConfigs::where('key',str_replace("_",".",$key))->update(['value'=>$value]);
@@ -117,13 +127,21 @@ class AdminController extends Controller
             \Session::flash('flash_mes', ['Success!']);
             \Session::flash('flash_ok', 1);
         }
-        $getConfigs = DB::table('blog_settings')->where('id',1)->first();
-        $site = [];
-        if(count($getConfigs)>0){
-            $site = $getConfigs;
+        foreach($this::$keysConfig as $key=>$value){
+            $exists = SConfigs::where('key',$key)->first();
+            if(count($exists)<=0){
+                $newConfig = new SConfigs();
+                $newConfig->key= $key;
+                $newConfig->value = $value;
+                $newConfig->title = $value;
+                $newConfig->description = $value;
+                $newConfig->state = 1;
+                $newConfig->save();
+                //SConfigs::create(['key'=>$key,'value'=>$value]);
+            }
         }
         $configs = SConfigs::where('state',1)->get();
-        return view('admin.settings.site',['site'=>$site,'configs'=>$configs]);
+        return view('admin.settings.site',['configs'=>$configs]);
     }
     public static function uploadImage($image,$prefix=null,$Id=null){
         if($Id!=null){

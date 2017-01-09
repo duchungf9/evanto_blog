@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Config;
+use App\Http\Model\SConfigs;
 class HomeController extends Controller
 {
     /**

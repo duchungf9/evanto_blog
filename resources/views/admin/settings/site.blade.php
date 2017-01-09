@@ -28,30 +28,36 @@
 				</ul>
 			</div>
 		@endif
-		<form action='/admin/settings/site' method="POST" enctype="multipart/form-data">
-			<div class="input-group">
-				<span class="input-group-addon">Site's Name</span>
-				<input type="text" class="form-control" name="title" ng-model="site.title"/>
-			</div>
-			<br>
-			<div class="input-group">
-				<span class="input-group-addon">Logo</span>
-				<img src="/logo.png" alt="" style="max-width: 100%;">
-				<input type="file" class="form-control" name="logo" ng-model="site.logo"/>
-			</div>
-			<br>
-			<div ng-repeat="(key,config) in configs">
-				<div class="input-group">
-					<span class="input-group-addon">@{{config.key}}</span>
-					<input type="text" class="form-control" name="@{{config.key}}" ng-model="config.value"/>
-				</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<form action='/admin/settings/site' method="POST" enctype="multipart/form-data">
 				<br>
-			</div>
+				<div ng-repeat="(key,config) in configs">
+					<div class="input-group">
+						<span class="input-group-addon">@{{config.key}}</span>
+						<input type="text" class="form-control" name="@{{config.key}}" ng-model="config.value"/>
+					</div>
+					<br>
+				</div>
 
-			{{ csrf_field() }}
-			<button class="btn btn-info">Submit</button>
-		</form>
-	</div>
+				{{ csrf_field() }}
+				<button class="btn btn-info">Submit</button>
+			</form>
+		</div>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+			<pre id="output">
+				<?php
+					$config = \App\Http\Model\SConfigs::where('state', '=', 1)->get();
+					if(isset($config) && count($config) > 0){
+						foreach($config as $cfg){
+							\Config::set($cfg->key, $cfg->value);
+						}
+					}
+				?>
+				{!! dump(\App\Http\Lib\Common::metaGet())!!}
+			</pre>
+		</div>
+
+		</div>
 @endsection
 @section('footer_script')
 	<script src="{{URL::to('/')}}/js/angular.min.js"></script>
@@ -59,10 +65,6 @@
 		var app = angular.module('myApp',[]);
 		app.controller('siteController',function($scope,$http){
 			$scope.site = "";
-			@if(isset($site))
-					$scope.site = '{!! json_encode($site) !!}';
-					$scope.site = (JSON.parse($scope.site));
-			@endif
 			$scope.configs = [
 				@foreach($configs as $row)
 					{!! $row !!},
