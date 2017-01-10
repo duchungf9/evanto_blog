@@ -12,6 +12,7 @@
 */
 $_ENV['DOMAIN_CURRENT'] = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
 $_ENV['PROJECT_NAME'] = 'cms';
+define('VIEW_FRONT', 'frontend.'.$_ENV['PROJECT_NAME'].'.');
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );

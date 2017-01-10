@@ -1,3 +1,4 @@
+{{dd($menus)}}
 <section class="navLink hideClick">
     <ul class="nlBox rs">
         <li><a href="javascript:void(0);">Games</a></li>
@@ -9,7 +10,7 @@
 </section>
 <header class="hdTop hideClick">
     <div class="hdTopBox">
-        <h1 class="logo"><a href="javascript:void(0);" title="Top5L">Top5L</a></h1>
+        <h1 class="logo"><a href="javascript:void(0);" title="7-CMS">7-CMS</a></h1>
         <div class="hashTag">
             <a href="javascript:void(0);"><strong>#top 5</strong></a>
             <a href="javascript:void(0);"><strong>#top 10</strong></a>

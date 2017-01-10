@@ -223,7 +223,7 @@ body {
     display: flex;
     -ms-flex-pack: distribute;
     justify-content: space-around;
-    background: #a70e1a;
+    background: #faba34;
     height: 40px
 }
 
@@ -1480,7 +1480,7 @@ footer .footerInner .infoBox .contentInfoBox .linkFriend a {
     }
 
     .nvTop .lstMenuTop li {
-        border-bottom: 1px solid #017a88
+        border-bottom: 1px solid #cc531b
     }
 
     .main .mainInner {

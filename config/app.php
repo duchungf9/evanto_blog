@@ -163,6 +163,7 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         'Baum\Providers\BaumServiceProvider',
+        \App\Providers\ComposerServiceProvider::class,
         //Illuminate\Html\HtmlServiceProvider::class
 
 

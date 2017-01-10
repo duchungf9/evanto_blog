@@ -19,7 +19,7 @@ class CreateBlogPostsTable extends Migration {
 			$table->text('json_params');
 			$table->enum('status', array('draft', 'publish'))->index();
 			$table->boolean('comments')->index();
-			$table->boolean('featured')->index();
+			$table->boolean('featured')->index()->default(0);
 			$table->timestamps();
 			$table->softDeletes();
 		});

@@ -177,8 +177,11 @@ class AdminController extends Controller
         $menu = Cache::get('menu_front',[]);
         //$menu = json_encode($menu);
         $categories = Category::select('id','name')->whereNotIn('id',$menu)->get();
-        $ids_ordered = implode(',', $menu);
-        $menu = Category::whereIn('id',$menu)->orderByRaw(DB::raw("FIELD(id, $ids_ordered)"))->get();
+        if(!empty($menu)){
+            $ids_ordered = implode(',', $menu);
+            $menu = Category::whereIn('id',$menu)->orderByRaw(DB::raw("FIELD(id, $ids_ordered)"))->get();
+        }
+
         return view('admin.settings.menu',['categories'=>$categories,'menu'=>$menu]);
     }
 

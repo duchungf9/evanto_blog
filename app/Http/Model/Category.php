@@ -18,7 +18,7 @@ class Category extends Node
 
     public function posts()
     {
-        return $this->hasMany('Post');
+        return $this->hasMany('\App\Http\Model\Post','category_id');
     }
     //////////////////////////////////////////////////////////////////////////////
 
