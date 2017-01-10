@@ -37,7 +37,11 @@ class HomeMain
             ->orderBy('blog_posts.id','DESC')
             ->limit(3)
             ->get();
-        $params['categories'] = Category::orderByRaw("RAND()")->limit(10)->get();
+        $params['categories'] = Category::select('id','name')->orderByRaw("RAND()")->limit(10)->get();
+        foreach($params['categories'] as $cat){
+            $post = Post::where('category_id',$cat->id)->orderBy('id','DESC')->limit(3)->get();
+            $cat->posts = $post;
+        }
         $view->with('params', $params);
     }
 }
