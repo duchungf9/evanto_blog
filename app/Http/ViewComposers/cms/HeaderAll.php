@@ -26,7 +26,6 @@ class HeaderAll
         if(count($cacheMenu)>0){
             $menus =  Category::select('id','name','slug')->whereIn('id',$cacheMenu)->get();
         }
-
         $view->with('menus', $menus);
     }
 }

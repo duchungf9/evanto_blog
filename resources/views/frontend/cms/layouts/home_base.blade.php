@@ -18,16 +18,7 @@
     <!--//mainInner-->
 </div>
 <nav class="navBot hideClick">
-    <a href="https://top5l.com/">Trang chủ</a>
-    <a href="http://top5l.com/cuoc-song" title="Cuộc sống">Cuộc sống</a>
-    <a href="http://top5l.com/top-phim-anh" title="Phim ảnh">Phim ảnh</a>
-    <a href="http://top5l.com/top-chuyen-la" title="Chuyện lạ">Chuyện lạ</a>
-    <a href="http://top5l.com/top-khuyen-mai" title="Khuyến mại">Khuyến mại</a>
-    <a href="http://top5l.com/top-game" title="Game">Game</a>
-    <a href="http://top5l.com/top-video" title="Video hay">Video hay</a>
-    <a href="http://top5l.com/top-dia-diem" title="Địa điểm">Địa điểm</a>
-    <a href="http://top5l.com/top-anh-dep" title="Ảnh đẹp">Ảnh đẹp</a>
-    <a href="http://top5l.com/top-suc-khoe" title="Sức khỏe">Sức khỏe</a>
+    <a href="{{URL::to('/')}}/">Home Page</a>
 </nav>
 <div class="advbanner adv9 hideClick">
     <a href="https://top5l.com/?s_nozip&amp;s_update#"><img src="http://placehold.it/980x90" alt=""></a>

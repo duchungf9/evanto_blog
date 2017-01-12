@@ -14,28 +14,30 @@ class DatabaseSeeder extends Seeder {
 
 		$limit = 21;
 		for ($i = 1; $i < $limit; $i++) {
-			$title = $faker->unique()->company;
+			$title = $faker->unique()->city;
 			$slug = str_slug($title,"-");
 			Category::create([
 				'name' => $title,
 				'slug' => $slug,
-				'description' => $faker->Text,
+				'description' => $faker->sentence(20),
 			]);
 		}
-		//for ($i = 0; $i < $limit; $i++) {
-		//	$title = $faker->unique()->company;
-		//	$slug = str_slug($title,"-");
-		//	DB::table('blog_posts')->insert([
-		//		'category_id' => rand(1,20),
-		//		'title' => $title,
-		//		'slug' => $slug,
-		//		'description' => $faker->Text,
-		//		'summary' => str_limit($faker->Text,27,"..."),
-		//		'content' => $faker->realText(1000,2),
-		//		'status' => 'publish',
-		//		'image' => "https://placehold.it/350x150",
-		//	]);
-		//}
+		$limit = 100000;
+		for ($i = 0; $i < $limit; $i++) {
+			$title = $faker->unique()->company;
+			$slug = str_slug($title,"-");
+			DB::table('blog_posts')->insert([
+				'category_id' => rand(1,20),
+				'title' => $title,
+				'slug' => $slug,
+				'description' => $faker->Text,
+				'summary' => str_limit($faker->Text,27,"..."),
+				'content' => $faker->realText(1000,2),
+				'status' => 'publish',
+				'featured' => 0,
+				'image' => "https://unsplash.it/700/50".rand(0,9)."/?random",
+			]);
+		}
 		$this->command->info('Post table seeded!');
 	}
 }

@@ -67,15 +67,27 @@
                     <li >
                         <a href="/admin/dashboard" ><i class="fa fa-desktop"></i>Dashboard</a>
                     </li>
-                    <li >
-                        <a href="/admin/category/list" ><i class="fa fa-bars"></i>Categories</a>
+                    <li onclick="show('category');">
+                        <a href="javscirpt:void(0);" ><i class="fa fa-bars"></i>Categories</a>
                     </li>
-                    <li >
-                        <a href="/admin/post/list" ><i class="fa fa-file-text-o"></i>Posts</a>
+                        <li class="child" data-parent="category">
+                            <a href="/admin/category/" ><i class="fa fa-plus-circle"></i> create new Category</a>
+                        </li>
+                        <li class="child" data-parent="category">
+                            <a href="/admin/category/list" ><i class="fa fa-bars"></i> List Categories</a>
+                        </li>
+                    <li onclick="show('post');">
+                        <a href="javascript:void(0);" ><i class="fa fa-file-text-o"></i>Posts</a>
                     </li>
-                    <li >
-                        <a href="/admin/post/featured" ><i class="fa fa-heart"></i>Featured Posts</a>
-                    </li>
+                        <li class="child" data-parent="post">
+                            <a href="/admin/post/" ><i class="fa fa-plus-circle"></i> create new Posts</a>
+                        </li>
+                        <li class="child" data-parent="post">
+                            <a href="/admin/post/list" ><i class="fa fa-bars"></i> List Posts</a>
+                        </li>
+                        <li class="child" data-parent="post">
+                            <a href="/admin/post/featured" ><i class="fa fa-heart"></i> Featured Posts</a>
+                        </li>
                     <li >
                         <a href="/admin/media/list" ><i class="fa fa-image"></i>Media Manager</a>
                     </li>
@@ -131,6 +143,12 @@
 <!-- CUSTOM SCRIPTS -->
 <script src="{{URL::to('/')}}/js/custom.js"></script>
 @yield('footer_script')
+<script>
+    $(".child").hide();
+    function show(cat){
+        $("li[data-parent="+cat+"]").toggle();
+    }
+</script>
 </body>
 </html>
 
