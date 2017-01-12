@@ -22,6 +22,10 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('/dashboard','Admin\AdminController@index');
     Route::get('category/list','CategoryController@listCategories');
     Route::post('category/delete','CategoryController@delCategories');
+    Route::get('/page','PageController@index');
+    Route::get('/page/list','PageController@list');
+    Route::post('/page/create','PageController@create');
+    Route::post('/page/delete','PageController@delete');
     Route::get('post/list','PostController@listPosts');
     Route::post('post/savetags','PostController@savetags');
     Route::post('post/savemeta','PostController@savemeta');
@@ -30,6 +34,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::any('settings/profile','Admin\AdminController@profile');
     Route::any('settings/site','Admin\AdminController@site');
     Route::any('settings/menu','Admin\AdminController@frontmenu');
+    Route::any('settings/module','Admin\AdminController@module');
     Route::post('media/deleteimage','MediasController@deleteimage');
     Route::post('post/searchfilter','PostController@searchfilter');
     Route::get('post/featured','PostController@featured');
@@ -42,4 +47,5 @@ Route::group(['prefix'=>'admin'],function(){
     Route::resource('comment', 'CommentController');
     Route::resource('posttag', 'PostTagController');
     Route::resource('tag', 'TagController');
+    Route::get('sitemap','Admin\AdminController@sitemap');
 });

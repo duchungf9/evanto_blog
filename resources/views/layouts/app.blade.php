@@ -67,6 +67,15 @@
                     <li >
                         <a href="/admin/dashboard" ><i class="fa fa-desktop"></i>Dashboard</a>
                     </li>
+                    <li onclick="show('page');">
+                        <a href="javascript:void(0);" ><i class="fa fa-flag"></i>Pages</a>
+                    </li>
+                    <li class="child" data-parent="page">
+                        <a href="/admin/page/" ><i class="fa fa-plus-circle"></i> create new Page</a>
+                    </li>
+                    <li class="child" data-parent="page">
+                        <a href="/admin/page/list" ><i class="fa fa-bars"></i> List Categories</a>
+                    </li>
                     <li onclick="show('category');">
                         <a href="javscirpt:void(0);" ><i class="fa fa-bars"></i>Categories</a>
                     </li>
@@ -91,18 +100,25 @@
                     <li >
                         <a href="/admin/media/list" ><i class="fa fa-image"></i>Media Manager</a>
                     </li>
-                    <li >
-                        <a href="/admin/settings/slider" ><i class="fa fa-th-list"></i>Home's Slider</a>
-                    </li>
+                    {{--<li >--}}
+                        {{--<a href="/admin/settings/slider" ><i class="fa fa-th-list"></i>Home's Slider</a>--}}
+                    {{--</li>--}}
                     <li >
                         <a href="/admin/settings/profile" ><i class="fa fa-user"></i>Edit Profile</a>
                     </li>
-                    <li >
-                        <a href="/admin/settings/site" ><i class="fa fa-cog"></i>Site settings</a>
+                    <li onclick="show('site');">
+                        <a href="javascript:void(0);" ><i class="fa fa-cog"></i>Site settings</a>
                     </li>
-                    <li >
+
+                    <li class="child" data-parent="site">
+                        <a href="/admin/settings/site" ><i class="fa fa-star-o"></i>settings/configs/META SEO</a>
+                    </li>
+                    <li class="child" data-parent="site">
                         <a href="/admin/settings/menu" ><i class="fa fa-star-o"></i>Menu (home page menu)</a>
                     </li>
+                    {{--<li class="child" data-parent="site">--}}
+                        {{--<a href="/admin/settings/module" ><i class="fa fa-star-o"></i>Modules config</a>--}}
+                    {{--</li>--}}
                 </li>
 
             </ul>
