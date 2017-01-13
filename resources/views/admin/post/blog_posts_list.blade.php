@@ -75,7 +75,7 @@
 			}
 			var token = '{!! csrf_token() !!}';
 			$scope.delCat = function(post,key) {
-				var question = prompt("Do you really want to delete this category?. All post what related with it will be move to UnCategory Category. Type 'Yes' to confirm.", "Yes");
+				var question = prompt("Do you really want to delete this post?. Type 'Yes' to confirm.", "Yes");
 
 				if (question == 'Yes') {
 					$http.post(

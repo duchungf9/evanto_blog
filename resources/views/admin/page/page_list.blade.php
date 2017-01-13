@@ -28,7 +28,7 @@
 				</ul>
 			</div>
 		@endif
-		<button class="btn btn-group-lg btn-success" onclick="javascript:window.location = '/admin/post'"><i class="fa fa-plus-circle"></i> Create New Post</button>
+		<button class="btn btn-group-lg btn-success" onclick="javascript:window.location = '/admin/page/create'"><i class="fa fa-plus-circle"></i> Create New Page</button>
 		<input type="text" ng-model="postFilter" ng-change="searchPost()" placeholder=" search posts here...">
 		<p></p>
 		<table class="table table-striped table-bordered table-hover">
@@ -44,14 +44,10 @@
 				<tr ng-repeat="(key,post) in list | filter:postFilter">
 					<td>@{{ post.id }}</td>
 					<td>@{{ post.title }}</td>
-					<td>@{{ post.slug }}</td>
+					<td>@{{ post.content }}</td>
 					<td>
-						<button class="btn  btn-primary" ng-click="editCat(post)"><i class="fa fa-pencil-square-o"></i>  Edit</button>
-						<button class="btn  btn-alert" ng-click="delCat(post,key)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-						<button class="btn  btn-success" ng-click="publish(post,key,'publish')" ng-show="post.status=='draft'"><i class="fa fa-volume-up"></i>  Publish</button>
-						<button class="btn  btn-success" ng-click="publish(post,key,'draft')" ng-show="post.status=='publish'"><i class="fa fa-volume-up"></i> Un Publish</button>
-						<button class="btn  btn-warning" ng-click="featured(post,key,'1')" ng-show="post.featured!='1'"><i class="fa fa-heart"></i> set as feature</button>
-						<button class="btn  btn-warning" ng-click="featured(post,key,'0')" ng-show="post.featured=='1'"><i class="fa fa-heart"></i> Un set as feature</button>
+						<button class="btn  btn-primary" ng-click="editPage(post)"><i class="fa fa-pencil-square-o"></i>Edit</button>
+						<button class="btn  btn-alert" ng-click="delPage(post,key)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
 					</td>
 				</tr>
 			</tbody>
@@ -66,7 +62,34 @@
 		var app = angular.module('myApp',[]);
 		app.controller('pageController',function($scope,$http){
 			var token = '{!! csrf_token() !!}';
+			$scope.list = "";
+			$scope.list = [
+					@foreach($list as $row)
+						JSON.parse('{!! json_encode($row) !!}'),
+					@endforeach
+			];
+			$scope.editPage = function(page){
+				window.location = '{{URL::to('/')}}'+"/admin/page/create/"+page.id;
+			}
+			$scope.delPage = function(page,key){
+				var question = prompt("Do you really want to delete this page?.  Type 'Yes' to confirm.", "Yes");
 
+				if (question == 'Yes') {
+					$http.post(
+							'/admin/page/delete',
+							$.param({_token: token, page: page}),
+							{headers : {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}}
+					).then(
+							function(response){
+								if(response.data=='ok'){
+									$scope.list.splice(key, 1);
+								}
+							},function(response){
+							}
+					);
+
+				}
+			}
 		});
 
 	</script>

@@ -23,8 +23,8 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('category/list','CategoryController@listCategories');
     Route::post('category/delete','CategoryController@delCategories');
     Route::get('/page','PageController@index');
-    Route::get('/page/list','PageController@list');
-    Route::post('/page/create','PageController@create');
+    Route::get('/page/list','PageController@index');
+    Route::any('/page/create/{id?}','PageController@create');
     Route::post('/page/delete','PageController@delete');
     Route::get('post/list','PostController@listPosts');
     Route::post('post/savetags','PostController@savetags');

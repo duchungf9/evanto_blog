@@ -21,8 +21,7 @@ class PageController extends AdminController
 
     private $aRules = [
         'title' => 'required',
-        'slug' => 'required|unique:blog_posts',
-        'content' => 'required',
+        'slug' => 'required'
     ];
     private $sViewPath = "/admin/page/";
 
@@ -45,6 +44,49 @@ class PageController extends AdminController
         $pages = DB::table('pages')->paginate(10);
 
         return view('admin.page.page_list',['list'=>$pages]);
+    }
+
+    public function delete(){
+        if(Request::ajax() || Request::wantsJson()){
+            $post = DB::table('pages')->where('id',Input::get('page')['id'])->delete();
+            if($post){
+                return 'ok';
+            }
+        }
+    }
+
+    public function create($page=null){
+        if(Request::method() == 'POST'){
+            $aInputs = Input::except('_token');
+            if (isset($aInputs['slug'])) {
+                $aInputs['slug'] = str_slug($aInputs['slug'], '-');
+            }
+            $validator = Validator::make($aInputs, $this->aRules);
+            if ($validator->passes()) {
+                if($page!=null){
+                    DB::table('pages')->where('id',$page)->update($aInputs);
+                    $root = $page;
+                }else{
+                    $root = DB::table('pages')->insertGetId($aInputs);
+                }
+
+                Session::flash('flash_mes', ['Success!']);
+                Session::flash('flash_ok', 1);
+                return redirect()->action('PageController@create', ['id' => $root]);
+            } else {
+                $oInput = Common::convertArrayToObj($aInputs);
+                Session::flash('oldInput_page', $oInput);
+                return view('admin.page.create')->with('mes', $validator->errors()->all());
+            }
+        }
+        if($page!=null){
+            $page = DB::table('pages')->where('id',$page)->first();
+            if($page==null){
+                echo 'page not found';
+            }
+            return view('admin.page.create',['page'=>json_encode($page)]);
+        }
+        return view('admin.page.create');
     }
 
 
