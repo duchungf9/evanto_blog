@@ -26,32 +26,10 @@
 <footer class="hideClick">
     <div class="footerInner">
         <div class="infoBox">
-            <div class="titleInfoBox">Liên hệ</div>
+            <div class="titleInfoBox">Social</div>
             <div class="contentInfoBox taj">
-                Là blog nhóm cá nhân note, bookmark, tổng hợp chia sẻ các điều, link hữu ích hướng thiện cho cộng đồng. Nếu cảm thấy hữu ích đừng quên like Fanpage
-                để động viên nhóm, cũng như SHARE bài viết để chia sẻ những điều hay, hữu ích tới mọi người.
-                <br>
-                Có thể blog sẽ có những bài viết đánh giá top 5, 10 theo cảm nhận cá nhân nhưng sẽ không bao giờ có ý định làm ảnh hưởng đến bất kỳ một cá nhân tổ chức nào.<br>
-                Nếu có vấn đề mọi email góp ý xin nhắn tin offline gửi về Fanpage: <a href="https://www.facebook.com/top5link/">Top5L</a>
-                <br>
+
             </div>
-        </div>
-        <div class="line"></div>
-        <div class="infoBox">
-            <div class="titleInfoBox">Liên kết</div>
-            <div class="contentInfoBox">
-                <ul class="rs linkFriend">
-                    <li><a href="https://game.top5l.com/">Game mini</a></li>
-                    <li><a href="https://top5l.com/?s_nozip&amp;s_update#">Afamily</a></li>
-                    <li><a href="https://top5l.com/?s_nozip&amp;s_update#">Kênh 14</a></li>
-                    <li><a href="https://top5l.com/?s_nozip&amp;s_update#">Dân Trí</a></li>
-                    <li><a href="https://top5l.com/?s_nozip&amp;s_update#">VnExpress</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="line"></div>
-        <div class="infoBox">
-            <div class="titleInfoBox">Mạng xã hội</div>
         </div>
     </div>
 </footer>
