@@ -31,12 +31,26 @@
             </div>
         @endif
         <div id="boximage" class="boximage">
-            <a title="@{{ img }}" href="javascript:void(0);" ng-repeat="(key,img) in list">
-                <img alt="@{{ img }}" src="@{{ img }}"/>
-                <div class="task__actions">
-                    <i class="fa fa-times" ng-click="delete(key,img)"> Delete This</i>
-                </div>
-            </a>
+            <table class="table table-striped table-bordered table-hover">
+                <thead>
+                <tr>
+                    <th>#id</th>
+                    <th>image</th>
+                    <th>url</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="(key,img) in list | filter:postFilter">
+                    <td>@{{ key }}</td>
+                    <td><img alt="@{{ img }}" src="@{{ img }}" style="max-width: 20%;"/></td>
+                    <td>@{{ img }}</td>
+                    <td>
+                            <button class="btn  btn-alert" ng-click="delete(key,img)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
             <div class="clear"></div>
         </div>
 
