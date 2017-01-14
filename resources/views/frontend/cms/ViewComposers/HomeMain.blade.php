@@ -35,7 +35,7 @@
                             <a class="imgThumb" href="#"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
                             <div class="aNewLastestInfo">
                                 <h3 class="rs"><a href="#" title="{{$post->title}}">{{$post->title}}</a></h3>
-                                <div class="nameCat"><a href="#">{{$post->name}}</a><span class="nameCatSpace">-</span><span class="nameCatTime">{{$post->updated_at}}</span></div>
+                                <div class="nameCat"><a href="#">{{$post->name}}</a><span class="nameCatSpace">-</span><span class="nameCatTime">{{$post->created_at}}</span></div>
                                 <p>{{$post->summary}}</p>
                             </div>
                         </article>
@@ -52,7 +52,7 @@
                     <a class="imgThumb" href="#" title="{{$post->title}}"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
                     <div class="aNewFocusInfo">
                         <h2 class="rs"><a href="#" title="{{$post->title}}">{{$post->title}}</a></h2>
-                        <div class="nameCat"><a href="#">{{$post->name}}</a><span class="nameCatSpace">-</span><span class="nameCatTime">{{$post->updated_at}}</span></div>
+                        <div class="nameCat"><a href="#">{{$post->name}}</a><span class="nameCatSpace">-</span><span class="nameCatTime">{{$post->created_at}}</span></div>
                         <p>{{$post->summary}}</p>
                     </div>
                 </article>
@@ -69,7 +69,7 @@
                             <a class="imgThumb" href="#"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
                             <div class="aNewLastestInfo">
                                 <h3 class="rs"><a href="#" title="{{$post->title}}">{{$post->title}}</a></h3>
-                                <div class="nameCat"><a href="#">{{$post->name}}</a><span class="nameCatSpace">-</span><span class="nameCatTime">{{$post->updated_at}}</span></div>
+                                <div class="nameCat"><a href="#">{{$post->name}}</a><span class="nameCatSpace">-</span><span class="nameCatTime">{{$post->created_at}}</span></div>
                                 <p>{{$post->summary}}</p>
                             </div>
                         </article>
@@ -105,46 +105,19 @@
             @foreach($params['categories'] as $key=>$cat)
                 @if($key>=0 and $key<=2)
                     <section class="newCat">
-                        <h2 class="newCatTitle"><a href="#">{{\Illuminate\Support\Str::words($cat->name,3)}}</a></h2>
-                        @foreach($cat->posts as $key=> $post)
-                            @if($key==0)
+                        <h2 class="newCatTitle"><a href="#">{{$cat->name}}</a></h2>
+                        @if(isset($cat->posts))
+                            @foreach($cat->posts as $post)
                                 <article class="aNewCatBig">
                                     <a href="#" class="imgThumb"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
                                     <h3 class="rs"><a href="#" title="{{$post->title}}">{{$post->description}}</a></h3>
                                 </article>
-                            @endif
-                            @if($key!=0)
-                             <article class="aNewCat">
-                                <a href="#" class="imgThumb"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="background: url({{$post->image}}) no-repeat center center;background-size: cover;display: block;width: 100%;" alt="{{$post->title}}"></a>
-                                <a href="#" title="{{$post->title}}">{{$post->title}}</a>
-                            </article>
-                            @endif
-                        @endforeach
-                    </section>
-                @endif
-                @if($key>=3 and $key<=5)
-                        <section class="newCat">
-                        <h2 class="newCatTitle"><a href="#">{{\Illuminate\Support\Str::words($cat->name,3)}}</a></h2>
-                        @foreach($cat->posts as $key=> $post)
-                            @if($key==0)
-                                <article class="aNewCatBig">
-                                    <a href="#" class="imgThumb"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
-                                    <h3 class="rs"><a href="#" title="{{$post->title}}">{{$post->description}}</a></h3>
-                                </article>
-                            @endif
-                            @if($key!=0)
-                                <article class="aNewCat">
-                                    <a href="#" class="imgThumb"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" style="background: url({{$post->image}}) no-repeat center center;background-size: cover;display: block;width: 100%;" alt="{{$post->title}}"></a>
-                                    <a href="#" title="{{$post->title}}">{{$post->title}}</a>
-                                </article>
-                            @endif
-                        @endforeach
+                            @endforeach
+                        @endif
                     </section>
                 @endif
             @endforeach
         @endif
-
-
     </div>
     <section class="mainLeft">
         <div class="newLastest pdtn">
@@ -155,8 +128,8 @@
                             <a class="imgThumb" href="#"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
                             <div class="aNewLastestInfo">
                                 <h3 class="rs"><a href="#" title="{{$post->title}}">{{$post->title}}</a></h3>
-                                <div class="nameCat"><a href="#">{{$post->name}}</a><span class="nameCatSpace">-</span><span class="nameCatTime">{{$post->updated_at}}</span></div>
-                                <p>{{str_limit(0,50,$post->summary)}}</p>
+                                <div class="nameCat"><a href="#">{{$post->name}}</a><span class="nameCatSpace">-</span><span class="nameCatTime">{{$post->created_at}}</span></div>
+                                <p>{{$post->summary}}</p>
                             </div>
                         </article>
                     @endif
@@ -175,18 +148,24 @@
 <div class="mainInner">
     <div class="mainLeft">
         <div class="boxCatMini">
-            @foreach($params['categories'] as $key=>$cat)
-                <section class="newCatMini">
-                    <h2 class="newCatMiniTitle"><a href="#" title="{{$cat->title}}">{{\Illuminate\Support\Str::words($cat->name,3)}}</a></h2>
-                    @foreach($cat->posts as $post)
-                        <article class="aNewCatMiniBig">
-                        <a href="#" class="imgThumb"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
-                        <h3 class="rs"><a href="#">{{$post->summary}}</a></h3>
-                    </article>
-                    @endforeach
-                </section>
-                <div class="line"></div>
-            @endforeach
+            @if(isset($params['categories']))
+                @foreach($params['categories'] as $key=>$cat)
+                    @if($key>=3)
+                        <section class="newCatMini">
+                            <h2 class="newCatMiniTitle"><a href="#" title="{{$cat->name}}">{{$cat->name}}</a></h2>
+                            @if(isset($cat->posts))
+                                @foreach($cat->posts as $post)
+                                    <article class="aNewCatMiniBig">
+                                        <a href="#" class="imgThumb"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
+                                        <h3 class="rs"><a href="#">{{$post->description}}</a></h3>
+                                    </article>
+                                @endforeach
+                            @endif
+                        </section>
+                        <div class="line"></div>
+                    @endif
+                @endforeach
+             @endif
         </div>
         <div class="spaceBig"></div>
     </div>

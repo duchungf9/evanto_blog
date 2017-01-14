@@ -84,6 +84,7 @@
                 ).then(
                         function (response) {
                             if (typeof response.data == 'object') {
+                                alert('Success!')
                                 $scope.category_ids = response.data;
                             }
                         }, function (response) {

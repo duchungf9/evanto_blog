@@ -24,9 +24,9 @@ class HeaderAll
         $cacheMenu = Cache::get('menu_front',[]);
         $menus = [];
         if(count($cacheMenu)>0){
-            $menus =  Category::select('id','name','slug')->whereIn('id',$cacheMenu)->get();
+            $ids_ordered = implode(',', $cacheMenu);
+            $menus =  Category::select('id','name','slug')->whereIn('id',$cacheMenu)->orderByRaw(DB::raw("FIELD(id, $ids_ordered)"))->get();
         }
-
         $view->with('menus', $menus);
     }
 }

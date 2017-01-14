@@ -12,9 +12,10 @@ use App\Http\Model\Category;
 use App\Http\Model\Post;
 use Cache,Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Schema;
-use DB;
+use DB,URL;
 use App\Http\Lib\Common;
 use Response;
+use Spatie\Sitemap\SitemapGenerator;
 
 class AdminController extends Controller
 {
@@ -193,6 +194,16 @@ class AdminController extends Controller
         }
         Cache::forever('menu_front',$aMenu);
         return Response::json($aInput);
+    }
+
+    public function sitemap(){
+        $path = public_path();
+    }
+
+    public function module(){
+        $params['about_us'] = Cache::get('site.about_us',[]);
+        $params['links'] = Cache::get('site.links',[]);
+        return view('admin.settings.module',['params'=>$params]);
     }
 
 
