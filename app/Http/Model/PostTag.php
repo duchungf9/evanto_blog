@@ -18,5 +18,13 @@ class PostTag extends Model {
 	{
 		return $this->hasOne('Tag');
 	}
+    public static function gettagsinpost($id){
+        $arrayTags = [];
+        $cdbTags = PostTag::select('tag_id')->where('post_id',$id)->get()->toArray();
+        foreach($cdbTags as $tagid){
+            $arrayTags[] = Tag::select('name')->where('id',$tagid['tag_id'])->first();
+        }
+        return $arrayTags;
+    }
 
 }

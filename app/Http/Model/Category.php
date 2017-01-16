@@ -1,6 +1,6 @@
 <?php
 namespace App\Http\Model;
-
+use DB;
 use Baum\Node;
 
 /**
@@ -105,5 +105,13 @@ class Category extends Node
     // Please refer the Laravel documentation for further instructions on how
     // to hook your own callbacks/observers into this events:
     // http://laravel.com/docs/5.0/eloquent#model-events
+
+    public static function findByName($catName,$select=null){
+        $category = Category::select('id','name','description')->where('slug',$catName)->first();
+        if(count($category)>=0){
+            return $category;
+        }
+        return null;
+    }
 
 }

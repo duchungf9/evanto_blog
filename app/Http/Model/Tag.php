@@ -13,5 +13,4 @@ class Tag extends Model {
 	{
 		return $this->belongsTo('PostTag');
 	}
-
 }

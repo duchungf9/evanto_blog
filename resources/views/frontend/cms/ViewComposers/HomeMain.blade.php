@@ -105,12 +105,12 @@
             @foreach($params['categories'] as $key=>$cat)
                 @if($key>=0 and $key<=2)
                     <section class="newCat">
-                        <h2 class="newCatTitle"><a href="#">{{$cat->name}}</a></h2>
+                        <h2 class="newCatTitle"><a href="#">{{str_limit($cat->name,20,"...")}}</a></h2>
                         @if(isset($cat->posts))
                             @foreach($cat->posts as $post)
                                 <article class="aNewCatBig">
-                                    <a href="#" class="imgThumb"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
-                                    <h3 class="rs"><a href="#" title="{{$post->title}}">{{$post->description}}</a></h3>
+                                    <a href="#" class="imgThumb"><img src="{{$post->image}}" alt="{{str_limit($post->title,20,'..')}}"></a>
+                                    <h3 class="rs"><a href="#" title="{{$post->title}}">{{str_limit($post->description,100,'..')}}</a></h3>
                                 </article>
                             @endforeach
                         @endif

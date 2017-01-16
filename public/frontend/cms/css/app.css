@@ -675,7 +675,7 @@ body {
 
 .main .mainInner .boxCat .newCat .aNewCatBig h3 a {
     color: #333;
-    font-size: 19px;
+    font-size: 15px;
     line-height: 26px;
     font-weight: 700
 }
@@ -1760,4 +1760,8 @@ footer .footerInner .infoBox .contentInfoBox .linkFriend a {
     iframe {
         width: 90%
     }
+}
+
+.fullwidth{
+    width: 100% !important;
 }

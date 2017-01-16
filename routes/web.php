@@ -10,14 +10,14 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix'=>'/'],function(){
+    Route::get('/', 'HomeController@index');
+    Route::get("/{category}/{alias}","HomeController@posts");
 });
+
 
 Auth::routes();
 
-Route::get('/', 'HomeController@index');
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/dashboard','Admin\AdminController@index');
     Route::get('category/list','CategoryController@listCategories');

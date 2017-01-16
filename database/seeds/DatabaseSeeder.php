@@ -12,17 +12,17 @@ class DatabaseSeeder extends Seeder {
 
 		$faker = Faker\Factory::create();
 
-		$limit = 21;
-		for ($i = 1; $i < $limit; $i++) {
-			$title = $faker->unique()->city;
-			$slug = str_slug($title,"-");
-			Category::create([
-				'name' => $title,
-				'slug' => $slug,
-				'description' => $faker->sentence(20),
-			]);
-		}
-		$limit = 100000;
+//		$limit = 21;
+//		for ($i = 1; $i < $limit; $i++) {
+//			$title = $faker->unique()->city;
+//			$slug = str_slug($title,"-");
+//			Category::create([
+//				'name' => $title,
+//				'slug' => $slug,
+//				'description' => $faker->sentence(20),
+//			]);
+//		}
+		$limit = 7000;
 		for ($i = 0; $i < $limit; $i++) {
 			$title = $faker->unique()->company;
 			$slug = str_slug($title,"-");
@@ -35,7 +35,7 @@ class DatabaseSeeder extends Seeder {
 				'content' => $faker->realText(1000,2),
 				'status' => 'publish',
 				'featured' => 0,
-				'image' => "https://unsplash.it/700/50".rand(0,9)."/?random",
+				'image' => "https://unsplash.it/700/5".rand(0,9).rand(0,9)."/?random",
 			]);
 		}
 		$this->command->info('Post table seeded!');
