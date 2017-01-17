@@ -10,10 +10,7 @@
 | to using a Closure or controller method. Build something great!
 |
 */
-Route::group(['prefix'=>'/'],function(){
-    Route::get('/', 'HomeController@index');
-    Route::get("/{category}/{alias}","HomeController@posts");
-});
+
 
 
 Auth::routes();
@@ -48,4 +45,8 @@ Route::group(['prefix'=>'admin'],function(){
     Route::resource('posttag', 'PostTagController');
     Route::resource('tag', 'TagController');
     Route::get('sitemap','Admin\AdminController@sitemap');
+});
+Route::group(['prefix'=>'/'],function(){
+    Route::get('/', 'HomeController@index');
+    Route::get("/{category}/{alias}","HomeController@posts");
 });

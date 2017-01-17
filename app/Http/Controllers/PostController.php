@@ -296,6 +296,14 @@ class PostController extends AdminController
                             $tagPostModel->save();
                         }
                     }
+                }else{
+                    $findTagPost =  PostTag::where('post_id',Input::get('pid'))->where('tag_id',$TagModel->id)->first();
+                    if(count($findTagPost)<=0){
+                        $tagPostModel = new PostTag;
+                        $tagPostModel->tag_id = $TagModel->id;
+                        $tagPostModel->post_id = Input::get('pid');
+                        $tagPostModel->save();
+                    }
                 }
             }
 

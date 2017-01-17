@@ -5,8 +5,8 @@
                 @foreach($params['posts'] as $key=>$post)
                     @if($key==0)
                         <article class="aNewHotBig">
-                            <a class="imgThumb" href="#"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
-                            <h2 class="rs"><a href="#" title="{{$post->title}}">{{$post->title}}</a></h2>
+                            <a class="imgThumb" href="{{URL::to('/')}}/{{$post->cat_slug}}/{{$post->slug}}"><img src="{{$post->image}}" alt="{{$post->title}}"></a>
+                            <h2 class="rs"><a href="{{URL::to('/')}}/{{$post->cat_slug}}/{{$post->slug}}" title="{{$post->title}}">{{$post->title}}</a></h2>
                             <p>{{$post->summary}}</p>
                         </article>
                     @endif
