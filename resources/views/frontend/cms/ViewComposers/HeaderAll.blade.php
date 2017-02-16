@@ -15,8 +15,11 @@
             <a href="javascript:void(0);"><strong>#top 10</strong></a>
         </div>
         <div class="searchBox">
-            <input class="txtSearch" type="text" value="" placeholder="Type here to search...">
-            <input class="btnSearch" type="button" value="search">
+            <form action="{{URL::to('/').'/search'}}" method="get">
+                <input class="txtSearch" type="text" name="keywords" value="" placeholder="Type here to search...">
+                <input class="btnSearch" type="submit" value="search">
+            </form>
+
         </div>
     </div>
 </header>

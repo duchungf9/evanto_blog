@@ -107,7 +107,7 @@ class Category extends Node
     // http://laravel.com/docs/5.0/eloquent#model-events
 
     public static function findByName($catName,$select=null){
-        $category = Category::select('id','name','description')->where('slug',$catName)->first();
+        $category = Category::select('id','name','description','slug')->where('slug',$catName)->first();
         if(count($category)>=0){
             return $category;
         }

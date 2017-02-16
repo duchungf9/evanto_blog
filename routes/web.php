@@ -48,5 +48,7 @@ Route::group(['prefix'=>'admin'],function(){
 });
 Route::group(['prefix'=>'/'],function(){
     Route::get('/', 'HomeController@index');
+    Route::get('/search', 'HomeController@search');
+    Route::get("/{category}","HomeController@cats");
     Route::get("/{category}/{alias}","HomeController@posts");
 });
