@@ -44,7 +44,7 @@
 				<tr ng-repeat="(key,post) in list | filter:postFilter">
 					<td>@{{ post.id }}</td>
 					<td>@{{ post.title }}</td>
-					<td>@{{ post.content }}</td>
+					<td>@{{ post.slug }}</td>
 					<td>
 						<button class="btn  btn-primary" ng-click="editPage(post)"><i class="fa fa-pencil-square-o"></i>Edit</button>
 						<button class="btn  btn-alert" ng-click="delPage(post,key)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
@@ -65,7 +65,12 @@
 			$scope.list = "";
 			$scope.list = [
 					@foreach($list as $row)
-						JSON.parse('{!! json_encode($row) !!}'),
+						{
+							id:'{{$row->id}}',
+							title:'{{$row->title}}',
+							slug:'{{$row->slug}}',
+							content:'{{$row->content}}'
+						},
 					@endforeach
 			];
 			$scope.editPage = function(page){
