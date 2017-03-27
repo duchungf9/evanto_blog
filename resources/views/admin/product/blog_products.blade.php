@@ -4,7 +4,7 @@
 @endsection
 @section('content')
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-app="myApp" ng-controller="postController">
-        <h5>Creat new Post.</h5>
+        <h5>Creat new Product.</h5>
         @if(isset($mes))
             <div class="alert alert-success">
                 <strong>Error!</strong> You have fix these error(s):</a>.
@@ -31,9 +31,11 @@
             </div>
         @endif
         <ul class="nav nav-tabs">
-            <li class="active"><a href="#home" data-toggle="tab">Post content</a>
+            <li class="active"><a href="#home" data-toggle="tab">Product content</a>
             </li>
-            <li class=""><a href="#tag" data-toggle="tab">Post's Tags</a>
+            <li class=""><a href="#price" data-toggle="tab">Product's Price</a>
+            </li>
+            <li class=""><a href="#tag" data-toggle="tab">Product's Tags</a>
             </li>
             <li class=""><a href="#meta" data-toggle="tab">Social meta data</a>
             </li>
@@ -60,7 +62,8 @@
                     <div class="input-group">
                         <span class="input-group-addon">Title</span>
                         <input type="text" class="form-control" name="title" ng-model="post.title"/>
-                        <input type="hidden" class="form-control" name="type" value="post"/>
+                        <input type="hidden" class="form-control" name="type" value="product"/>
+
                     </div>
                     <br>
                     <div class="input-group">
@@ -127,7 +130,7 @@
             <div class="tab-pane fade" id="tag">
                 <div ng-show="post!=''">
                     <p></p>
-                    <label for="">Tags remain on this post:</label>
+                    <label for="">Tags remain on this Product:</label>
                     <ul>
                         <li ng-repeat="tag in tags">@{{ tag }}</li>
                     </ul>
@@ -223,6 +226,25 @@
                     <h2>you need to save the article before adding Social's meta</h2>
                 </div>
             </div>
+            <div class="tab-pane fade" id="price">
+                <div ng-show="post!=''">
+                    <br>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">price</span>
+                            <input type="text" class="form-control" ng-model="price"/>
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                        <button class="btn btn-primary btn-block" ng-click="savePrice()">Save</button>
+                    </div>
+                    <br>
+                </div>
+                <div ng-show="post==''">
+                    <h2>you need to save the article before adding Social's meta</h2>
+                </div>
+            </div>
 
         </div>
 
@@ -238,13 +260,13 @@
             $("textarea").jqte();
             $scope.category_ids = [];
             var token = '{!! csrf_token() !!}';
-            $scope.action = "/admin/post";
+            $scope.action = "/admin/product";
             $scope.post = "";
             $scope.post.category_id = 'null';
             @if(isset($post))
                 $scope.method = "PUT";
                 $scope.post = {!! $post !!};
-                $scope.action = "/admin/post/" + $scope.post.id;
+                $scope.action = "/admin/product/" + $scope.post.id;
                 $("textarea").jqteVal($scope.post.content);
             @endif
             @if(Session::has('oldInput'))
@@ -255,7 +277,7 @@
                 $scope.post = (JSON.parse($scope.post));
             @endif
             $http.post(
-                    '/admin/post/get_cat_ids',
+                    '/admin/product/get_cat_ids',
                     $.param({_token: token}),
                     {headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}}
             ).then(
@@ -280,6 +302,9 @@
                         @if(isset($json_params->title))
                             $scope.social_title = '{!! $json_params->title !!}';
                         @endif
+                        @if(isset($json_params->price))
+                            $scope.price = '{!! $json_params->price !!}';
+                        @endif
                         @if(isset($json_params->desc))
                                 $scope.social_desc = '{!! $json_params->desc !!}';
                         @endif
@@ -295,7 +320,7 @@
                     @endif
                 $scope.saveTag = function () {
                 $http.post(
-                        '/admin/post/savetags',
+                        '/admin/product/savetags',
                         $.param({_token: token, tags: $scope.input_tags, pid: $scope.post.id}),
                         {headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}}
                 ).then(
@@ -310,7 +335,7 @@
             }
                 $scope.savemeta = function(){
                     $http.post(
-                            '/admin/post/savemeta',
+                            '/admin/product/savemeta',
                             $.param({
                                 _token: token,
                                 tags: $scope.input_tags,
@@ -333,6 +358,28 @@
                             }
                     );
                 }
+
+            $scope.savePrice = function(){
+                $http.post(
+                        '/admin/product/saveprice',
+                        $.param({
+                            _token: token,
+                            tags: $scope.input_tags,
+                            pid: $scope.post.id,
+                            price: $scope.price
+                        }),
+                        {headers: {'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'}}
+                ).then(
+                        function (response) {
+                            if (response.data == 'ok') {
+                                alert('saved!');
+                            }else if(response.data=='false'){
+                                alert('You must save the post\'s content first!');
+                            }
+                        }, function (response) {
+                        }
+                );
+            }
         });
 
     </script>

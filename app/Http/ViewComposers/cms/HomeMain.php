@@ -23,10 +23,11 @@ class HomeMain
     public function compose(View $view)
     {
         $params = [];
-        $params['posts'] = Post::select('blog_posts.id','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id','categories.slug as cat_slug')
+        $params['posts'] = Post::select('blog_posts.id','blog_posts.type','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id','categories.slug as cat_slug')
             ->join('categories','categories.id','=','blog_posts.category_id')
             ->where('blog_posts.status','publish')
             ->where('blog_posts.featured','<>',1)
+            ->where('blog_posts.type','=','post')
             ->orderBy('blog_posts.id','DESC')
             ->limit(19)
             ->get();
@@ -34,6 +35,7 @@ class HomeMain
             ->join('categories','categories.id','=','blog_posts.category_id')
             ->where('blog_posts.status','publish')
             ->where('blog_posts.featured','=',1)
+            ->where('blog_posts.type','=','post')
             ->orderBy('blog_posts.id','DESC')
             ->limit(3)
             ->get();

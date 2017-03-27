@@ -9,7 +9,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use App\Http\Model\SConfigs;
 use Illuminate\Support\Facades\Input;
-
+use Goutte\Client;
 class HomeController extends Controller
 {
     /**
@@ -34,6 +34,12 @@ class HomeController extends Controller
     }
 
     //--FUNCTION render VIEW for POST
+    /**
+     * @param $categoryAlias
+     * @param $Postalias
+     *
+     * @return View
+     */
     public function posts($categoryAlias,$Postalias){
         $category = Category::findByName($categoryAlias,['name','id','description']);
         if($category==null){
@@ -46,17 +52,25 @@ class HomeController extends Controller
         $tags = PostTag::gettagsinpost($post->id);
         $posts = Post::select('blog_posts.id','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id as cat_id','categories.slug as cat_slug')
             ->join('categories','categories.id','=','blog_posts.category_id')
-            ->where('category_id',$category->id)->limit(10)->orderBy('id','DESC')->where('blog_posts.id','<>',$post->id)->get();
+            ->where('category_id',$category->id)
+            ->where('blog_posts.type','post')
+            ->limit(10)->orderBy('id','DESC')->where('blog_posts.id','<>',$post->id)->get();
         $featured_posts = Post::select('blog_posts.id','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id as cat_id','categories.slug as cat_slug')
             ->join('categories','categories.id','=','blog_posts.category_id')
             ->where('blog_posts.status','publish')
             ->where('blog_posts.featured','=',1)
+            ->where('blog_posts.type','=','post')
             ->orderBy('blog_posts.id','DESC')
             ->limit(5)
             ->get();
         return view('frontend/cms/layouts/post_base',['post'=>$post,'tags'=>$tags,'category'=>$category,'posts'=>$posts,'featured_posts'=>$featured_posts]);
     }
 
+    /**
+     * @param $catSlug
+     *
+     * @return View
+     */
     public function cats($catSlug){
         $params = [];
         $cdbCategory = Category::findByName($catSlug);
@@ -66,6 +80,7 @@ class HomeController extends Controller
         $params['posts'] = Post::select('id','title','created_at','slug','description','summary','image')
             ->where('category_id',$cdbCategory->id)
             ->where('status','publish')
+            ->where('type','post')
             ->where('featured','<>',1)
             ->orderBy('id','DESC')
             ->limit(19)
@@ -73,6 +88,7 @@ class HomeController extends Controller
         $params['featured_posts'] = Post::select('id','title','created_at','slug','description','summary','image')
             ->where('category_id',$cdbCategory->id)
             ->where('status','publish')
+            ->where('type','post')
             ->where('featured','=',1)
             ->orderBy('id','DESC')
             ->limit(3)
@@ -80,6 +96,11 @@ class HomeController extends Controller
         return view('frontend/cms/layouts/category_base',['params'=>$params,'category'=>$cdbCategory]);
     }
 
+    /**
+     * @param null $keywords
+     *
+     * @return View
+     */
     public function search($keywords=null){
         $search = Input::get('keywords',$keywords);
         $params['posts'] = Post::select('id','title','created_at','slug','description','summary','image')
@@ -88,5 +109,24 @@ class HomeController extends Controller
             ->orderBy('title','asc')
             ->get();
         return view('frontend/cms/layouts/search_base',['posts'=>$params['posts']]);
+    }
+
+    /**
+     *
+     */
+    public function crawl(){
+        $client = new Client();
+        $crawler = $client->request('get','http://pets.vn/home/');
+        $lastPage = $crawler->filter('.pages')->text();
+        $lastPage = (str_replace('Page 1 of ','',$lastPage));
+        $arrayPages = [];
+        for($i=1;$i<=$lastPage;$i++){
+            $crawler_pages = $client->request('get','http://pets.vn/home/page/'.$i);
+            foreach($crawler_pages->filter(".item-details h3 a") as $href){
+                $arrayPages[] = $href->getAttribute('href');
+            }
+        }
+
+        dump($arrayPages);
     }
 }

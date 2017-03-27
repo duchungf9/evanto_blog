@@ -26,6 +26,12 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('post/list','PostController@listPosts');
     Route::post('post/savetags','PostController@savetags');
     Route::post('post/savemeta','PostController@savemeta');
+    Route::post('product/savemeta','ProductController@savemeta');
+    Route::get('product/list','ProductController@listPosts');
+    Route::post('product/savetags','ProductController@savetags');
+    Route::post('product/savemeta','ProductController@savemeta');
+    Route::post('product/saveprice','ProductController@saveprice');
+    Route::get('product/list','ProductController@listPosts');
     Route::get('media/list','MediasController@listMedias');
     Route::any('settings/slider','Admin\AdminController@slider');
     Route::any('settings/profile','Admin\AdminController@profile');
@@ -39,8 +45,15 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('post/publish','PostController@publish');
     Route::post('post/setfeatured','PostController@setfeatured');
     Route::post('post/get_cat_ids','PostController@catIds');
+    Route::post('product/searchfilter','ProductController@searchfilter');
+    Route::get('product/featured','ProductController@featured');
+    Route::post('product/delete','ProductController@delPosts');
+    Route::post('product/publish','ProductController@publish');
+    Route::post('product/setfeatured','ProductController@setfeatured');
+    Route::post('product/get_cat_ids','ProductController@catIds');
     Route::resource('category', 'CategoryController');
     Route::resource('post', 'PostController');
+    Route::resource('product', 'ProductController');
     Route::resource('comment', 'CommentController');
     Route::resource('posttag', 'PostTagController');
     Route::resource('tag', 'TagController');
@@ -49,6 +62,7 @@ Route::group(['prefix'=>'admin'],function(){
 Route::group(['prefix'=>'/'],function(){
     Route::get('/', 'HomeController@index');
     Route::get('/search', 'HomeController@search');
+    Route::get('/crawl', 'HomeController@crawl');
     Route::get("/{category}","HomeController@cats");
     Route::get("/{category}/{alias}","HomeController@posts");
 });

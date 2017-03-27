@@ -15,7 +15,7 @@ use Illuminate\Validation\Rule;
 use App\Http\Controllers\Admin\AdminController;
 use Request, stdClass,Cache;
 
-class PostController extends AdminController
+class ProductController  extends AdminController
 {
 
     private $aRules = [
@@ -27,7 +27,7 @@ class PostController extends AdminController
         'featured' => 'required|numeric',
         'image' => 'mimes:jpeg,bmp,png'
     ];
-    private $sViewPath = "/admin/post/";
+    private $sViewPath = "/admin/product/";
 
     /**
      * Display a listing of the resource.
@@ -38,20 +38,20 @@ class PostController extends AdminController
     {
         $nCountCat = Category::select('id')->count();
         if ($nCountCat <= 0) {
-            Session::flash('flash_mes', ['you need to create at least one category before posting a new post']);
-            return redirect()->action('CategoryController@index');
-        }
-        return view($this->sViewPath . 'blog_posts');
-    }
-
-    public function product(){
-        $nCountCat = Category::select('id')->count();
-        if ($nCountCat <= 0) {
             Session::flash('flash_mes', ['you need to create at least one category before posting a new product']);
             return redirect()->action('CategoryController@index');
         }
         return view($this->sViewPath . 'blog_products');
     }
+
+    //public function product(){
+    //    $nCountCat = Category::select('id')->count();
+    //    if ($nCountCat <= 0) {
+    //        Session::flash('flash_mes', ['you need to create at least one category before posting a new product']);
+    //        return redirect()->action('CategoryController@index');
+    //    }
+    //    return view($this->sViewPath . 'blog_products');
+    //}
     /**
      * Show the form for creating a new resource.
      *
@@ -80,11 +80,11 @@ class PostController extends AdminController
             $root = Post::create($aInputs);
             Session::flash('flash_mes', ['Success!']);
             Session::flash('flash_ok', 1);
-            return redirect()->action('PostController@show', ['id' => $root->id]);
+            return redirect()->action('ProductController@show', ['id' => $root->id]);
         } else {
             $oInput = Common::convertArrayToObj($aInputs);
             Session::flash('oldInput', $oInput);
-            return view($this->sViewPath . 'blog_posts')->with('mes', $validator->errors()->all());
+            return view($this->sViewPath . 'blog_products')->with('mes', $validator->errors()->all());
         }
     }
 
@@ -105,7 +105,7 @@ class PostController extends AdminController
             }
         }
 
-        return view($this->sViewPath . 'blog_posts', ['post' => $cdbCategory,'tags'=>$aTags]);
+        return view($this->sViewPath . 'blog_products', ['post' => $cdbCategory,'tags'=>$aTags]);
     }
 
     /**
@@ -152,7 +152,7 @@ class PostController extends AdminController
         } else {
             Session::flash('flash_mes', $validator->errors()->all());
         }
-        return redirect()->action('PostController@show', ['id' => $cdbPost->id]);
+        return redirect()->action('ProductController@show', ['id' => $cdbPost->id]);
     }
 
     /**
@@ -189,8 +189,8 @@ class PostController extends AdminController
     |
     */
       public function listPosts(){
-            $cdbListCate = Post::select('id','title','slug','status','featured')->where('type','post')->paginate(10);
-            return view($this->sViewPath.'blog_posts_list',['list'=>$cdbListCate]);
+            $cdbListCate = Post::select('id','title','slug','status','featured')->where('type','product')->paginate(10);
+            return view($this->sViewPath.'blog_products_list',['list'=>$cdbListCate]);
       }
     /*
     |--------------------------------------------------------------------------
@@ -220,8 +220,8 @@ class PostController extends AdminController
     |
     */
       public function featured(){
-          $cdbListCate = Post::select('id','title','slug','status','featured')->where('featured',1)->where('status','publish')->paginate(10);
-          return view($this->sViewPath.'blog_posts_list',['list'=>$cdbListCate]);
+          $cdbListCate = Post::select('id','title','slug','status','featured')->where('featured',1)->where('status','publish')->where('type','product')->paginate(10);
+          return view($this->sViewPath.'blog_products_list',['list'=>$cdbListCate]);
       }
     /*
     |--------------------------------------------------------------------------
@@ -332,11 +332,42 @@ class PostController extends AdminController
     | return : arrray.
     |
     */
-    public function savemeta(){
+
+    public function saveprice(){
         $cdbPost = Post::find(Input::get('pid'));
         $arrayMetas = Input::except('_token','pid');
         if($cdbPost!=null){
-            $cdbPost->update(['json_params'=>json_encode($arrayMetas)]);
+            $oldMeta = json_decode($cdbPost->json_params);
+            $oldMeta->price = Input::get('price');
+            foreach($oldMeta as $key=>$value){
+                foreach($arrayMetas as $k=>$v){
+                    if($key==$k){
+                        $oldMeta->$key = $v;
+                    }
+                }
+            }
+            $cdbPost->update(['json_params'=>json_encode($oldMeta)]);
+            if($cdbPost->save()){
+                return 'ok';
+            }else{
+                return 'false';
+            }
+        }
+        return 'false';
+    }
+    public function savemeta(){
+        $cdbPost = Post::find(Input::get('pid'));
+        $arrayMetas = Input::except('_token','pid');
+        $oldMeta = json_decode($cdbPost->json_params);
+        foreach($oldMeta as $key=>$value){
+            foreach($arrayMetas as $k=>$v){
+                if($key==$k){
+                    $oldMeta->$key = $v;
+                }
+            }
+        }
+        if($cdbPost!=null){
+            $cdbPost->update(['json_params'=>json_encode($oldMeta)]);
             if($cdbPost->save()){
                 return 'ok';
             }else{
