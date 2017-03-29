@@ -30,6 +30,7 @@ $_ENV['CAUHINH'] = [
     ]
 ];
 $sDomain =  $_SERVER['SERVER_NAME'];
+var_dump($sDomain);die;
 $key = array_search($sDomain, array_column($_ENV['CAUHINH'], 'domain'));
 $_ENV['PROJECT_NAME'] = 'cms';
 if($key!=false){
