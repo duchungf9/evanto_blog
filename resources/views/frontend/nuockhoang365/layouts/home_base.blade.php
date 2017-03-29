@@ -62,13 +62,7 @@
                     </a>
                     <a href="tel:19008198" class="hotline-top" title="Gọi ngay hotline">(08)73.0000.173</a>
                 </h1>
-                <ul class="main-nav rs">
-                    <li class="active"><a href="/" title="LaVie">LaVie</a></li>
-                    <li><a href="/" title="Nước tinh khiết Miru">Miru</a></li>
-                    <li><a href="/" title="Nước tinh khiết Aquafina">AquaFina</a></li>
-                    <li><a href="khuyen-mai.html" title="Khuyến mại và tài trợ">Khuyến mại</a></li>
-                    <li><a href="tin-tuc.html" title="Tin tức">Tin tức</a></li>
-                </ul>
+                @include('frontend.nuockhoang365.ViewComposers.HeaderAll')
             </div>
             <a href="javascript:void(0)" class="responsive-menu-toggle"></a>
         </nav>

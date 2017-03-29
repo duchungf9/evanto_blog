@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\ViewComposers\Cms;
+namespace App\Http\ViewComposers\Nuockhoang365;
 
 use App\Http\Model\Category;
 use Illuminate\View\View;
