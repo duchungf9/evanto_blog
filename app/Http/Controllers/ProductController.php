@@ -334,36 +334,37 @@ class ProductController  extends AdminController
     */
 
     public function saveprice(){
-        try{
-            $cdbPost = Post::find(Input::get('pid'));
-            $arrayMetas = Input::except('_token','pid');
-            if($cdbPost!=null){
-                $oldMeta = json_decode($cdbPost->json_params);
-                $oldMeta->price = Input::get('price');
-                foreach($oldMeta as $key=>$value){
-                    foreach($arrayMetas as $k=>$v){
-                        if($key==$k){
-                            $oldMeta->$key = $v;
-                        }
+        $cdbPost = Post::find(Input::get('pid'));
+        $arrayMetas = Input::except('_token','pid');
+        if($cdbPost!=null){
+            $oldMeta = json_decode($cdbPost->json_params);
+            if($oldMeta==null){
+                $oldMeta = new stdClass();
+            }
+            $oldMeta->price = Input::get('price');
+            foreach($oldMeta as $key=>$value){
+                foreach($arrayMetas as $k=>$v){
+                    if($key==$k){
+                        $oldMeta->$key = $v;
                     }
                 }
-                $cdbPost->update(['json_params'=>json_encode($oldMeta)]);
-                if($cdbPost->save()){
-                    return 'ok';
-                }else{
-                    return 'false';
-                }
             }
-            return 'false';
-        }catch(\Exception $e){
-            dd($e);
+            $cdbPost->update(['json_params'=>json_encode($oldMeta)]);
+            if($cdbPost->save()){
+                return 'ok';
+            }else{
+                return 'false';
+            }
         }
-
+        return 'false';
     }
     public function savemeta(){
         $cdbPost = Post::find(Input::get('pid'));
         $arrayMetas = Input::except('_token','pid');
         $oldMeta = json_decode($cdbPost->json_params);
+        if($oldMeta==null){
+            $oldMeta = new stdClass();
+        }
         foreach($oldMeta as $key=>$value){
             foreach($arrayMetas as $k=>$v){
                 if($key==$k){
