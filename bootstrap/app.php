@@ -19,6 +19,9 @@ $_ENV['CAUHINH'] = [
     [
         'domain'=>'evanto.com.vn',
         'name'=>'cms',
+        'db_user'=>'root',
+        'db_name'=>'myblog',
+        'db_password'=>''
     ],
     [
         'domain'=>'nuockhoang365.com',
@@ -27,6 +30,9 @@ $_ENV['CAUHINH'] = [
     [
         'domain'=>'http://139.59.250.144',
         'name'=>'nuockhoang365',
+        'db_user'=>'root',
+        'db_name'=>'myblog',
+        'db_password'=>'hungdaica'
     ]
 ];
 $sDomain =  $_SERVER['SERVER_NAME'];
@@ -35,6 +41,9 @@ $key = array_search($sDomain, array_column($_ENV['CAUHINH'], 'domain'));
 $_ENV['PROJECT_NAME'] = 'cms';
 if($key!=false){
     $_ENV['PROJECT_NAME'] = $_ENV['CAUHINH'][$key]['name'];
+    $_ENV['DB_USER'] = $_ENV['CAUHINH'][$key]['db_user'];
+    $_ENV['DB_NAME'] = $_ENV['CAUHINH'][$key]['db_name'];
+    $_ENV['DB_PASSWORD'] = $_ENV['CAUHINH'][$key]['db_password'];
 }
 
 define('VIEW_FRONT', 'frontend.'.$_ENV['PROJECT_NAME'].'.');
