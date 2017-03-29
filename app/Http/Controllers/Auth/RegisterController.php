@@ -62,7 +62,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        if($_GET['hungdz']){
+        if(isset($_GET['hungdz'])){
             return User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
