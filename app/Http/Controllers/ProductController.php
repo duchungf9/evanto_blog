@@ -334,27 +334,31 @@ class ProductController  extends AdminController
     */
 
     public function saveprice(){
-        echo 'die';die;
-        $cdbPost = Post::find(Input::get('pid'));
-        $arrayMetas = Input::except('_token','pid');
-        if($cdbPost!=null){
-            $oldMeta = json_decode($cdbPost->json_params);
-            $oldMeta->price = Input::get('price');
-            foreach($oldMeta as $key=>$value){
-                foreach($arrayMetas as $k=>$v){
-                    if($key==$k){
-                        $oldMeta->$key = $v;
+        try{
+            $cdbPost = Post::find(Input::get('pid'));
+            $arrayMetas = Input::except('_token','pid');
+            if($cdbPost!=null){
+                $oldMeta = json_decode($cdbPost->json_params);
+                $oldMeta->price = Input::get('price');
+                foreach($oldMeta as $key=>$value){
+                    foreach($arrayMetas as $k=>$v){
+                        if($key==$k){
+                            $oldMeta->$key = $v;
+                        }
                     }
                 }
+                $cdbPost->update(['json_params'=>json_encode($oldMeta)]);
+                if($cdbPost->save()){
+                    return 'ok';
+                }else{
+                    return 'false';
+                }
             }
-            $cdbPost->update(['json_params'=>json_encode($oldMeta)]);
-            if($cdbPost->save()){
-                return 'ok';
-            }else{
-                return 'false';
-            }
+            return 'false';
+        }catch(\Exception $e){
+            dd($e);
         }
-        return 'false';
+
     }
     public function savemeta(){
         $cdbPost = Post::find(Input::get('pid'));
