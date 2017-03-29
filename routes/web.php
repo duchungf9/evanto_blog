@@ -60,9 +60,12 @@ Route::group(['prefix'=>'admin'],function(){
     Route::get('sitemap','Admin\AdminController@sitemap');
 });
 Route::group(['prefix'=>'/'],function(){
-    Route::get('/', 'HomeController@index');
-    Route::get('/search', 'HomeController@search');
-    Route::get('/crawl', 'HomeController@crawl');
-    Route::get("/{category}","HomeController@cats");
-    Route::get("/{category}/{alias}","HomeController@posts");
+    Route::get('/',function(){
+        echo "Site under Contruction!";
+    });
+    //Route::get('/', 'HomeController@index');
+    //Route::get('/search', 'HomeController@search');
+    //Route::get('/crawl', 'HomeController@crawl');
+    //Route::get("/{category}","HomeController@cats");
+    //Route::get("/{category}/{alias}","HomeController@posts");
 });
