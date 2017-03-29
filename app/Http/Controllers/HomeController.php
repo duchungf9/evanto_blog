@@ -30,7 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('frontend/cms/layouts/home_base');
+        return view(VIEW_FRONT.'.layouts.home_base');
     }
 
     //--FUNCTION render VIEW for POST

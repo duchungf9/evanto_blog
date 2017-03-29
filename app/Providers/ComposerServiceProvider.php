@@ -13,6 +13,7 @@ class ComposerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         $fileComposers = File::allFiles(app_path()."/Http/ViewComposers/".$_ENV['PROJECT_NAME']);
         $aFileComposers = [];
         foreach($fileComposers as $viewComposer){

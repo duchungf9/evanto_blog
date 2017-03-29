@@ -11,7 +11,31 @@
 |
 */
 $_ENV['DOMAIN_CURRENT'] = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+$_ENV['CAUHINH'] = [
+    [
+        'domain'=>'kenhgosu.com',
+        'name'=>'kenhgosu',
+    ],
+    [
+        'domain'=>'evanto.com.vn',
+        'name'=>'cms',
+    ],
+    [
+        'domain'=>'nuockhoang365.com',
+        'name'=>'nuockhoang365',
+    ],
+    [
+        'domain'=>'139.59.250.144',
+        'name'=>'nuockhoang365',
+    ]
+];
+$sDomain =  $_SERVER['SERVER_NAME'];
+$key = array_search($sDomain, array_column($_ENV['CAUHINH'], 'domain'));
 $_ENV['PROJECT_NAME'] = 'cms';
+if($key!=false){
+    $_ENV['PROJECT_NAME'] = $_ENV['CAUHINH'][$key]['name'];
+}
+
 define('VIEW_FRONT', 'frontend.'.$_ENV['PROJECT_NAME'].'.');
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')

@@ -1,0 +1,1 @@
+$(document).ready(function(){var n=0;$(".responsive-menu-toggle").click(function(){0==n?($(".main-nav").css({margin:"0% 0 0 0"}),n++):($(".main-nav").css({margin:"-100% 0 0 0"}),n--)})});
