@@ -97,6 +97,20 @@
                         <li class="child" data-parent="post">
                             <a href="/admin/post/featured" ><i class="fa fa-heart"></i> Featured Posts</a>
                         </li>
+
+                    <li onclick="show('product');">
+                        <a href="javascript:void(0);" ><i class="fa fa-file-text-o"></i>Products</a>
+                    </li>
+                    <li class="child" data-parent="product">
+                        <a href="/admin/post/" ><i class="fa fa-plus-circle"></i> create new Products</a>
+                    </li>
+                    <li class="child" data-parent="product">
+                        <a href="/admin/post/list" ><i class="fa fa-bars"></i> List Products</a>
+                    </li>
+                    <li class="child" data-parent="product">
+                        <a href="/admin/post/featured" ><i class="fa fa-heart"></i> Featured Products</a>
+                    </li>
+
                     <li >
                         <a href="/admin/media/list" ><i class="fa fa-image"></i>Media Manager</a>
                     </li>
