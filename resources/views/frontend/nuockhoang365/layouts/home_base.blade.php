@@ -50,8 +50,6 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-
-
 </head>
 <body>
 <div class="wrapper pr">
@@ -64,7 +62,7 @@
                     </a>
                     <a href="tel:19008198" class="hotline-top" title="Gọi ngay hotline">(08)73.0000.173</a>
                 </h1>
-                @include('frontend.nuockhoang365.ViewComposers.HeaderAll')
+                @include('frontend.nuockhoang3d65.ViewComposers.HeaderAll')
             </div>
             <a href="javascript:void(0)" class="responsive-menu-toggle"></a>
         </nav>
