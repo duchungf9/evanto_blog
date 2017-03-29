@@ -102,13 +102,13 @@
                         <a href="javascript:void(0);" ><i class="fa fa-file-text-o"></i>Products</a>
                     </li>
                     <li class="child" data-parent="product">
-                        <a href="/admin/post/" ><i class="fa fa-plus-circle"></i> create new Products</a>
+                        <a href="/admin/product/" ><i class="fa fa-plus-circle"></i> create new Products</a>
                     </li>
                     <li class="child" data-parent="product">
-                        <a href="/admin/post/list" ><i class="fa fa-bars"></i> List Products</a>
+                        <a href="/admin/product/list" ><i class="fa fa-bars"></i> List Products</a>
                     </li>
                     <li class="child" data-parent="product">
-                        <a href="/admin/post/featured" ><i class="fa fa-heart"></i> Featured Products</a>
+                        <a href="/admin/product/featured" ><i class="fa fa-heart"></i> Featured Products</a>
                     </li>
 
                     <li >
