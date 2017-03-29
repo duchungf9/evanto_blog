@@ -16,6 +16,7 @@
 Auth::routes();
 
 Route::group(['prefix'=>'admin'],function(){
+    Route::get('/','Admin\AdminController@index');
     Route::get('/dashboard','Admin\AdminController@index');
     Route::get('category/list','CategoryController@listCategories');
     Route::post('category/delete','CategoryController@delCategories');
