@@ -21,7 +21,8 @@ $_ENV['CAUHINH'] = [
         'name'=>'cms',
         'db_user'=>'root',
         'db_name'=>'myblog',
-        'db_password'=>''
+        'db_password'=>'hungdaica',
+        'db_host'=>'139.59.250.144'
     ],
     [
         'domain'=>'nuockhoang365.com',
@@ -32,7 +33,8 @@ $_ENV['CAUHINH'] = [
         'name'=>'nuockhoang365',
         'db_user'=>'root',
         'db_name'=>'myblog',
-        'db_password'=>'hungdaica'
+        'db_password'=>'hungdaica',
+        'db_host'=>'139.59.250.144'
     ]
 ];
 $sDomain =  $_SERVER['SERVER_NAME'];
@@ -44,6 +46,7 @@ if($key!=false){
     $_ENV['DB_USER'] = $_ENV['CAUHINH'][$key]['db_user'];
     $_ENV['DB_NAME'] = $_ENV['CAUHINH'][$key]['db_name'];
     $_ENV['DB_PASSWORD'] = $_ENV['CAUHINH'][$key]['db_password'];
+    $_ENV['DB_HOST'] = $_ENV['CAUHINH'][$key]['db_host'];
 }
 
 define('VIEW_FRONT', 'frontend.'.$_ENV['PROJECT_NAME'].'.');
