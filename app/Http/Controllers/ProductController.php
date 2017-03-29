@@ -334,6 +334,7 @@ class ProductController  extends AdminController
     */
 
     public function saveprice(){
+        echo 'die';die;
         $cdbPost = Post::find(Input::get('pid'));
         $arrayMetas = Input::except('_token','pid');
         if($cdbPost!=null){
