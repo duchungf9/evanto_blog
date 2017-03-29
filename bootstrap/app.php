@@ -25,12 +25,12 @@ $_ENV['CAUHINH'] = [
         'name'=>'nuockhoang365',
     ],
     [
-        'domain'=>'139.59.250.144',
+        'domain'=>'http://139.59.250.144',
         'name'=>'nuockhoang365',
     ]
 ];
 $sDomain =  $_SERVER['SERVER_NAME'];
-var_dump($sDomain);die;
+
 $key = array_search($sDomain, array_column($_ENV['CAUHINH'], 'domain'));
 $_ENV['PROJECT_NAME'] = 'cms';
 if($key!=false){
