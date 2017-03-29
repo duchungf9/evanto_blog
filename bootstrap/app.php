@@ -24,6 +24,7 @@ $_ENV['CAUHINH'] = [
         'db_password'=>'hungdaica',
         'db_host'=>'139.59.250.144'
     ],
+
     [
         'domain'=>'nuockhoang365.com',
         'name'=>'nuockhoang365',
