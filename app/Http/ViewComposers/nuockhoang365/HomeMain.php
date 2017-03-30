@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\ViewComposers\Cms;
+namespace App\Http\ViewComposers\Nuockhoang365;
 
 use App\Http\Model\Category;
 use App\Http\Model\Post;
@@ -23,26 +23,18 @@ class HomeMain
     public function compose(View $view)
     {
         $params = [];
-        $params['posts'] = Post::select('blog_posts.id','blog_posts.type','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id','categories.slug as cat_slug')
-            ->join('categories','categories.id','=','blog_posts.category_id')
-            ->where('blog_posts.status','publish')
-            ->where('blog_posts.featured','<>',1)
-            ->where('blog_posts.type','=','post')
-            ->orderBy('blog_posts.id','DESC')
-            ->limit(19)
-            ->get();
-        $params['featured_posts'] = Post::select('blog_posts.id','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id as cat_id','categories.slug as cat_slug')
+        $params['featured_posts'] = Post::select('blog_posts.id','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','blog_posts.json_params','categories.name','categories.id as cat_id','categories.slug as cat_slug')
             ->join('categories','categories.id','=','blog_posts.category_id')
             ->where('blog_posts.status','publish')
             ->where('blog_posts.featured','=',1)
-            ->where('blog_posts.type','=','post')
+            ->where('blog_posts.type','=','product')
             ->orderBy('blog_posts.id','DESC')
-            ->limit(3)
+            ->limit(4)
             ->get();
         $cacheMenu = Cache::get('menu_front',[]);
         $params['categories'] = Category::orderByRaw("RAND()")->whereIn('id',$cacheMenu)->limit(10)->get();
         foreach($params['categories'] as $cat){
-            $cat->posts = Post::select('blog_posts.id','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id as cat_id','categories.slug as cat_slug')
+            $cat->posts = Post::select('blog_posts.id','blog_posts.title','blog_posts.created_at','blog_posts.json_params','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id as cat_id','categories.slug as cat_slug')
                 ->join('categories','categories.id','=','blog_posts.category_id')
                 ->where('blog_posts.category_id',$cat->id)->orderBy('id','DESC')->limit(3)->get();
         }

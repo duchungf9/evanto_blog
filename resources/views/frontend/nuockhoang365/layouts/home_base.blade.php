@@ -88,87 +88,7 @@
         </div>
     </header>
     <section class="fixCen" id="content">
-        <div class="showProduct">
-            <div class="product">
-                <div class="image">
-                    <img src="http://laviewater.vn/wp-content/uploads/2016/08/nuoc-khoang-lavie-1.png"
-                         alt="Bình La Vie 19 Lít" width="470" height="470">
-                </div>
-                <h2>Bình 19 Lít</h2>
-                <div class="price"><span>55,000</span><sup class="currency">đ</sup><sup class="period">/bình</sup></div>
-                <div class="hr_color"></div>
-                <div class="subtitle">Bình La Vie 19 Lít thích hợp dùng cho văn phòng, hộ gia đình</div>
-            </div>
-            <div class="product">
-                <div class="image">
-                    <img src="http://laviewater.vn/wp-content/uploads/2016/08/gia-thung-nuoc-lavie-chai-nho.png"
-                         alt="nước lavie 350ml" width="488" height="488">
-                </div>
-                <h2>Thùng 350ml</h2>
-                <div class="price"><span>80,000</span><sup class="currency">đ</sup><sup class="period">/ thùng</sup>
-                </div>
-                <div class="hr_color"></div>
-                <div class="subtitle">24 chai/thùng. Tiện lợi dùng cho hội họp, tổ chức sự kiện.</div>
-            </div>
-            <div class="product">
-                <div class="image">
-                    <img src="http://laviewater.vn/wp-content/uploads/2016/11/Lavie-500ml.png" alt="La Vie 500ml"
-                         width="488" height="488">
-                </div>
-                <h2>Thùng 500ml</h2>
-                <div class="price"><span>90,000</span><sup class="currency">đ</sup><sup class="period">/ thùng</sup>
-                </div>
-                <div class="hr_color"></div>
-                <div class="subtitle">24 chai/thùng. Tiện lợi dùng cho hội họp, tổ chức sự kiện.</div>
-            </div>
-            <div class="product">
-                <div class="image">
-                    <img src="http://laviewater.vn/wp-content/uploads/2016/11/Lavie-1.5l.png" alt="La Vie 1,5 Lít"
-                         width="488" height="488">
-                </div>
-                <h2>Thùng 1,5 Lít</h2>
-                <div class="price"><span>95,000</span><sup class="currency">đ</sup><sup class="period">/ thùng</sup>
-                </div>
-                <div class="hr_color"></div>
-                <div class="subtitle">12 chai/thùng. Tiện lợi dùng cho hội họp, tổ chức sự kiện.</div>
-            </div>
-        </div>
-        <h2 class="pk-title"><i></i><span>Phụ kiện LaVie</span><i></i></h2>
-        <div class="show-equiment">
-            <div class="product">
-                <div class="image">
-                    <img src="http://laviewater.vn/wp-content/uploads/2016/11/Lavie-binh-up.png" alt="Bình Nhựa La Vie"
-                         width="488" height="488">
-                </div>
-                <h2>Bình Đựng Nước La Vie</h2>
-                <div class="price"><span>320,000</span><sup class="currency">đ</sup><sup class="period">/ cái</sup>
-                </div>
-                <div class="hr_color"></div>
-                <div class="subtitle">Dùng để úp bình La Vie 19 Lít</div>
-            </div>
-            <div class="product">
-                <div class="image">
-                    <img src="http://laviewater.vn/wp-content/uploads/2016/11/Lavie-chan-inox.png" alt="Kệ Inox La Vie"
-                         width="488" height="488">
-                </div>
-                <h2>Chân Kệ Inox</h2>
-                <div class="price"><span>150,000</span><sup class="currency">đ</sup><sup class="period">/ cái</sup>
-                </div>
-                <div class="hr_color"></div>
-                <div class="subtitle">Dùng cho bình La Vie 19 lít</div>
-            </div>
-            <div class="product">
-                <div class="image">
-                    <img src="http://laviewater.vn/wp-content/uploads/2016/11/Lavie-nong-lanh.png"
-                         alt="Máy nóng lạnh La Vie" width="488" height="488">
-                </div>
-                <h2>Máy Nóng Lạnh La Vie</h2>
-                <div class="price"><span>3,580,000</span><sup class="currency">đ</sup><sup class="period">/ cái</sup>
-                </div>
-                <div class="hr_color"></div>
-                <div class="subtitle">Dùng cho bình La Vie 19 lít</div>
-            </div>
-        </div>
+        @include('frontend.nuockhoang365.ViewComposers.HomeMain')
     </section>
     <footer>
         <div class="fixCen">
@@ -176,37 +96,20 @@
                 <h4>Người tiêu dùng</h4>
                 <div class="recent_posts">
                     <ul>
-                        <li class="post">
-                            <a href="chi-tiet.html">
-                                <div class="desc"><h6>Giá nước La Vie hiện nay phù hợp với tầng lớp người tiêu dùng nào</h6>
-                                    <span class="date"><i class="icon-clock"></i>18/08/2016</span>
-                                </div>
-                                <div class="photo">
-                                    <img width="80" height="80" src="http://laviewater.vn/wp-content/uploads/2016/11/Lavie-binh-up.png" alt="Bình Nhựa La Vie">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="post">
-                            <a href="chi-tiet.html">
-                                <div class="desc"><h6>Giá nước La Vie hiện nay phù hợp với tầng lớp người tiêu dùng nào</h6>
-                                    <span class="date"><i class="icon-clock"></i>18/08/2016</span>
-                                </div>
-                                <div class="photo">
-                                    <img width="80" height="80" src="http://laviewater.vn/wp-content/uploads/2016/11/Lavie-binh-up.png" alt="Bình Nhựa La Vie">
-                                </div>
-                            </a>
-                        </li>
-                        <li class="post">
-                            <a href="chi-tiet.html">
-                                <div class="desc">
-                                    <h6>Giá nước La Vie hiện nay phù hợp với tầng lớp người tiêu dùng nào</h6>
-                                    <span class="date"><i class="icon-clock"></i>18/08/2016</span>
-                                </div>
-                                <div class="photo">
-                                    <img width="80" height="80" src="http://laviewater.vn/wp-content/uploads/2016/11/Lavie-binh-up.png" alt="Bình Nhựa La Vie">
-                                </div>
-                            </a>
-                        </li>
+                        @if(isset($params['posts']))
+                            @foreach($params['posts'] as $key=>$post)
+                                <li class="post">
+                                    <a href="{{URL::to('/').'/'.$post->cat_slug.'/'.$post->slug}}">
+                                        <div class="desc"><h6>{{$post->title}}</h6>
+                                            <span class="date"><i class="icon-clock"></i>{{$post->created_at}}</span>
+                                        </div>
+                                        <div class="photo">
+                                            <img width="80" height="80" src="{{$post->image}}" alt="{{$post->title}}">
+                                        </div>
+                                    </a>
+                                </li>
+                            @endforeach
+                        @endif
                     </ul>
                 </div>
             </div>

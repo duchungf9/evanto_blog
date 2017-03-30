@@ -30,7 +30,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view(VIEW_FRONT.'.layouts.home_base');
+        $params['posts'] = Post::select('blog_posts.id','blog_posts.type','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id','categories.slug as cat_slug')
+                               ->join('categories','categories.id','=','blog_posts.category_id')
+                               ->where('blog_posts.status','publish')
+                               ->where('blog_posts.featured','<>',1)
+                               ->where('blog_posts.type','=','post')
+                               ->orderBy('blog_posts.id','DESC')
+                               ->limit(3)
+                               ->get();
+        return view(VIEW_FRONT.'.layouts.home_base',['params'=>$params]);
     }
 
     //--FUNCTION render VIEW for POST
