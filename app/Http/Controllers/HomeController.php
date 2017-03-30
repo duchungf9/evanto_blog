@@ -30,15 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $params['posts'] = Post::select('blog_posts.id','blog_posts.type','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id','categories.slug as cat_slug')
-                               ->join('categories','categories.id','=','blog_posts.category_id')
-                               ->where('blog_posts.status','publish')
-                               ->where('blog_posts.featured','<>',1)
-                               ->where('blog_posts.type','=','post')
-                               ->orderBy('blog_posts.id','DESC')
-                               ->limit(3)
-                               ->get();
-        return view(VIEW_FRONT.'.layouts.home_base',['params'=>$params]);
+        return view(VIEW_FRONT.'.layouts.home_base');
     }
 
     //--FUNCTION render VIEW for POST
@@ -49,6 +41,7 @@ class HomeController extends Controller
      * @return View
      */
     public function posts($categoryAlias,$Postalias){
+
         $category = Category::findByName($categoryAlias,['name','id','description']);
         if($category==null){
             abort('404','post not found');
@@ -71,7 +64,7 @@ class HomeController extends Controller
             ->orderBy('blog_posts.id','DESC')
             ->limit(5)
             ->get();
-        return view('frontend/cms/layouts/post_base',['post'=>$post,'tags'=>$tags,'category'=>$category,'posts'=>$posts,'featured_posts'=>$featured_posts]);
+        return view('frontend/nuockhoang365/layouts/post_base',['post'=>$post,'tags'=>$tags,'category'=>$category,'posts'=>$posts,'featured_posts'=>$featured_posts]);
     }
 
     /**
@@ -101,7 +94,7 @@ class HomeController extends Controller
             ->orderBy('id','DESC')
             ->limit(3)
             ->get();
-        return view('frontend/cms/layouts/category_base',['params'=>$params,'category'=>$cdbCategory]);
+        return view('frontend/nuockhoang365/layouts/category_base',['params'=>$params,'category'=>$cdbCategory]);
     }
 
     /**

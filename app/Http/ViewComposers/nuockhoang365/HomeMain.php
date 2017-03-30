@@ -36,7 +36,9 @@ class HomeMain
         foreach($params['categories'] as $cat){
             $cat->posts = Post::select('blog_posts.id','blog_posts.title','blog_posts.created_at','blog_posts.json_params','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','categories.name','categories.id as cat_id','categories.slug as cat_slug')
                 ->join('categories','categories.id','=','blog_posts.category_id')
-                ->where('blog_posts.category_id',$cat->id)->orderBy('id','DESC')->limit(3)->get();
+                ->where('blog_posts.category_id',$cat->id)
+                ->where('blog_posts.type','product')
+                ->orderBy('id','DESC')->limit(3)->get();
         }
         $view->with('params', $params);
     }

@@ -1,3 +1,4 @@
+<section class="fixCen" id="content">
 <div class="showProduct">
     @if(isset($params['featured_posts']))
         @foreach($params['featured_posts'] as $post)
@@ -90,4 +91,4 @@
 
     @endforeach
 @endif
-
+</section>

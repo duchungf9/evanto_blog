@@ -1,40 +1,33 @@
-<!DOCTYPE html>
-<!-- saved from url=(0035)https://top5l.com/?s_nozip&s_update -->
-<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml" style="height: 100%;">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    {!! \App\Http\Lib\Common::headGetMemcache() !!}
-    <link href="{{URL::to('/')}}/frontend/cms/css/app.css" rel="stylesheet" type="text/css">
-    @yield('head_style')
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-</head>
-<body class="rs blog " style="position: relative; min-height: 100%; top: 0px;">
-<!-- Google Tag Manager -->
+@extends(VIEW_FRONT.'.layouts.base')
+@section('content')
+    <section class="fixCen news-body" id="content">
+        <div class="news-content">
+            @if(isset($params['posts']))
+                @foreach($params['posts'] as $key=>$post)
+                    <div class="post pr">
+                        <a href="{{URL::to('/')}}/{{$category->slug}}/{{$post->slug}}" title="{{$post->title}}">
+                            <img src="{{$post->image}}" alt="{{$post->title}}"></a>
+                        <div class="title">
+                            <a href="{{URL::to('/')}}/{{$category->slug}}/{{$post->slug}}" title="{{$post->title}}">{{$post->title}}</a>
+                        </div>
+                        <div class="date">{{$post->created_at}}</div>
+                        <div class="summary">{{$post->summary}}</div>
+                        <div class="content-hide">
+                            <a class="view-detail" href="{{URL::to('/')}}/{{$category->slug}}/{{$post->slug}}" title="{{$post->title}}">CHI TIẾT</a>
+                        </div>
+                    </div>
+                @endforeach
+            @endif
 
-<!-- End Google Tag Manager -->
-@include('frontend.cms.ViewComposers.HeaderAll')
-<div class="main hideClick">
-    @include('frontend.cms.include.body.categoryMain')
-    <!--//mainInner-->
-</div>
-<nav class="navBot hideClick">
-    <a href="{{URL::to('/')}}/">Home Page</a>
-</nav>
-<div class="advbanner adv9 hideClick">
-    <a href="https://top5l.com/?s_nozip&amp;s_update#"><img src="http://placehold.it/980x90" alt=""></a>
-</div>
-<footer class="hideClick">
-    <div class="footerInner">
-        <div class="infoBox">
-            <div class="titleInfoBox">Social</div>
-            <div class="contentInfoBox taj">
-
-            </div>
         </div>
-    </div>
-</footer>
-<script src="{{URL::to('/')}}/frontend/cms/js/jquery-1.10.2.min.js" type="text/javascript"></script>
-<script src="{{URL::to('/')}}/frontend/cms/js/bootstrap.min.js" type="text/javascript"></script>
-<script src="{{URL::to('/')}}/frontend/cms/js/blog.js" type="text/javascript"></script>
-</body>
-</html>
+        <div class="hot-line-right">
+            <span>Gọi nước nhanh</span>
+            <blueBig>(08) 73000173</blueBig>
+            <div class="hr"></div>
+            Giờ giao hàng <br>
+            <strong>Từ 8:00 đến 17:00</strong>
+        </div>
+    </section>
+
+    @include('frontend.nuockhoang365.ViewComposers.footerAll')
+@endsection

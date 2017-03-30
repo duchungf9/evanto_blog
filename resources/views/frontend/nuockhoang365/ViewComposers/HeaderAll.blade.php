@@ -1,7 +1,7 @@
 <ul class="main-nav rs">
     @if(isset($menus))
         @foreach($menus as $menu)
-            <li><a href="/" title="{{$menu->name}}">{{$menu->name}}</a></li>
+            <li><a href="{{URL::to('/')}}/{{$menu->slug}}" title="{{$menu->name}}">{{$menu->name}}</a></li>
         @endforeach
     @endif
     {{--<li class="active"><a href="/" title="LaVie">LaVie</a></li>--}}
