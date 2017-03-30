@@ -62,7 +62,7 @@
                     </a>
                     <a href="tel:19008198" class="hotline-top" title="Gọi ngay hotline">(082)73.0000.173</a>
                 </h1>
-                @include('frontend.nuockhoang3d65.ViewComposers.HeaderAll')
+                @include('frontend.nuockhoang365.ViewComposers.HeaderAll')
             </div>
             <a href="javascript:void(0)" class="responsive-menu-toggle"></a>
         </nav>
