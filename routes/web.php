@@ -64,8 +64,7 @@ Route::group(['prefix'=>'/'],function(){
     //Route::get('/',function(){
     //    echo "Site under Contruction!";
     //});
-    //Route::get('/', 'HomeController@index');
-    Route::get('/', function(){echo 'dcm';die;});
+    Route::get('/', 'HomeController@index');
     Route::get('/search', 'HomeController@search');
     Route::get('/crawl', 'HomeController@crawl');
     Route::get("/{category}","HomeController@cats");
