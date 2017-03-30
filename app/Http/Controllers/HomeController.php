@@ -30,7 +30,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return 'xxxx';die;
         return view(VIEW_FRONT.'.layouts.home_base');
     }
 
