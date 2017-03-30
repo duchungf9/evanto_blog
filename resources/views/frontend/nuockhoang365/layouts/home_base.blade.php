@@ -60,7 +60,7 @@
                     <a href="/" class="logo" title="Nước khoáng LaVie">
                         <img src="{{URL::to('/')}}/frontend/nuockhoang365/images/logo.png" class="imgFull" alt="Nước khoáng LaVie" width="244" height="139">
                     </a>
-                    <a href="tel:19008198" class="hotline-top" title="Gọi ngay hotline">(08)73.0000.173</a>
+                    <a href="tel:19008198" class="hotline-top" title="Gọi ngay hotline">(082)73.0000.173</a>
                 </h1>
                 @include('frontend.nuockhoang3d65.ViewComposers.HeaderAll')
             </div>
