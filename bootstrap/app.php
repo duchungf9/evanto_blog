@@ -54,6 +54,7 @@ if($key!=false){
     $_ENV['DB_HOST'] = $_ENV['CAUHINH'][$key]['db_host'];
 }
 
+
 define('VIEW_FRONT', 'frontend.'.$_ENV['PROJECT_NAME'].'.');
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')

@@ -2,50 +2,49 @@
 <html>
 <head>
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'/>
-    {!! \App\Http\Lib\Common::headGetMemcache() !!}
     <link rel="shortcut icon" href="http://laviewater.vn/wp-content/uploads/2016/11/favicon.png"/>
     <link href="https://plus.google.com/107515763736347546999" rel="publisher"/>
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic,800italic,700,800&amp;subset=latin,vietnamese"rel="stylesheet" type="text/css">
-    <link type="text/css" rel="stylesheet" href="{{URL::to('/')}}/frontend/nuockhoang365/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="{{URL::to('/')}}/frontend/nuockhoang365/css/home.css"/>
-    @yield('head_style')
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic,800italic,700,800&amp;subset=latin,vietnamese"
+          rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="css/home.css"/>
     <meta content='TL' name='generator'/>
-    {{--<title>LavieWater | Trang chủ</title>--}}
+    <title>LavieWater | Trang chủ</title>
 
-    {{--<meta property="og:title" content="Tiêu đề site hoặc tên bài viết">--}}
-    {{--<meta property="og:description" content="Mô tả site hoặc tóm tắt bài viết">--}}
-    {{--<meta property="og:type" content="website">--}}
-    {{--<meta property="og:url" content="Đường dẫn hiện tại">--}}
-    {{--<meta property="og:image" content="Đường dẫn ảnh logo hoặc ảnh bài viết">--}}
-    {{--<meta property="og:site_name" content="Tên website">--}}
+    <meta property="og:title" content="Tiêu đề site hoặc tên bài viết">
+    <meta property="og:description" content="Mô tả site hoặc tóm tắt bài viết">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="Đường dẫn hiện tại">
+    <meta property="og:image" content="Đường dẫn ảnh logo hoặc ảnh bài viết">
+    <meta property="og:site_name" content="Tên website">
 
-    {{--<meta name="twitter:card" content="Card">--}}
-    {{--<meta name="twitter:url" content="Đường dẫn hiện tại">--}}
-    {{--<meta name="twitter:title" content="Tiêu đề site hoặc tên bài viết">--}}
-    {{--<meta name="twitter:description" content="Mô tả site hoặc tóm tắt bài viết">--}}
-    {{--<meta name="twitter:image" content="Đường dẫn ảnh logo hoặc ảnh bài viết">--}}
+    <meta name="twitter:card" content="Card">
+    <meta name="twitter:url" content="Đường dẫn hiện tại">
+    <meta name="twitter:title" content="Tiêu đề site hoặc tên bài viết">
+    <meta name="twitter:description" content="Mô tả site hoặc tóm tắt bài viết">
+    <meta name="twitter:image" content="Đường dẫn ảnh logo hoặc ảnh bài viết">
 
-    {{--<meta itemprop="name" content="Tiêu đề site hoặc tên bài viết">--}}
-    {{--<meta itemprop="description" content="Mô tả site hoặc tóm tắt bài viết">--}}
-    {{--<meta itemprop="image" content="Đường dẫn ảnh logo hoặc ảnh bài viết">--}}
+    <meta itemprop="name" content="Tiêu đề site hoặc tên bài viết">
+    <meta itemprop="description" content="Mô tả site hoặc tóm tắt bài viết">
+    <meta itemprop="image" content="Đường dẫn ảnh logo hoặc ảnh bài viết">
 
-    {{--<meta name="ABSTRACT" content="Mô tả site"/>--}}
-    {{--<meta http-equiv="REFRESH" content="1200"/>--}}
-    {{--<meta name="REVISIT-AFTER" content="1 DAYS"/>--}}
-    {{--<meta name="DESCRIPTION" content="Mô tả site hoặc tóm tắt bài viết"/>--}}
-    {{--<meta name="KEYWORDS" content="Từ khóa"/>--}}
-    {{--<meta name="ROBOTS" content="index,follow"/>--}}
-    {{--<meta name="AUTHOR" content="Tên website"/>--}}
-    {{--<meta name="RESOURCE-TYPE" content="DOCUMENT"/>--}}
-    {{--<meta name="DISTRIBUTION" content="GLOBAL"/>--}}
-    {{--<meta name="COPYRIGHT" content="Copyright 2013 by Goethe"/>--}}
-    {{--<meta name="Googlebot" content="index,follow,archive"/>--}}
-    {{--<meta name="RATING" content="GENERAL"/>--}}
+    <meta name="ABSTRACT" content="Mô tả site"/>
+    <meta http-equiv="REFRESH" content="1200"/>
+    <meta name="REVISIT-AFTER" content="1 DAYS"/>
+    <meta name="DESCRIPTION" content="Mô tả site hoặc tóm tắt bài viết"/>
+    <meta name="KEYWORDS" content="Từ khóa"/>
+    <meta name="ROBOTS" content="index,follow"/>
+    <meta name="AUTHOR" content="Tên website"/>
+    <meta name="RESOURCE-TYPE" content="DOCUMENT"/>
+    <meta name="DISTRIBUTION" content="GLOBAL"/>
+    <meta name="COPYRIGHT" content="Copyright 2013 by Goethe"/>
+    <meta name="Googlebot" content="index,follow,archive"/>
+    <meta name="RATING" content="GENERAL"/>
     <!--[if lte IE 8]>
-    <script src="{{URL::to('/')}}/frontend/nuockhoang365/js/html5.js" type="text/javascript"></script>
+    <script src="js/html5.js" type="text/javascript"></script>
     <![endif]-->
     <!--[if lte IE 7]>
-    <link rel="stylesheet" href="{{URL::to('/')}}/frontend/nuockhoang365/css/ie.css" type="text/css"/>
+    <link rel="stylesheet" href="css/ie.css" type="text/css"/>
     <![endif]-->
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -58,11 +57,17 @@
             <div class="fixCen">
                 <h1 class="rs">
                     <a href="/" class="logo" title="Nước khoáng LaVie">
-                        <img src="{{URL::to('/')}}/frontend/nuockhoang365/images/logo.png" class="imgFull" alt="Nước khoáng LaVie" width="244" height="139">
+                        <img src="images/logo.png" class="imgFull" alt="Nước khoáng LaVie" width="244" height="139">
                     </a>
-                    <a href="tel:19008198" class="hotline-top" title="Gọi ngay hotline">(082)73.0000.173</a>
+                    <a href="tel:19008198" class="hotline-top" title="Gọi ngay hotline">(08)73.0000.173</a>
                 </h1>
-                @include('frontend.nuockhoang3d65.ViewComposers.HeaderAll')
+                <ul class="main-nav rs">
+                    <li class="active"><a href="/" title="LaVie">LaVie</a></li>
+                    <li><a href="/" title="Nước tinh khiết Miru">Miru</a></li>
+                    <li><a href="/" title="Nước tinh khiết Aquafina">AquaFina</a></li>
+                    <li><a href="khuyen-mai.html" title="Khuyến mại và tài trợ">Khuyến mại</a></li>
+                    <li><a href="tin-tuc.html" title="Tin tức">Tin tức</a></li>
+                </ul>
             </div>
             <a href="javascript:void(0)" class="responsive-menu-toggle"></a>
         </nav>
@@ -244,7 +249,6 @@
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
     var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-
     (function(){
         var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
         s1.async=true;
@@ -254,8 +258,8 @@
         s0.parentNode.insertBefore(s1,s0);
     })();
 </script>
-<script type="text/javascript" src="{{URL::to('/')}}/frontend/nuockhoang365/js/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="{{URL::to('/')}}/frontend/nuockhoang365/js/SmoothScroll.js"></script>
-<script type="text/javascript" src="{{URL::to('/')}}/frontend/nuockhoang365/js/common.js"></script>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/SmoothScroll.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
 </body>
 </html>

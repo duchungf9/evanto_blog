@@ -92,6 +92,7 @@ return [
     |
     */
 
+
     'migrations' => 'migrations',
 
     /*
