@@ -1,0 +1,15 @@
+*min.min*
+.fuse_*
+HTML (Rails).tmLanguage
+*.tmLanguage
+sublimelinter.version
+.npm-debug.log
+.vagrant
+.idea
+.DS_Store
+Thumbs.db
+.project
+/nbproject/private/
+node_modules
+*.swp
+*jb_bak*
