@@ -59,6 +59,7 @@ define('VIEW_FRONT', 'frontend.'.$_ENV['PROJECT_NAME'].'.');
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
+
 /*
 |--------------------------------------------------------------------------
 | Bind Important Interfaces
