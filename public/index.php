@@ -18,18 +18,8 @@
 | loading any of our classes later on. It feels nice to relax.
 |
 */
-//if(isset($_GET['log1']) && $_GET['log1'] == 1){
-    register_shutdown_function("fatal_handler");
-//}
-function fatal_handler()
-{
-    $error = error_get_last();
-    if($error != null){
-        echo '<br/>';
-        var_dump($error);
-    }
-    exit();
-}
+
+
 require __DIR__.'/../bootstrap/autoload.php';
 
 /*
