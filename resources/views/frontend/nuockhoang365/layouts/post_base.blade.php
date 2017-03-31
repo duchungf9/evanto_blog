@@ -15,5 +15,5 @@
             <strong>Từ 8:00 đến 17:00</strong>
         </div>
     </section>
-    @include('frontend.nuockhoang365.ViewComposers.footerAll')
+    @include('frontend.nuockhoang365.ViewComposers.FooterAll')
 @endsection

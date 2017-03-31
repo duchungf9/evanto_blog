@@ -29,5 +29,5 @@
         </div>
     </section>
 
-    @include('frontend.nuockhoang365.ViewComposers.footerAll')
+    @include('frontend.nuockhoang365.ViewComposers.FooterAll')
 @endsection
