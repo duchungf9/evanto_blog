@@ -78,12 +78,12 @@
 <script type="text/javascript" src="{{URL::to('/')}}/frontend/nuockhoang365/js/SmoothScroll.js"></script>
 <script type="text/javascript" src="{{URL::to('/')}}/frontend/nuockhoang365/js/common.js"></script>
 <script>
-    $(".main-nav").find('li').on('mouseover',function(){
-        $(this).addClass('active');
-    });
-    $(".main-nav").find('li').on('mouseout',function(){
-        $(this).removeClass('active');
-    });
+//    $(".main-nav").find('li').on('mouseover',function(){
+//        $(this).addClass('active');
+//    });
+//    $(".main-nav").find('li').on('mouseout',function(){
+//        $(this).removeClass('active');
+//    });
 </script>
 </body>
 </html>
