@@ -30,7 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view(VIEW_FRONT.'.layouts.home_base');
+        return $this->cats('nuoc-lavie');
     }
 
     //--FUNCTION render VIEW for POST
@@ -81,7 +81,7 @@ class HomeController extends Controller
         $params['posts'] = Post::select('id','title','created_at','slug','description','summary','image')
             ->where('category_id',$cdbCategory->id)
             ->where('status','publish')
-            ->where('type','post')
+            ->where('type','product')
             ->where('featured','<>',1)
             ->orderBy('id','DESC')
             ->limit(19)
@@ -89,12 +89,12 @@ class HomeController extends Controller
         $params['featured_posts'] = Post::select('id','title','created_at','slug','description','summary','image')
             ->where('category_id',$cdbCategory->id)
             ->where('status','publish')
-            ->where('type','post')
+            ->where('type','product')
             ->where('featured','=',1)
             ->orderBy('id','DESC')
             ->limit(3)
             ->get();
-        return view('frontend/nuockhoang365/layouts/category_base',['params'=>$params,'category'=>$cdbCategory]);
+        return view('frontend/nuockhoang365/layouts/home_base',['params'=>$params,'category'=>$cdbCategory]);
     }
 
     /**
