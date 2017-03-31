@@ -24,7 +24,7 @@
         @endforeach
     @endif
 </div>
-    <h2 class="pk-title"><i></i><span>Phụ kiện LaVie</span><i></i></h2>
+    <h2 class="pk-title"><i></i><span>Phụ kiện</span><i></i></h2>
     <div class="show-equiment">
         @if(isset($params['phu-kien']))
             @if(isset($params['phu-kien']->products))
