@@ -67,6 +67,7 @@ Route::group(['prefix'=>'/'],function(){
     Route::get('/', 'HomeController@index');
     Route::get('/search', 'HomeController@search');
     Route::get('/crawl', 'HomeController@crawl');
+    Route::get('/p/{alias}', 'HomeController@page');
     Route::get("/{category}","HomeController@cats");
     Route::get("/{category}/{alias}","HomeController@posts");
 });

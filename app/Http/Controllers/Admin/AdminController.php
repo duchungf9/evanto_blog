@@ -180,7 +180,6 @@ class AdminController extends Controller
             $ids_ordered = implode(',', $menu);
             $menu = Category::whereIn('id',$menu)->orderByRaw(DB::raw("FIELD(id, $ids_ordered)"))->get();
         }
-
         return view('admin.settings.menu',['categories'=>$categories,'menu'=>$menu]);
     }
 

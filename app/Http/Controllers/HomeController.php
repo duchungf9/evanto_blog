@@ -130,4 +130,11 @@ class HomeController extends Controller
 
         dump($arrayPages);
     }
+
+    public function page($slug){
+        $params = [];
+        $slug = str_replace(".html","",$slug);
+        $page = \DB::table('pages')->where('slug',$slug)->first();
+        return view('frontend/nuockhoang365/layouts/page_base',['page'=>$page]);
+    }
 }

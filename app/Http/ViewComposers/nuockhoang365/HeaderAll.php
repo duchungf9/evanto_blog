@@ -32,6 +32,8 @@ class HeaderAll
             $menus =  Category::select('id','name','slug')->whereIn('id',$menu)->orderByRaw(DB::raw("FIELD(id, $ids_ordered)"))->get();
 
         }
+        $pages = DB::table('pages')->get();
+        $menus->pages = $pages;
         $view->with('menus', $menus);
     }
 }
