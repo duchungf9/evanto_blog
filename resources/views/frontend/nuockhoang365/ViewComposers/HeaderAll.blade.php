@@ -13,5 +13,5 @@
     {{--<li><a href="/" title="Nước tinh khiết Miru">Miru</a></li>--}}
     {{--<li><a href="/" title="Nước tinh khiết Aquafina">AquaFina</a></li>--}}
     <li><a href="{{URL::to('/')}}/khuyen-mai.html" title="Khuyến mại và tài trợ">KHUYẾN MẠI</a></li>
-    <li><a href="tin-tuc.html" title="Tin tức">TIN TỨC</a></li>
+    <li><a href="{{URL::to('/')}}/tin-tuc.html" title="Tin tức">TIN TỨC</a></li>
 </ul>
