@@ -172,10 +172,8 @@ class AdminController extends Controller
             return $this::saveMenu(Input::get('menu'));
         }
         $categories = Category::select('id','name')->get();
-        if(isset($_GET['s_update'])){
-            Cache::forget('menu_front');
-        }
-        $menu = Cache::get('menu_front',[]);
+        $menu = SConfigs::where('key','app.menu')->first();
+        if(!$menu){$menu=[];}else{$menu=unserialize($menu->value);}
         //$menu = json_encode($menu);
         $categories = Category::select('id','name')->whereNotIn('id',$menu)->get();
         if(!empty($menu)){
@@ -192,7 +190,21 @@ class AdminController extends Controller
             $row = Common::convertArrayToObj($row);
             $aMenu[] = $row->id;
         }
-        Cache::forever('menu_front',$aMenu);
+        //Cache::forever('menu_front',$aMenu);
+        $sconfig = new SConfigs();
+        $findMenu = $sconfig->select('id')->where('key','app.menu')->first();
+        if(!$findMenu){
+            $sconfig->key = 'app.menu';
+            $sconfig->title = 'frontend menu';
+            $sconfig->state = 1;
+            $sconfig->description = 'description menu';
+            $sconfig->value = serialize($aMenu);
+            $sconfig->save();
+        }else{
+            $findMenu->value = serialize($aMenu);
+            $findMenu->save();
+        }
+
         return Response::json($aInput);
     }
 

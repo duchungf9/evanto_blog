@@ -3,6 +3,7 @@
 namespace App\Http\ViewComposers\Nuockhoang365;
 
 use App\Http\Model\Category;
+use App\Http\Model\SConfigs;
 use Illuminate\View\View;
 use DB,Cache;
 class HeaderAll
@@ -23,11 +24,12 @@ class HeaderAll
      */
     public function compose(View $view)
     {
-        $cacheMenu = Cache::get('menu_front',[]);
+        $menu = SConfigs::where('key','app.menu')->first();
+        if(!$menu){$menu=[];}else{$menu=unserialize($menu->value);}
         $menus = [];
-        if(count($cacheMenu)>0){
-            $ids_ordered = implode(',', $cacheMenu);
-            $menus =  Category::select('id','name','slug')->whereIn('id',$cacheMenu)->orderByRaw(DB::raw("FIELD(id, $ids_ordered)"))->get();
+        if(count($menu)>0){
+            $ids_ordered = implode(',', $menu);
+            $menus =  Category::select('id','name','slug')->whereIn('id',$menu)->orderByRaw(DB::raw("FIELD(id, $ids_ordered)"))->get();
 
         }
         $view->with('menus', $menus);
