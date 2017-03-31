@@ -25,9 +25,10 @@ class HomeMain
     public function compose(View $view)
     {
         $categorySLug = null;
-        if(isset($_SERVER['REDIRECT_URL'])){
-            $categorySLug = str_replace("/","",$_SERVER['REDIRECT_URL']);
-            $categorySLug = str_replace("/","",$_SERVER['REDIRECT_URL']);
+        if(isset($_SERVER['REDIRECT_URL']) or isset($_SERVER['REQUEST_URI'])){
+            $href = (isset($_SERVER['REDIRECT_URL']))?$_SERVER['REDIRECT_URL']:$_SERVER['REQUEST_URI'];
+            $categorySLug = str_replace("/","",$href);
+            $categorySLug = str_replace("/","",$href);
             $category = Category::where('slug',$categorySLug)->first();
         }
         if(!isset($category)){
