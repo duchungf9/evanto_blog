@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Http\Model\SConfigs;
 use Illuminate\Support\Facades\Input;
 use Goutte\Client;
+use Cache;
 class HomeController extends Controller
 {
     /**
@@ -30,6 +31,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        Cache::set('hung','7');
         return $this->cats('nuoc-lavie');
     }
 
