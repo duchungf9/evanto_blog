@@ -22,10 +22,10 @@
         </div>
         <div class="hot-line-right">
             <span>Gọi nước nhanh</span>
-            <blueBig>(08) 73000173</blueBig>
+            <blueBig>0979332708-0962632231</blueBig>
             <div class="hr"></div>
             Giờ giao hàng <br>
-            <strong>Từ 8:00 đến 17:00</strong>
+            <strong>Từ 7:00 đến 20:00</strong>
         </div>
     </section>
 

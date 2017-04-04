@@ -73,13 +73,22 @@
             </div>
             <h2 class="pk-title"><i></i><span>Thông tin nhà cung cấp</span><i></i></h2>
             <div class="info-ncc">
-                Công ty TNHH Tư Vấn Đầu Tư Thương Mại Dịch Vụ Thiên An <br>
-                Mã Số Doanh Nghiệp: 0312760479 <br>
-                Địa chỉ: 183C/3C Tôn Thất Thuyết, phường 4, quận 4, Tp.HCM <br>
-                Kho hàng: 196 Tôn Thất Thuyết, phường 3, quận 4, Tp.HCM <br>
-                Hotline bán hàng: <red><a href="tel:0873000173">(08) 73.000.173</a> – <a href="tel:0906222127">0906.222.127</a></red>
+                <p><strong>CÔNG TY CT TNHH DVTM TỔNG HỢP HỒNG HÀ</strong></p>
+                <p>
+                    Nhà phân phối La Vie cấp 1<br>
+                    Mã Số Doanh Nghiệp 0107785544 <br>Nơi cấp: Sở KH-ĐT TP.Hà Nội<br>74A ngõ 295 phố bạch mai quận HBT tp HN
+                    <br>Điện thoại : 0979332708-0962632231
+                </p>
+                <h4 class="title">Kho Hàng</h4>
+                <p>74A ngõ 295 phố bạch mai quận HBT tp HN<br>Điện thoại : 0906.222.127</p>
+                <p>Kho 2 số 32 ngõ 192 lê trọng tấn- thanh xuân hà nội<br>Điện thoại : 0979332708</p>
+                <p>Kho 3 102 d7 thành công -  ba đình hà nội<br>Điện thoại : 0962632231</p>
+                <p>Kho 4 150 tây sơn - đống đa hà nội<br>Điện thoại : 0962632231</p>
+                <p>28 đường yên phụ đôi - tây hồ hà nội<br>Điện thoại : 0979332708</p>
+                <p>Kho 6 123 tân mai mới hoàng mai hà nội<br>Điện thoại : 0962632231</p>
+                Hotline bán hàng: <red><a href="tel:0979332708">0979332708</a> – <a href="tel:0962632231">0962632231</a></red>
                 <br>
-                Email: <a href="mailto:thienanwater@gmail.com">thienanwater@gmail.com</a>
+                Email: <a href="mailto:Dinhbinh.th1994@gmail.com">Dinhbinh.th1994@gmail.com</a>
             </div>
         </div>
     </section>

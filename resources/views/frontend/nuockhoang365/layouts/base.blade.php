@@ -29,7 +29,7 @@
                     <a href="/" class="logo" title="Nước khoáng LaVie">
                         <img src="{{URL::to('/')}}/frontend/nuockhoang365/images/logo.png" class="imgFull" alt="Nước khoáng LaVie" width="244" height="139">
                     </a>
-                    <a href="tel:0962632231" class="hotline-top" title="Gọi ngay hotline">0962632231</a>
+                    <a href="tel:0962632231" class="hotline-top" title="Gọi ngay hotline">0962632231 - </a>
                     <a href="tel:0979332708" class="hotline-top" title="Gọi ngay hotline">0979332708</a>
                 </h1>
                 @include('frontend.nuockhoang365.ViewComposers.HeaderAll')
@@ -58,7 +58,7 @@
         </div>
     </header>
     @yield('content')
-    <div class="hot-line-bottom px">
+    <div class="hot-line-bottom px" style="background-color: red;">
         <span>Hotline: </span> <a href="tel:0979332708">0979332708</a>
         <span>Hotline: </span> <a href="tel:0962632231">0962632231</a>
     </div>
