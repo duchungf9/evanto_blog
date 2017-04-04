@@ -33,13 +33,13 @@ class HomeMain
         }
         if(!isset($category)){
             $params = [];
-            $params['featured_posts'] = Post::select('blog_posts.id','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','blog_posts.json_params','categories.name','categories.id as cat_id','categories.slug as cat_slug')
-                                            ->join('categories','categories.id','=','blog_posts.category_id')
-                                            ->where('blog_posts.status','publish')
-                                            ->where('blog_posts.featured','=',1)
-                                            ->where('blog_posts.type','=','product')
-                                            ->orderBy('blog_posts.id','DESC')
-                                            ->get();
+            //$params['featured_posts'] = Post::select('blog_posts.id','blog_posts.title','blog_posts.created_at','blog_posts.slug','blog_posts.description','blog_posts.summary','blog_posts.image','blog_posts.json_params','categories.name','categories.id as cat_id','categories.slug as cat_slug')
+            //                                ->join('categories','categories.id','=','blog_posts.category_id')
+            //                                ->where('blog_posts.status','publish')
+            //                                ->where('blog_posts.featured','=',1)
+            //                                ->where('blog_posts.type','=','product')
+            //                                ->orderBy('blog_posts.id','DESC')
+            //                                ->get();
             $menu = SConfigs::where('key','app.menu')->first();
             if(!$menu){$menu=[];}else{$menu=unserialize($menu->value);}
             $params['categories'] = Category::orderByRaw("RAND()")->whereIn('id',$menu)->limit(10)->get();
