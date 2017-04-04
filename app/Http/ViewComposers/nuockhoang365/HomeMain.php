@@ -48,7 +48,7 @@ class HomeMain
                                   ->join('categories','categories.id','=','blog_posts.category_id')
                                   ->where('blog_posts.category_id',$cat->id)
                                   ->where('blog_posts.type','product')
-                                  ->orderBy('id','DESC')->get();
+                                  ->orderBy('blog_posts.id','DESC')->get();
             }
             $view->with('params', $params);
         }else{
