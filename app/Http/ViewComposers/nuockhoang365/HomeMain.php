@@ -41,7 +41,7 @@ class HomeMain
             ->where('featured','=',1)
             ->where('type','=','product')
             ->orderBy('id','DESC')
-            ->limit(4)
+            //->limit(4)
             ->get();
         $params['category'] = $category;
         $catPhukien = Category::where('slug','phu-kien')->first();
