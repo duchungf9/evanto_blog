@@ -59,7 +59,8 @@
     </header>
     @yield('content')
     <div class="hot-line-bottom px">
-        <span>Hotline: </span> <a href="tel:0873000173">(08)73.000.173</a>
+        <span>Hotline: </span> <a href="tel:0979332708">0979332708</a>
+        <span>Hotline: </span> <a href="tel:0962632231">0962632231</a>
     </div>
 </div>
 <!--Start of Tawk.to Script-->
