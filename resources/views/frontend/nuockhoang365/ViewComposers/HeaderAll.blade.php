@@ -1,7 +1,7 @@
 <ul class="main-nav rs">
     @if(isset($menus))
         @foreach($menus as $key=>$menu)
-            <li><a href="{{URL::to('/')}}/{{$menu->slug}}" title="{{$menu->name}}">{{\Illuminate\Support\Str::upper($menu->name)}}</a></li>
+            <li><a href="{{URL::to('/')}}/{{$menu->slug}}" title="{{$menu->name}}">{{\Illuminate\Support\Str::upper(str_limit($menu->name,12))}}</a></li>
         @endforeach
     @endif
     {{--@if(isset($menus->pages))--}}
