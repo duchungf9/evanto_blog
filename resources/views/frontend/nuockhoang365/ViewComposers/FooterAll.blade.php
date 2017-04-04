@@ -25,22 +25,27 @@
             <h4>Chính sách giao hàng</h4>
             <ul class="list_mixed">Giao hàng tận nơi, miễn phí.
                 <li class="list_star">Giao hàng theo giờ hẹn linh hoạt.</li>
-                <li class="list_idea">Giao miễn phí lên lầu 1.</li>
+                <li class="list_idea">Giao miễn phí lên tầng 3.</li>
                 <li class="list_check">Giá bán không bao gồm các phụ phí khác (phí giữ xe, thang máy,...)</li>
             </ul>
         </div>
         <div class="company">
             <h4>Đơn vị chủ quản</h4>
             <div class="textwidget"><h4 class="title"></h4>
-                <p><strong>CÔNG TY TNHH TVĐT TMDV THIÊN AN</strong></p>
+                <p><strong>CÔNG TY CT TNHH DVTM TỔNG HỢP HỒNG HÀ</strong></p>
                 <p>
                     Nhà phân phối La Vie cấp 1<br>
-                    Mã số NPP: C0013140<br>
-                    Mã Số Doanh Nghiệp 0312760479 <br>Nơi cấp: Sở KH-ĐT TP.Hồ Chí Minh <br>183C/3C Tôn Thất Thuyết, P.4, Q.4, TP. HCM<br>Điện thoại : (08) 73.000.173
+                    Mã Số Doanh Nghiệp 0107785544 <br>Nơi cấp: Sở KH-ĐT TP.Hà Nội<br>74A ngõ 295 phố bạch mai quận HBT tp HN
+                    <br>Điện thoại : 0979332708-0962632231
                 </p>
                 <h4 class="title">Kho Hàng</h4>
-                <p>196 Tôn Thất Thuyết, P.3, Q.4, TP. HCM<br>
-                    Điện thoại : 0906.222.127</p>
+                <p>74A ngõ 295 phố bạch mai quận HBT tp HN<br>Điện thoại : 0906.222.127</p>
+                <p>Kho 2 số 32 ngõ 192 lê trọng tấn- thanh xuân hà nội<br>Điện thoại : 0979332708</p>
+                <p>Kho 3 102 d7 thành công -  ba đình hà nội<br>Điện thoại : 0962632231</p>
+                <p>Kho 4 150 tây sơn - đống đa hà nội<br>Điện thoại : 0962632231</p>
+                <p>28 đường yên phụ đôi - tây hồ hà nội<br>Điện thoại : 0979332708</p>
+                <p>Kho 6 123 tân mai mới hoàng mai hà nội<br>Điện thoại : 0962632231</p>
+
             </div>
         </div>
         <div class="gg-map">
