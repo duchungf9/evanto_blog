@@ -38,6 +38,7 @@ class HomeMain
                                             ->where('blog_posts.status','publish')
                                             ->where('blog_posts.featured','=',1)
                                             ->where('blog_posts.type','=','product')
+                                            ->orderBy('blog_posts.category_id','ASC')
                                             ->orderBy('blog_posts.id','ASC')
                                             ->get();
             $menu = SConfigs::where('key','app.menu')->first();
