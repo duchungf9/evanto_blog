@@ -40,8 +40,8 @@ class HomeMain
             ->where('category_id',$category->id)
             ->where('featured','=',1)
             ->where('type','=','product')
-            ->orderBy('id','DESC')
-            //->limit(4)
+            ->orderBy('id','ASC')
+            ->limit(4)
             ->get();
         $params['category'] = $category;
         $catPhukien = Category::where('slug','phu-kien')->first();
@@ -52,7 +52,7 @@ class HomeMain
             $catPhukien->description = "Phụ Kiện";
             $catPhukien->save();
         }
-        $catPhukien->products = Post::where('category_id',$catPhukien->id)->where('status','publish')->orderBy('id','DESC')->limit(3)->get();
+        $catPhukien->products = Post::where('category_id',$catPhukien->id)->where('status','publish')->orderBy('id','ASC')->limit(3)->get();
         $params['phu-kien'] = $catPhukien;
         $view->with('params', $params);
     }
