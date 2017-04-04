@@ -9,7 +9,6 @@
 
                 $period = explode("/",$price);$period = isset($period[1])?$period[1]:"bình";
                 $price = explode(" ",$price); $price = isset($price[0])?$price[0]:0;
-
             ?>
             <div class="product">
                 <div class="image">
@@ -24,6 +23,42 @@
         @endforeach
     @endif
 </div>
+    @if(isset($params['categories']))
+        @foreach($params['categories'] as $key=>$cat)
+            <h2 class="pk-title"><i></i><span>{{$cat->name}}</span><i></i></h2>
+            <div class="show-equiment">
+                @if(isset($cat->posts))
+                    @foreach($cat->posts as $post)
+                        <?php
+                        $json_params = json_decode($post->json_params);
+                        //                dump($json_params->price);die;
+                        $price = (isset($json_params->price)?$json_params->price:0);
+
+                        $period = explode("/",$price);$period = isset($period[1])?$period[1]:"bình";
+                        $price = explode(" ",$price); $price = isset($price[0])?$price[0]:0;
+
+                        ?>
+                        <div class="product">
+                            <div class="image">
+                                <img src="{{$post->image}}" alt="{{$post->title}}"
+                                     width="488" height="488">
+                            </div>
+                            <h2>{{$post->title}}</h2>
+                            <div class="price"><span>{{$price}}</span><sup class="currency">đ</sup><sup class="period">/ {{$period}}</sup>
+                            </div>
+                            <div class="hr_color"></div>
+                            <div class="subtitle">{{$post->summary}}</div>
+                        </div>
+                        {{--<article class="aNewCatMiniBig">--}}
+                        {{--<a href="{{URL::to('/').'/'.$cat->slug.'/'.$post->slug}}" class="imgThumb"><img src="{{$post->image}}" alt="{{$post->title}}"></a>--}}
+                        {{--<h3 class="rs"><a href="{{URL::to('/').'/'.$cat->slug.'/'.$post->slug}}">{{$post->description}}</a></h3>--}}
+                        {{--</article>--}}
+                    @endforeach
+                @endif
+
+            </div>
+        @endforeach
+    @endif
     <h2 class="pk-title"><i></i><span>Phụ kiện</span><i></i></h2>
     <div class="show-equiment">
         @if(isset($params['phu-kien']))
