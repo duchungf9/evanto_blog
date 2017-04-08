@@ -5,7 +5,7 @@ use Closure;
 use Config;
 use Illuminate\Http\Request;
 use Redirect;
-
+use Memcached;
 
 class CacheMiddleware {
 
@@ -38,6 +38,11 @@ class CacheMiddleware {
 		//flush cache
 		//clear view
 		$allow = true;
+
+		//echo phpinfo();die;
+		//$memcache = new \Memcache();
+		//$memcache->addServer('localhost', 11211) or die ("Could not connect");
+
 		if($request->is('admin/*') || $request->is('admin')){$allow=false;}
 		if($allow){
 			$fullUrl = \Request::fullUrl();
