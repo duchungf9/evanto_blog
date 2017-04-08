@@ -19,7 +19,11 @@
 |
 */
 
-
+if(isset($_GET['777'])){
+    echo phpinfo();die;
+    //$memcache = new \Memcache();
+    //$memcache->addServer('localhost', 11211) or die ("Could not connect");
+}
 require __DIR__.'/../bootstrap/autoload.php';
 
 /*
