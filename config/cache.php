@@ -6,7 +6,7 @@ if(isset($_SERVER['SERVER_ADDR'])){
         $driverCache = 'memcached';
     }
 }
-
+if(isset($_GET['7'])){dd($driverCache);}
 return [
 
     /*
