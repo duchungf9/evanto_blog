@@ -97,5 +97,20 @@
     ga('send', 'pageview');
 
 </script>
+<script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "product",
+  "brand": "Nước Khoáng 365",
+  "name": "Nước Khoáng 365",
+  "image": "http://nuockhoang365.com/frontend/nuockhoang365/images/logo.png",
+  "description": "Nước khoáng 365, gọi nước nhanh 24/24, các cơ sở khắp Hà Nội",
+  "aggregateRating": {
+    "@type": "aggregateRating",
+    "ratingValue": "10",
+    "reviewCount": "1000"
+  }
+}
+ </script>
 </body>
 </html>
