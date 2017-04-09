@@ -102,7 +102,7 @@ a{
           width: 110px;
           display: block;
           height: 64px;
-         margin: 0px 10px 0 0;;
+          margin: 0px 10px 0 0;;
         }
         .hotline-group{
           width: 134px;
@@ -296,14 +296,12 @@ a{
   #content{
     .showProduct, .show-equiment{
       @extend %disFlex;
-      -webkit-justify-content: space-between;
-      justify-content: space-between;
       -webkit-align-items: flex-start;
       align-items: flex-start;
       -webkit-flex-flow: row wrap;
       flex-flow: row wrap;
       .product{
-        width: 23%;
+        width: 25%;
         margin: 2% 0;
         @extend %disFlex;
         -webkit-flex-flow: row wrap;
