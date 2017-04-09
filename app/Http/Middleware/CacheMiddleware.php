@@ -45,16 +45,16 @@ class CacheMiddleware {
 
 		if($request->is('admin/*') || $request->is('admin')){$allow=false;}
 		if($allow){
-			if(isset($_GET['s_flush'])){
-				Cache::flush();
-			}
-			$fullUrl = \Request::fullUrl();
-			$sKeyCache = $this->getKeycache($fullUrl);
-			if(Cache::has($sKeyCache)){
-				$content = Cache::get($sKeyCache);
-
-				return $content;
-			}
+			//if(isset($_GET['s_flush'])){
+			//	Cache::flush();
+			//}
+			//$fullUrl = \Request::fullUrl();
+			//$sKeyCache = $this->getKeycache($fullUrl);
+			//if(Cache::has($sKeyCache)){
+			//	$content = Cache::get($sKeyCache);
+            //
+			//	return $content;
+			//}
 		}
 
 	}//function
@@ -68,11 +68,11 @@ class CacheMiddleware {
 	 */
 	private  function after(Request $request, $response){
 		//Cache::forever('hungdz', $response->getContent());
-		$fullUrl = \Request::fullUrl();
-		$sKeyCache = $this->getKeycache($fullUrl);
-		//save cache
-		$expiresAt = Carbon::now()->addMinutes(60);
-		Cache::put($sKeyCache,$response->getContent(),$expiresAt);
+		//$fullUrl = \Request::fullUrl();
+		//$sKeyCache = $this->getKeycache($fullUrl);
+		////save cache
+		//$expiresAt = Carbon::now()->addMinutes(60);
+		//Cache::put($sKeyCache,$response->getContent(),$expiresAt);
 		return $response;
 	}//function
 
