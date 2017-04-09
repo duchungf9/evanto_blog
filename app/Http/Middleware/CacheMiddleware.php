@@ -45,6 +45,9 @@ class CacheMiddleware {
 
 		if($request->is('admin/*') || $request->is('admin')){$allow=false;}
 		if($allow){
+			if(isset($_GET['s_flush'])){
+				Cache::flush();
+			}
 			$fullUrl = \Request::fullUrl();
 			$sKeyCache = $this->getKeycache($fullUrl);
 			if(Cache::has($sKeyCache)){
@@ -63,7 +66,7 @@ class CacheMiddleware {
 	 * Check add cache page after proccess in controller and router
 	 */
 	private  function after(Request $request, $response){
-		Cache::forever('hungdz', $response->getContent());
+		//Cache::forever('hungdz', $response->getContent());
 		$fullUrl = \Request::fullUrl();
 		$sKeyCache = $this->getKeycache($fullUrl);
 		//save cache
