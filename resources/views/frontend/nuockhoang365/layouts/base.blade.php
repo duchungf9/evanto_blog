@@ -4,7 +4,6 @@
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'/>
     {!! \App\Http\Lib\Common::headGetMemcache() !!}
     <link rel="shortcut icon" href="http://laviewater.vn/wp-content/uploads/2016/11/favicon.png"/>
-    <link href="https://plus.google.com/107515763736347546999" rel="publisher"/>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:700italic,800italic,700,800&amp;subset=latin,vietnamese"rel="stylesheet" type="text/css">
     <link type="text/css" rel="stylesheet" href="{{URL::to('/')}}/frontend/nuockhoang365/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="{{URL::to('/')}}/frontend/nuockhoang365/css/home.css"/>
