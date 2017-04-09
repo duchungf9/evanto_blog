@@ -790,5 +790,11 @@ a{
     a{
       color: #ffffff;
     }
+    @media(max-width: 960px) {
+      text-align: left;
+    }
+    @media(max-width: 830px) {
+      padding-bottom: 40px;
+    }
   }
 }
