@@ -87,5 +87,30 @@
         $(this).removeClass('active');
     });
 </script>
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-97050284-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+<script type='application/ld+json'>
+{
+  "@context": "http://www.schema.org",
+  "@type": "product",
+  "brand": "Nước Khoáng 365",
+  "name": "Nước Khoáng 365",
+  "image": "http://nuockhoang365.com/frontend/nuockhoang365/images/logo.png",
+  "description": "Nước khoáng 365, gọi nước nhanh 24/24, các cơ sở khắp Hà Nội",
+  "aggregateRating": {
+    "@type": "aggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "1000"
+  }
+}
+ </script>
 </body>
 </html>

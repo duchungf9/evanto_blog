@@ -19,7 +19,14 @@
 |
 */
 
-
+//if(isset($_GET['777'])){
+//    //echo phpinfo();die;
+//    $memcache = new \Memcached();
+//    $memcache->addServer('localhost', 11211) or die ("Could not connect");
+//    $memcache->add('hung',234234);
+//    echo $memcache->get('hung');die;
+//
+//}
 require __DIR__.'/../bootstrap/autoload.php';
 
 /*

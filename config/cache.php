@@ -1,5 +1,12 @@
 <?php
-
+$driverCache = 'file';
+if(isset($_SERVER['SERVER_ADDR'])){
+    $address = $_SERVER['SERVER_ADDR'];
+    if($address!='127.0.0.1'){
+        $driverCache = 'memcached';
+    }
+}
+if(isset($_GET['7'])){dd($driverCache);}
 return [
 
     /*
@@ -15,7 +22,7 @@ return [
     |
     */
 
-    'default' => env('CACHE_DRIVER', 'file'),
+    'default' => $driverCache,
 
     /*
     |--------------------------------------------------------------------------
