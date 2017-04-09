@@ -52,6 +52,7 @@ class CacheMiddleware {
 			$sKeyCache = $this->getKeycache($fullUrl);
 			if(Cache::has($sKeyCache)){
 				$content = Cache::get($sKeyCache);
+				echo "<script>console.log('load frome cache');</script>";
 				return $content;
 			}
 		}
