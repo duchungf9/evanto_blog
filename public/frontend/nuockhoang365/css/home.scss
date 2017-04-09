@@ -1,0 +1,788 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}
+red{
+  a{
+    color: red;
+  }
+}
+a{
+  text-decoration: none;
+}
+.rs{
+  margin: 0;
+  padding: 0;
+}
+.pa{
+  position: absolute;
+}
+.pr{
+  position: relative;
+}
+.px{
+  position: fixed;
+}
+.imgFull{
+  max-width: 100%;
+  height: auto;
+}
+%disFlex{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+}
+.fixCen{
+  width: 1024px;
+  position: relative;
+  margin: auto;
+  @media(max-width: 1024px) {
+    width: 100%;
+    padding: 0 5%;
+    box-sizing: border-box;
+  }
+}
+.wrapper{
+  header{
+    color: #444444;
+    .fixCen{
+      width: 960px;
+      @media(max-width: 960px) {
+        width: 100%;
+      }
+    }
+    a{
+      font-family: "Roboto", Arial, Tahoma, sans-serif;
+      color: #444444;
+      &:hover, &:focus{
+        text-decoration: none;
+      }
+    }
+    nav{
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: 0 !important;
+      z-index: 701;
+      background: #fff;
+      opacity: .97;
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.1);
+      height: 90px;
+      .fixCen{
+        @extend %disFlex;
+        -webkit-align-items: center;
+        align-items: center;
+        height: 100%;
+      }
+      h1{
+        font-weight: normal;
+        height: 100%;
+        margin-right: 20px;
+        @extend %disFlex;
+        -webkit-align-items: center;
+        align-items: center;
+        .logo{
+          width: 110px;
+          display: block;
+          height: 64px;
+         margin: 0px 10px 0 0;;
+        }
+        .hotline-group{
+          width: 134px;
+        }
+        .hotline-top{
+          font-size: 24px;
+        }
+      }
+      .main-nav{
+        width: 686px;
+        height: 100%;
+        line-height: 23px;
+        padding: 25px 0 0 0;
+        @extend %disFlex;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        li{
+          list-style: none;
+          height: 100%;
+          text-align: center;
+          width: 20%;
+          a{
+            display: block;
+            width: 100%;
+            height: 100%;
+            box-sizing: content-box;
+            text-transform: uppercase;
+            position: relative;
+          }
+          &.active, &:hover{
+            -webkit-transition: all 0.2s ease;
+            -moz-transition: all 0.2s ease;
+            -ms-transition: all 0.2s ease;
+            -o-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+            a{
+              color: #2991d6;
+              &::after{
+                content: "";
+                display: block;
+                border-bottom: 4px solid #2991d6;
+                position: absolute;
+                bottom: -4px;
+                width: 100%;
+              }
+            }
+          }
+        }
+        a{
+          display: block;
+          width: 100%;
+          height: 100%;
+          font-size: 14px;
+          &:hover{
+            color: #2991d6;
+          }
+        }
+      }
+      .responsive-menu-toggle{
+        display: none;
+        background: url("../images/menu-icon.png")no-repeat;
+        width: 29px;
+        height: 19px;
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        margin-top: -10px;
+      }
+    }
+    #banner_header{
+      background-color: rgba(0, 0, 0, 0);
+      background: url(http://laviewater.vn/wp-content/uploads/revslider/shop/bg.jpg) center top no-repeat;
+      background-size: cover;
+      width: 100%;
+      height: 100%;
+      .fixCen{
+        @extend %disFlex;
+        -webkit-align-items: center;
+        align-items: center;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+        padding: 90px 0px 0 0px;
+        div{
+          margin: 70px 0;
+        }
+        #slogan{
+          width: 30%;
+        }
+        #product1{
+          width: 20%;
+        }
+        #product2{
+          width: 18%;
+        }
+        #product3{
+          width: 16%;
+        }
+      }
+    }
+    @media(max-width: 960px) {
+      nav{
+        position: relative;
+        .fixCen{
+          -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+        }
+        h1{
+          width: 100%;
+          background: #ffffff;
+          z-index: 2;
+        }
+        .main-nav{
+          -webkit-transition: all 0.5s ease;
+          -moz-transition: all 0.5s ease;
+          -ms-transition: all 0.5s ease;
+          -o-transition: all 0.5s ease;
+          transition: all 0.5s ease;
+          display: block;
+          height: auto;
+          width: 300px;
+          bottom: auto;
+          top: 100%;
+          right: 5%;
+          position: absolute;
+          margin: -110% 0 0 0;
+          background: #ffffff;
+          z-index: 0;
+          li{
+            text-align: left;
+            height: 40px;
+            line-height: 40px;
+            padding-left: 20px;
+            &.active{
+              a{
+                padding: 0 0 0 15px;
+                &::after{
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+        .responsive-menu-toggle{
+          display: block;
+          z-index: 3;
+        }
+      }
+      #banner_header{
+        .fixCen{
+          padding: 0px 0px 0 0px;
+        }
+      }
+    }
+    @media(max-width: 414px) {
+      nav{
+        height: auto;
+        h1{
+          .logo{
+            width: 95px;
+            margin-right: 5px;
+          }
+          .hotline-top{
+            font-size: 20px;
+          }
+        }
+        .main-nav{
+          width: 100%;
+          right: 0%;
+          position: relative;
+        }
+        .responsive-menu-toggle{
+          top: 44px;
+        }
+      }
+    }
+
+    @media(max-width: 320px) {
+      nav{
+        height: auto;
+        h1{
+          .logo{
+            width: 85px;
+          }
+          .hotline-top{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+  #content{
+    .showProduct, .show-equiment{
+      @extend %disFlex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-align-items: flex-start;
+      align-items: flex-start;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+      .product{
+        width: 23%;
+        margin: 2% 0;
+        @extend %disFlex;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        text-align: center;
+        div{
+          width: 100%;
+          margin: 5px 0;
+        }
+        h2{
+          font-weight: normal;
+          font-size: 1.8vw;
+          display: block;
+          text-align: center;
+          width: 100%;
+          margin: 5px 0;
+        }
+        .price{
+          font-size: 3vw;
+          color: #2991d6;
+          sup{
+            font-size: 15px;
+            line-height: 15px;
+            top: -15px;
+            position: relative;
+          }
+        }
+        img{
+          max-width: 100%;
+          height: auto;
+        }
+        .hr_color{
+          width: 60%;
+          height: 1px;
+          margin: 5px auto;
+          color: #2991d6;
+          background: #2991d6;
+        }
+        .subtitle{
+          padding: 10px 0;
+          color: #a8a8a8;
+          font-size: 14px;
+        }
+      }
+    }
+    .pk-title{
+      margin: 20px 0;
+      font-size: 3.5vw;
+      font-weight: normal;
+      display: block;
+      text-align: center;
+      span{
+        margin: 0 20px;
+      }
+      i{
+        font-style: normal;
+        &::before{
+          content: "";
+          background: #2991d6;
+          height: 3px;
+          width: 100px;
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+    .show-equiment{
+      .product{
+        width: 33%;
+      }
+    }
+    @media(max-width: 768px){
+      .showProduct, .show-equiment{
+        .product{
+          width: 48%;
+          h2{
+            font-size: 3.8vw;
+          }
+          .price{
+            font-size: 5vw;
+          }
+        }
+      }
+      .pk-title{
+        font-size: 5.5vw;
+      }
+    }
+    @media(max-width: 450px){
+      .pk-title{
+        i{
+          &::before{
+            width: 50px;
+          }
+        }
+      }
+    }
+    @media(max-width: 414px){
+      .showProduct, .show-equiment{
+        .product{
+          width: 100%;
+          h2{
+            font-size: 6.8vw;
+          }
+          .price{
+            font-size: 10vw;
+          }
+        }
+      }
+      .pk-title{
+        font-size: 8.5vw;
+        span{
+          margin: 0 10px;
+        }
+        i{
+          &::before{
+            width: 30px;
+          }
+        }
+      }
+    }
+  }
+  .km-content{
+    margin-top: 50px;
+    h2{
+      font-size: 24px !important;
+      text-transform: uppercase;
+    }
+    .long-title{
+      display: block;
+      width: 70%;
+      margin: auto;
+      text-align: center;
+      line-height: 40px;
+      @media(max-width: 802px) {
+        width: 90%;
+      }
+      @media(max-width: 624px) {
+        width: 100%;
+      }
+    }
+    h3{
+      color: red;
+    }
+    .note{
+      font-size: 13px;
+      color: orangered;
+    }
+    .info-pk{
+      label{
+        width: 250px;
+      }
+    }
+    .questions{
+      details{
+        padding-left: 40px;
+        box-sizing: border-box;
+        margin: 10px 0;
+        font-size: 13px;
+      }
+      summary{
+        color: red;
+      }
+    }
+    .info-ncc{
+      margin-bottom: 20px;
+    }
+  }
+  .news-body{
+    padding: 40px 0;
+    @extend %disFlex;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    .news-content{
+      width: 66%;
+      @extend %disFlex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+      .post{
+        display: inline-block;
+        padding: 10px;
+        box-sizing: border-box;
+        overflow: hidden;
+        background: #ffffff;
+        width: 32%;
+        height: auto;
+        color: #444444;
+        border: 5px solid #f1e7e7;
+        background-size: 100%;
+        margin: 0px 0 20px 0;
+        a{
+          color: #444444;
+          font-size: 15px;
+          font-weight: 700;
+        }
+        img{
+          height: auto;
+          width: 100%;
+          margin: auto;
+        }
+        .summary{
+          font-size: 13px;
+        }
+        .title {
+          margin: 10px auto 5px;
+        }
+        .date {
+          font-size: 14px;
+        }
+        .content-hide {
+          position: absolute;
+          bottom: 0;
+          height: 0;
+          overflow: hidden;
+          width: 100%;
+          -webkit-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+          background: rgba(0, 0, 0, 0.5);
+          left: 0;
+          .view-detail {
+            width: 117px;
+            height: 38px;
+            text-align: center;
+            display: block;
+            line-height: 38px;
+            background: #2991d6;
+            color: #fff;
+            font-size: 16px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -19px 0 0 -59px;
+            &:hover{
+              color: #444444;
+              text-decoration: none;
+            }
+          }
+
+        }
+        &:hover{
+          .content-hide{
+            top: 0;
+            height: 100%;
+          }
+        }
+      }
+    }
+    .hot-line-right{
+      width: 30%;
+      color: #9C9C9C;
+      font-size: 2vw;
+      text-align: center;
+      border-left: thin solid rgba(156, 156, 156, 0.4);
+      padding-left: 10px;
+      span{
+        display: block;
+        font-size: 18px;
+        text-align: left;
+      }
+      .hr{
+        height: 1px;
+        background: #2991d6;
+        width: 50%;
+        margin: 0 auto;
+      }
+      blueBig{
+        font-size: 3vw;
+        display: block;
+        text-align: center;
+        margin: 15px 0;
+        color: #2991d6;
+        font-family: Patua One, serif;
+      }
+    }
+    .news-detail-content{
+      img{
+        max-width: 100%;
+        display: block;
+        margin: auto;
+      }
+      .entry-title{
+        font-size: 28px;
+        font-weight: 400;
+        display: block;
+        margin: 0 auto 20px auto;
+      }
+    }
+    @media(max-width: 1024px) {
+      padding: 5%;
+      .news-content{
+      }
+    }
+    @media(max-width: 960px) {
+      .news-content{
+        .post{
+          width: 48%;
+        }
+      }
+    }
+    @media(max-width: 768px) {
+      .news-content{
+        width: 100%;
+        .post{
+          width: 48%;
+        }
+      }
+      .hot-line-right{
+        display: none;
+      }
+    }
+    @media(max-width: 460px) {
+      .news-content{
+        .post{
+          width: 100%;
+        }
+      }
+    }
+  }
+  footer{
+    background-color: #545454;
+    color: #cccccc;
+    font-size: 13px;
+    padding-bottom: 44px;
+    h4{
+      color: #fff;
+      font-size: 21px;
+      line-height: 25px;
+      font-weight: 400;
+      margin: 20px 0;
+    }
+    ul{
+      margin: 0;
+      padding: 0;
+      li{
+        list-style: none;
+      }
+    }
+    .fixCen{
+      @extend %disFlex;
+      -webkit-justify-content: space-around;
+      justify-content: space-around;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
+    }
+    .info-for-cus{
+      width: 25%;
+      .recent_posts{
+        li{
+          max-height: 90px;
+          background: rgba(0,0,0,.1);
+          margin: 0 0 10px 0;
+        }
+        a{
+          color: #ffffff;
+          @extend %disFlex;
+          .desc{
+            position: relative;
+            padding: 5px 10px;
+            z-index: 2;
+            &::after{
+              -webkit-transition: all 0.3s ease-in-out;
+              -moz-transition: all 0.3s ease-in-out;
+              -ms-transition: all 0.3s ease-in-out;
+              -o-transition: all 0.3s ease-in-out;
+              transition: all 0.3s ease-in-out;
+              content: '';
+              position: absolute;
+              background: #2991d6;
+              width: 4px;
+              display: block;
+              height: 95%;
+              right: 0;
+              top: 0;
+              z-index: -1;
+            }
+          }
+          h6{
+            border-bottom: thin solid rgba(255,255,255,.08);
+            padding: 0px 0 3px 0;
+            margin-bottom: 3px;
+            letter-spacing: 1px;
+            font-weight: normal;
+          }
+          .date{
+            color: #a8a8a8;
+          }
+          .photo{
+            img{
+              width: auto;
+              height: 90px;
+            }
+          }
+          &:hover{
+            text-decoration: none;
+            .desc {
+              position: relative;
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    .delivery{
+      width: 22%;
+      ul{
+        li{
+          position: relative;
+          list-style: none;
+          padding-left: 30px;
+          min-height: 40px;
+          line-height: 25px;
+          &:nth-child(1){
+            background: url(http://laviewater.vn/wp-content/themes/betheme/images/icons/list_star.png) no-repeat 10px 5px;
+          }
+          &:nth-child(2){
+            background: url(http://laviewater.vn/wp-content/themes/betheme/images/icons/list_idea.png) no-repeat 10px 5px;
+          }
+          &:nth-child(3){
+            background: url(http://laviewater.vn/wp-content/themes/betheme/images/icons/list_check.png) no-repeat 10px 5px;
+          }
+        }
+      }
+    }
+    .company{
+      width: 22%;
+      p{
+        margin: 15px 0;
+      }
+    }
+    .gg-map{
+      width: 25%;
+      position: relative;
+      iframe{
+        width: 100%;
+        height: 300px;
+        top: 50%;
+        margin-top: -150px;
+        position: absolute;
+      }
+    }
+    @media(max-width: 1024px){
+      .fixCen{
+        &>div{
+          width: 48%;
+        }
+      }
+    }
+    @media(max-width: 550px){
+      .fixCen{
+        &>div{
+          width: 100%;
+        }
+        .gg-map{
+          iframe{
+            position: relative;
+            top: inherit;
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+  .hot-line-bottom{
+    background: #2991d6;
+    text-align: center;
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 5px 0;
+    z-index: 999;
+    bottom: 0;
+    width: 100%;
+    a{
+      color: #ffffff;
+    }
+  }
+}
