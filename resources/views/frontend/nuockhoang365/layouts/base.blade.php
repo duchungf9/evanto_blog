@@ -107,7 +107,7 @@
   "description": "Nước khoáng 365, gọi nước nhanh 24/24, các cơ sở khắp Hà Nội",
   "aggregateRating": {
     "@type": "aggregateRating",
-    "ratingValue": "10",
+    "ratingValue": "5",
     "reviewCount": "1000"
   }
 }
