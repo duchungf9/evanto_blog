@@ -387,6 +387,10 @@ a{
           .price{
             font-size: 5vw;
           }
+          img{
+            max-height: inherit;
+            height: auto;
+          }
         }
       }
       .pk-title{
