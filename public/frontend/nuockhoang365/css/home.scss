@@ -102,7 +102,7 @@ a{
           width: 110px;
           display: block;
           height: 64px;
-         margin: 0px 10px 0 0;;
+          margin: 0px 10px 0 0;;
         }
         .hotline-group{
           width: 134px;
@@ -235,6 +235,7 @@ a{
             height: 40px;
             line-height: 40px;
             padding-left: 20px;
+            width: 100%;
             &.active{
               a{
                 padding: 0 0 0 15px;
@@ -296,15 +297,16 @@ a{
   #content{
     .showProduct, .show-equiment{
       @extend %disFlex;
-      -webkit-justify-content: space-between;
-      justify-content: space-between;
+      -webkit-justify-content: space-around;
+      justify-content: space-around;
       -webkit-align-items: flex-start;
       align-items: flex-start;
       -webkit-flex-flow: row wrap;
       flex-flow: row wrap;
       .product{
-        width: 23%;
-        margin: 2% 0;
+        //width: 25%;
+        width: 236px;
+        margin: 2% 10px;
         @extend %disFlex;
         -webkit-flex-flow: row wrap;
         flex-flow: row wrap;
@@ -333,7 +335,7 @@ a{
         }
         img{
           max-width: 100%;
-          height: auto;
+          max-height: 300px;
         }
         .hr_color{
           width: 60%;
@@ -384,6 +386,10 @@ a{
           }
           .price{
             font-size: 5vw;
+          }
+          img{
+            max-height: inherit;
+            height: auto;
           }
         }
       }
@@ -783,6 +789,12 @@ a{
     width: 100%;
     a{
       color: #ffffff;
+    }
+    @media(max-width: 960px) {
+      text-align: left;
+    }
+    @media(max-width: 830px) {
+      padding-bottom: 40px;
     }
   }
 }
