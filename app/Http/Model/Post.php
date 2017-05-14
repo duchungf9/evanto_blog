@@ -2,6 +2,7 @@
 
 namespace App\Http\Model;
 
+use App\Http\Controllers\MediasController;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use File;
@@ -53,6 +54,15 @@ class Post extends Model {
             base_path() . '/public/images/posts/', $imageName
         );
         $result = '/images/posts/'.$imageName;
+        $newPath = MediasController::picasa($result);
+
+        if($newPath!=false){
+            @unlink(base_path() . '/public/images/posts/'.$imageName);
+            return $newPath;
+        }
+
+
+
         return $result;
 	}
 

@@ -34,6 +34,7 @@ Route::group(['prefix'=>'admin'],function(){
     Route::post('product/saveprice','ProductController@saveprice');
     Route::get('product/list','ProductController@listPosts');
     Route::get('media/list','MediasController@listMedias');
+    Route::any('media/picasa-upload','MediasController@picasa');
     Route::any('settings/slider','Admin\AdminController@slider');
     Route::any('settings/profile','Admin\AdminController@profile');
     Route::any('settings/site','Admin\AdminController@site');

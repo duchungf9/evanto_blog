@@ -117,18 +117,21 @@ class HomeController extends Controller
      */
     public function crawl(){
         $client = new Client();
-        $crawler = $client->request('get','http://webtruyen.com/all/1');
-//        $lastPage = $crawler->filter('.pages')->text();
+//        $crawler = $client->request('get','http://webtruyen.com/all/1');
+//        $lastPage = $crawler->filter('.list-caption')->siblings();
 //        $lastPage = (str_replace('Page 1 of ','',$lastPage));
 //        $arrayPages = [];
-//        for($i=1;$i<=$lastPage;$i++){
-//            $crawler_pages = $client->request('get','http://pets.vn/home/page/'.$i);
-//            foreach($crawler_pages->filter(".item-details h3 a") as $href){
-//                $arrayPages[] = $href->getAttribute('href');
-//            }
-//        }
-
-        dump($crawler);
+        for($i=1;$i<=1;$i++){
+            $crawler_pages = $client->request('get','http://webtruyen.com/all/'.$i);
+            foreach($crawler_pages->filter(".list-caption h3 a") as $href){
+                $arrayPages[] = [
+                            'title'=>$href->getAttribute('title'),
+                            'link'=>$href->getAttribute('href')
+                    ];
+            }
+        }
+        echo 'xddx';
+        dd($arrayPages);
     }
 
     public function page($slug){

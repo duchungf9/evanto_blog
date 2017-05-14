@@ -57,6 +57,7 @@ class ComposerStaticInit83a34b4f8d3316b8f9e483f5d33d8797
         ),
         'R' => 
         array (
+            'RemoteImageUploader\\' => 20,
             'Ramsey\\Uuid\\' => 12,
         ),
         'P' => 
@@ -93,6 +94,7 @@ class ComposerStaticInit83a34b4f8d3316b8f9e483f5d33d8797
         array (
             'Dotenv\\' => 7,
             'Doctrine\\Instantiator\\' => 22,
+            'Doctrine\\Common\\Cache\\' => 22,
             'DeepCopy\\' => 9,
         ),
         'C' => 
@@ -193,6 +195,10 @@ class ComposerStaticInit83a34b4f8d3316b8f9e483f5d33d8797
         array (
             0 => __DIR__ . '/..' . '/jeremeamia/SuperClosure/src',
         ),
+        'RemoteImageUploader\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ptcong/php-image-uploader/src/RemoteImageUploader',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -253,6 +259,10 @@ class ComposerStaticInit83a34b4f8d3316b8f9e483f5d33d8797
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
         ),
+        'Doctrine\\Common\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
+        ),
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
@@ -297,6 +307,13 @@ class ComposerStaticInit83a34b4f8d3316b8f9e483f5d33d8797
                 0 => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src',
             ),
         ),
+        'E' => 
+        array (
+            'EasyRequest' => 
+            array (
+                0 => __DIR__ . '/..' . '/ptcong/php-http-class',
+            ),
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Inflector\\' => 
@@ -336,9 +353,11 @@ class ComposerStaticInit83a34b4f8d3316b8f9e483f5d33d8797
         'App\\Http\\Controllers\\PageController' => __DIR__ . '/../..' . '/app/Http/Controllers/PageController.php',
         'App\\Http\\Controllers\\PostController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostController.php',
         'App\\Http\\Controllers\\PostTagController' => __DIR__ . '/../..' . '/app/Http/Controllers/PostTagController.php',
+        'App\\Http\\Controllers\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProductController.php',
         'App\\Http\\Controllers\\TagController' => __DIR__ . '/../..' . '/app/Http/Controllers/TagController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
-        'App\\Http\\Lib\\Common' => __DIR__ . '/../..' . '/app/Http/Lib/Common.php',
+        'App\\Http\\Lib\\Common' => __DIR__ . '/../..' . '/app/Http/lib/Common.php',
+        'App\\Http\\Middleware\\CacheMiddleware' => __DIR__ . '/../..' . '/app/Http/Middleware/CacheMiddleware.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
         'App\\Http\\Middleware\\RedirectIfAuthenticated' => __DIR__ . '/../..' . '/app/Http/Middleware/RedirectIfAuthenticated.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
@@ -350,6 +369,9 @@ class ComposerStaticInit83a34b4f8d3316b8f9e483f5d33d8797
         'App\\Http\\Model\\Tag' => __DIR__ . '/../..' . '/app/Http/Model/Tag.php',
         'App\\Http\\ViewComposers\\Cms\\HeaderAll' => __DIR__ . '/../..' . '/app/Http/ViewComposers/cms/HeaderAll.php',
         'App\\Http\\ViewComposers\\Cms\\HomeMain' => __DIR__ . '/../..' . '/app/Http/ViewComposers/cms/HomeMain.php',
+        'App\\Http\\ViewComposers\\Nuockhoang365\\FooterAll' => __DIR__ . '/../..' . '/app/Http/ViewComposers/nuockhoang365/footerAll.php',
+        'App\\Http\\ViewComposers\\Nuockhoang365\\HeaderAll' => __DIR__ . '/../..' . '/app/Http/ViewComposers/nuockhoang365/HeaderAll.php',
+        'App\\Http\\ViewComposers\\Nuockhoang365\\HomeMain' => __DIR__ . '/../..' . '/app/Http/ViewComposers/nuockhoang365/HomeMain.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
         'App\\Providers\\BroadcastServiceProvider' => __DIR__ . '/../..' . '/app/Providers/BroadcastServiceProvider.php',
@@ -426,6 +448,32 @@ class ComposerStaticInit83a34b4f8d3316b8f9e483f5d33d8797
         'DeepCopy\\TypeFilter\\Spl\\SplDoublyLinkedList' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/Spl/SplDoublyLinkedList.php',
         'DeepCopy\\TypeFilter\\TypeFilter' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeFilter/TypeFilter.php',
         'DeepCopy\\TypeMatcher\\TypeMatcher' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/TypeMatcher/TypeMatcher.php',
+        'Doctrine\\Common\\Cache\\ApcCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ApcCache.php',
+        'Doctrine\\Common\\Cache\\ApcuCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ApcuCache.php',
+        'Doctrine\\Common\\Cache\\ArrayCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ArrayCache.php',
+        'Doctrine\\Common\\Cache\\Cache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Cache.php',
+        'Doctrine\\Common\\Cache\\CacheProvider' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/CacheProvider.php',
+        'Doctrine\\Common\\Cache\\ChainCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ChainCache.php',
+        'Doctrine\\Common\\Cache\\ClearableCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ClearableCache.php',
+        'Doctrine\\Common\\Cache\\CouchbaseCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/CouchbaseCache.php',
+        'Doctrine\\Common\\Cache\\FileCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FileCache.php',
+        'Doctrine\\Common\\Cache\\FilesystemCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FilesystemCache.php',
+        'Doctrine\\Common\\Cache\\FlushableCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/FlushableCache.php',
+        'Doctrine\\Common\\Cache\\MemcacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MemcacheCache.php',
+        'Doctrine\\Common\\Cache\\MemcachedCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MemcachedCache.php',
+        'Doctrine\\Common\\Cache\\MongoDBCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MongoDBCache.php',
+        'Doctrine\\Common\\Cache\\MultiGetCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiGetCache.php',
+        'Doctrine\\Common\\Cache\\MultiPutCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/MultiPutCache.php',
+        'Doctrine\\Common\\Cache\\PhpFileCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/PhpFileCache.php',
+        'Doctrine\\Common\\Cache\\PredisCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/PredisCache.php',
+        'Doctrine\\Common\\Cache\\RedisCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/RedisCache.php',
+        'Doctrine\\Common\\Cache\\RiakCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/RiakCache.php',
+        'Doctrine\\Common\\Cache\\SQLite3Cache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/SQLite3Cache.php',
+        'Doctrine\\Common\\Cache\\Version' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/Version.php',
+        'Doctrine\\Common\\Cache\\VoidCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/VoidCache.php',
+        'Doctrine\\Common\\Cache\\WinCacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/WinCacheCache.php',
+        'Doctrine\\Common\\Cache\\XcacheCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/XcacheCache.php',
+        'Doctrine\\Common\\Cache\\ZendDataCache' => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache/ZendDataCache.php',
         'Doctrine\\Common\\Inflector\\Inflector' => __DIR__ . '/..' . '/doctrine/inflector/lib/Doctrine/Common/Inflector/Inflector.php',
         'Doctrine\\Instantiator\\Exception\\ExceptionInterface' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/ExceptionInterface.php',
         'Doctrine\\Instantiator\\Exception\\InvalidArgumentException' => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator/Exception/InvalidArgumentException.php',
@@ -440,6 +488,7 @@ class ComposerStaticInit83a34b4f8d3316b8f9e483f5d33d8797
         'Dotenv\\Exception\\ValidationException' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Exception/ValidationException.php',
         'Dotenv\\Loader' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Loader.php',
         'Dotenv\\Validator' => __DIR__ . '/..' . '/vlucas/phpdotenv/src/Validator.php',
+        'EasyRequest' => __DIR__ . '/..' . '/ptcong/php-http-class/EasyRequest.php',
         'Faker\\Calculator\\Iban' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Iban.php',
         'Faker\\Calculator\\Luhn' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/Calculator/Luhn.php',
         'Faker\\DefaultGenerator' => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker/DefaultGenerator.php',
@@ -2651,6 +2700,15 @@ class ComposerStaticInit83a34b4f8d3316b8f9e483f5d33d8797
         'Ramsey\\Uuid\\UuidFactory' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactory.php',
         'Ramsey\\Uuid\\UuidFactoryInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidFactoryInterface.php',
         'Ramsey\\Uuid\\UuidInterface' => __DIR__ . '/..' . '/ramsey/uuid/src/UuidInterface.php',
+        'RemoteImageUploader\\Adapters\\Flickr' => __DIR__ . '/..' . '/ptcong/php-image-uploader/src/RemoteImageUploader/Adapters/Flickr.php',
+        'RemoteImageUploader\\Adapters\\Imageshack' => __DIR__ . '/..' . '/ptcong/php-image-uploader/src/RemoteImageUploader/Adapters/Imageshack.php',
+        'RemoteImageUploader\\Adapters\\Imgur' => __DIR__ . '/..' . '/ptcong/php-image-uploader/src/RemoteImageUploader/Adapters/Imgur.php',
+        'RemoteImageUploader\\Adapters\\Picasa' => __DIR__ . '/..' . '/ptcong/php-image-uploader/src/RemoteImageUploader/Adapters/Picasa.php',
+        'RemoteImageUploader\\Adapters\\Postimage' => __DIR__ . '/..' . '/ptcong/php-image-uploader/src/RemoteImageUploader/Adapters/Postimage.php',
+        'RemoteImageUploader\\Factory' => __DIR__ . '/..' . '/ptcong/php-image-uploader/src/RemoteImageUploader/Factory.php',
+        'RemoteImageUploader\\Helper' => __DIR__ . '/..' . '/ptcong/php-image-uploader/src/RemoteImageUploader/Helper.php',
+        'RemoteImageUploader\\Interfaces\\Account' => __DIR__ . '/..' . '/ptcong/php-image-uploader/src/RemoteImageUploader/Interfaces/Account.php',
+        'RemoteImageUploader\\Interfaces\\OAuth' => __DIR__ . '/..' . '/ptcong/php-image-uploader/src/RemoteImageUploader/Interfaces/OAuth.php',
         'SconfigTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_09_024632_sconfig_table.php',
         'SebastianBergmann\\CodeCoverage\\CodeCoverage' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/CodeCoverage.php',
         'SebastianBergmann\\CodeCoverage\\CoveredCodeNotExecutedException' => __DIR__ . '/..' . '/phpunit/php-code-coverage/src/Exception/CoveredCodeNotExecutedException.php',

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Doctrine\Common\Cache\FilesystemCache;
+use RemoteImageUploader\Factory;
 use Response;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Validator;
@@ -127,6 +129,38 @@ class MediasController extends AdminController
             return 'ok';
         }
         return 'false';
+    }
+
+    //upload picass
+
+
+    public static function picasa($imageStoragePath=null){
+//        if(Request::ajax()){
+            $cacher = new FilesystemCache('/tmp');
+            $uploader = Factory::create('Flickr', array(
+                'cacher'         => $cacher,
+                'api_key'        => 'b681c7f6dce08c05cc7caf50ccb8fe0d',
+                'api_secret'     => '140305ed26a83a34',
+
+                // if you have oauth_token and secret, you can set
+                // to the options to pass
+                'oauth_token'        => "72157680634138054-24addaf1029755e3",
+                'oauth_token_secret' => "ee8f2c475f8b86cc",
+            ));
+//            $callbackUrl = 'http'.(getenv('HTTPS') == 'on' ? 's' : '').'://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+//
+//            $uploader->authorize($callbackUrl);
+            $path = isset($imageStoragePath)?$imageStoragePath:'';
+            if($path!=''){
+                $url = $uploader->upload(public_path().$path);
+                return $url;
+            }else{
+                return false;
+            }
+
+//        }
+//        $list = [];
+//        return view('admin.media.api-upload',compact('list'));
     }
 
 
