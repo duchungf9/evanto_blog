@@ -140,4 +140,39 @@ class HomeController extends Controller
         $page = \DB::table('pages')->where('slug',$slug)->first();
         return view('frontend/nuockhoang365/layouts/page_base',['page'=>$page]);
     }
+
+    public function getSocialRedirect($provider='google')
+    {
+        //return \SView::render('admin.auth.index');
+        return Socialite::driver( $provider )->redirect();
+    }
+
+    public function getSocialHandle( $provider='google' )
+    {
+        $o_googleuser = Socialite::driver( $provider )->user();
+        if(is_object($o_googleuser)){
+            $o_userVCCmail = $o_googleuser->email;
+            $cdb_user = User::where('email',$o_userVCCmail)->first();
+            if(count($cdb_user)>0){
+                $this->loginUser($cdb_user);
+                if(\Auth::check()){
+                    return \Redirect::to('/admin');
+                }else{
+                    echo 'chua login duoc';
+                }
+
+
+            }else{
+                echo "User khong duoc phep! please login with VCORP's email : example (xxx@vccorp.vn)\n";
+                echo "Click here to login to admin : <a href='/admin'>login</a>";
+            }
+        }else{
+            echo 'Authen failed!';
+        }
+
+    }
+
+    private function loginUser($o_user){
+        Auth::login($o_user);
+    }
 }

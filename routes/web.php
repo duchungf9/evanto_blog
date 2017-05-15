@@ -14,7 +14,8 @@
 
 
 Auth::routes();
-
+Route::get('social/redirect/google', 'HomeController@getSocialRedirect');
+Route::get('social/handle/google', 'HomeController@getSocialHandle');
 Route::group(['prefix'=>'admin'],function(){
     Route::get('/','Admin\AdminController@index');
     Route::get('/dashboard','Admin\AdminController@index');

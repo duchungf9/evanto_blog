@@ -34,5 +34,12 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'google'=>[
+        //'client_id'=>'888658177403-cekl2996ad6h4mn05kmo68rmdolldgfo.apps.googleusercontent.com',
+        'client_id'=>'1008995111621-43foc84rjhrv7p9dafgv05vkqg934dnm.apps.googleusercontent.com',
+        //'client_secret' => 'LaJ361XXGpGnirkvuJ-9sQBY',
+        'client_secret' => 'Lhnrqa4z_LveyubB_QOxYIwm',
+        'redirect' => 'http://'.$_SERVER['HTTP_HOST'].'/social/handle/google',
+    ]
 
 ];
