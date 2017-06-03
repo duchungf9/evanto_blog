@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Input;
 use Goutte\Client;
 use Illuminate\Support\Facades\Validator;
 use Schema,DB,Response;
-require_once(app_path().'\simple_html_dom.php');
+//require_once(app_path().'\simple_html_dom.php');
 class HomeController extends Controller
 {
     /**
