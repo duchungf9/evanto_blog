@@ -10,6 +10,9 @@ use Illuminate\Http\Request;
 use App\Http\Model\SConfigs;
 use Illuminate\Support\Facades\Input;
 use Goutte\Client;
+use Illuminate\Support\Facades\Validator;
+use Schema,DB,Response;
+require_once(app_path().'\simple_html_dom.php');
 class HomeController extends Controller
 {
     /**
@@ -116,24 +119,72 @@ class HomeController extends Controller
      *
      */
     public function crawl(){
-        $client = new Client();
-//        $crawler = $client->request('get','http://webtruyen.com/all/1');
-//        $lastPage = $crawler->filter('.list-caption')->siblings();
-//        $lastPage = (str_replace('Page 1 of ','',$lastPage));
-//        $arrayPages = [];
-        for($i=1;$i<=1;$i++){
-            $crawler_pages = $client->request('get','http://webtruyen.com/all/'.$i);
-            foreach($crawler_pages->filter(".list-caption h3 a") as $href){
-                $arrayPages[] = [
-                            'title'=>$href->getAttribute('title'),
-                            'link'=>$href->getAttribute('href')
-                    ];
-            }
-        }
-        echo 'xddx';
-        dd($arrayPages);
+        //lay danh sách truyện
+        //---------------------///
+        //self::danhsachtruyen();
+        //--------------------//
+
+        //craw từng truyện
+        return view('frontend/cms/layouts/crawl_base');
     }
 
+    protected static function danhsachtruyen(){
+
+//        if(Schema::hasTable('m_list')==false){
+//            Schema::create('m_list',function($table){
+//                $table->increments('id');
+//                $table->string('title')->nullable();
+//                $table->integer('cat_id')->nullable();
+//                $table->string('link_crawl')->nullable();
+//                $table->integer('last_chapter')->nullable();
+//                $table->string('json_params')->nullable();
+//                $table->timestamps();
+//            });
+//        }
+//        $html = file_get_html('http://truyentranhtuan.com/danh-sach-truyen');
+//        $a = $html->find('span[class=manga] a');
+//        $listTruyen = [];
+//        foreach($a as $row){
+//            $listTruyen[] = ['title'=>$row->plaintext,'link_crawl'=>$row->href];
+//
+//        }
+//        dd($listTruyen);
+//        foreach($listTruyen as $key=>$row){
+//            $v = Validator::make($row,[
+//                'title'=>'unique:m_list',
+//                'link_crawl'=>'unique:m_list'
+//            ]);
+//            if($v->passes()==false){
+//                unset($listTruyen[$key]);
+//            }
+//        }
+//        dd($listTruyen);
+//        $c = DB::table('m_list')->insert($listTruyen);
+//        dump($c);
+    }
+    protected static function listchapter(){
+        $manga = DB::table('m_list')->where('id',Input::get('id'))->first();
+        $link = $manga->link_crawl;
+
+        $html = file_get_html($link);
+        $a = $html->find('span[class=chapter-name] a');
+        $listTruyen = [];
+        foreach($a as $row){
+            $listTruyen[] = ['title'=>$row->plaintext,'link_crawl'=>$row->href,'m_id'=>$manga->id];
+        }
+        $lastChapter = count($listTruyen);
+        if($lastChapter!=$manga->last_chapter){
+            // nếu có chương mới
+            DB::table('m_list')->where('id',$manga->id)->update([
+                'last_chapter'=>$lastChapter
+            ]);
+
+        }else{
+            $cdbListTruyen = DB::table('c_list')->where('m_id',$manga->id)->get();
+        }
+        return Response::json($listTruyen);
+
+    }
     public function page($slug){
         $params = [];
         $slug = str_replace(".html","",$slug);

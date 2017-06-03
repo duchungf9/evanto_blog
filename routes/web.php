@@ -83,8 +83,12 @@ Route::group(['prefix'=>'/'],function(){
         return view('frontend.nuockhoang365.layouts.new_base',['params'=>$params]);
 
     });
-    Route::get('/crawl', 'HomeController@crawl');
+    Route::group(['prefix'=>'crawl'],function(){
+        Route::get('/', 'HomeController@crawl');
+        Route::any('/listChapter', 'HomeController@listchapter');
+    });
     Route::get('/p/{alias}', 'HomeController@page');
     Route::get("/{category}","HomeController@cats");
     Route::get("/{category}/{alias}","HomeController@posts");
+
 });
