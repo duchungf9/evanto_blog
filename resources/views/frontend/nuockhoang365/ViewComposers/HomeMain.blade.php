@@ -11,7 +11,7 @@
                 $price = explode(" ",$price); $price = isset($price[0])?$price[0]:0;
             ?>
             <div class="product">
-                <div class="image">
+                <div class="image" style="background-image: url({{$post->image}})">
                     <img src="{{$post->image}}"
                          alt="{{$post->title}}" width="470" height="470">
                 </div>
@@ -59,9 +59,9 @@
             </div>
         @endforeach
     @endif
+    @if(isset($params['phu-kien']))
     <h2 class="pk-title"><i></i><span>Phụ kiện</span><i></i></h2>
     <div class="show-equiment">
-        @if(isset($params['phu-kien']))
             @if(isset($params['phu-kien']->products))
                 @foreach($params['phu-kien']->products as $key=>$value)
                     <?php
@@ -86,6 +86,6 @@
                     </div>
                 @endforeach
             @endif
-        @endif
     </div>
+    @endif
 </section>

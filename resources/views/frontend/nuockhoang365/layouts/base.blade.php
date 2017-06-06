@@ -38,24 +38,7 @@
             <a href="javascript:void(0)" class="responsive-menu-toggle"></a>
         </nav>
         <div id="banner_header">
-            <div class="fixCen">
-                <div id="slogan">
-                    <img src="http://laviewater.vn/wp-content/uploads/revslider/shop/header_txt.png" class="imgFull"
-                         alt="">
-                </div>
-                <div id="product1" class="sp-pr">
-                    <img src="http://laviewater.vn/wp-content/uploads/revslider/shop/Lavie-19l.png" class="imgFull"
-                         alt="">
-                </div>
-                <div id="product2" class="sp-pr">
-                    <img src="http://laviewater.vn/wp-content/uploads/revslider/shop/Lavie-19l.png" class="imgFull"
-                         alt="">
-                </div>
-                <div id="product3" class="sp-pr">
-                    <img src="http://laviewater.vn/wp-content/uploads/revslider/shop/Lavie-19l.png" class="imgFull"
-                         alt="">
-                </div>
-            </div>
+            <img src="{{URL::to('/')}}/frontend/nuockhoang365/images/bg.jpg" class="imgFull" alt="Nước khoáng LaVie">
         </div>
     </header>
     @yield('content')
