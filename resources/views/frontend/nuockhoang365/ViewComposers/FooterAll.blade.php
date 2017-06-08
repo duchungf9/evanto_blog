@@ -47,7 +47,8 @@
             <p>Kho 3 102 d7 thành công -  ba đình hà nội<br>Điện thoại : 0962632231</p>
             <p>Kho 4 150 tây sơn - đống đa hà nội<br>Điện thoại : 0979332708</p>
             <p>28 đường yên phụ đôi - tây hồ hà nội<br>Điện thoại : 0962632231</p>
-            <p>Kho 6 123 tân mai mới hoàng mai hà nội<br>Điện thoại : 0979332708</p>
+            <p>Kho 6 123 tân mai mới hoàng mai hà nội<br>Điện thoại : 0979332708.</p>
+
         </div>
     </div>
 </footer>
