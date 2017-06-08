@@ -74,7 +74,7 @@
 
                     ?>
                     <div class="product">
-                        <div class="image">
+                        <div class="image" style="background-image: url({{$value->image}})">
                             <img src="{{$value->image}}" alt="{{$value->title}}"
                                  width="488" height="488">
                         </div>
