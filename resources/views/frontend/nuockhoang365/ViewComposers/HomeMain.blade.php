@@ -39,7 +39,7 @@
 
                         ?>
                         <div class="product">
-                            <div class="image">
+                            <div class="image" style="background-image: url({{$post->image}})"></div>
                                 <img src="{{$post->image}}" alt="{{$post->title}}"
                                      width="488" height="488">
                             </div>
