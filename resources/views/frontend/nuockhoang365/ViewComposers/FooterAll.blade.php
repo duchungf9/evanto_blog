@@ -42,12 +42,12 @@
         </div>
         <div class="gg-map">
             <h4 class="title">Kho Hàng</h4>
-            <p>74A ngõ 295 phố bạch mai quận HBT tp HN<br>Điện thoại : 0906.222.127</p>
+            <p>74A ngõ 295 phố bạch mai quận HBT tp HN<br>Điện thoại : 0962632231</p>
             <p>Kho 2 số 32 ngõ 192 lê trọng tấn- thanh xuân hà nội<br>Điện thoại : 0979332708</p>
             <p>Kho 3 102 d7 thành công -  ba đình hà nội<br>Điện thoại : 0962632231</p>
-            <p>Kho 4 150 tây sơn - đống đa hà nội<br>Điện thoại : 0962632231</p>
-            <p>28 đường yên phụ đôi - tây hồ hà nội<br>Điện thoại : 0979332708</p>
-            <p>Kho 6 123 tân mai mới hoàng mai hà nội<br>Điện thoại : 0962632231</p>
+            <p>Kho 4 150 tây sơn - đống đa hà nội<br>Điện thoại : 0979332708</p>
+            <p>28 đường yên phụ đôi - tây hồ hà nội<br>Điện thoại : 0962632231</p>
+            <p>Kho 6 123 tân mai mới hoàng mai hà nội<br>Điện thoại : 0979332708</p>
         </div>
     </div>
 </footer>
