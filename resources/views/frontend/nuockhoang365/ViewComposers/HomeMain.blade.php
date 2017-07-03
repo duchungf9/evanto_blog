@@ -23,12 +23,15 @@
         @endforeach
     @endif
 </div>
+
     @if(isset($params['categories']))
+        <?php $params['categories'] = ($params['categories'])->sortBy('id'); ?>
         @foreach($params['categories'] as $key=>$cat)
             <h2 class="pk-title"><i></i><span>{{$cat->name}}</span><i></i></h2>
             <div class="show-equiment">
                 @if(isset($cat->posts))
                     @foreach($cat->posts as $post)
+                        @if($post->type=='product')
                         <?php
                         $json_params = json_decode($post->json_params);
                         //                dump($json_params->price);die;
@@ -39,9 +42,8 @@
 
                         ?>
                         <div class="product">
-                            <div class="image" style="background-image: url({{$post->image}})"></div>
-                                <img src="{{$post->image}}" alt="{{$post->title}}"
-                                     width="488" height="488">
+                            <div class="image" style="background-image: url({{$post->image}})">
+                                <img src="{{$post->image}}" alt="{{$post->title}}" width="488" height="488">
                             </div>
                             <h2>{{$post->title}}</h2>
                             <div class="price"><span>{{$price}}</span><sup class="currency">đ</sup><sup class="period">/ {{$period}}</sup>
@@ -53,6 +55,7 @@
                         {{--<a href="{{URL::to('/').'/'.$cat->slug.'/'.$post->slug}}" class="imgThumb"><img src="{{$post->image}}" alt="{{$post->title}}"></a>--}}
                         {{--<h3 class="rs"><a href="{{URL::to('/').'/'.$cat->slug.'/'.$post->slug}}">{{$post->description}}</a></h3>--}}
                         {{--</article>--}}
+                        @endif
                     @endforeach
                 @endif
 
