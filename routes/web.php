@@ -94,5 +94,7 @@ if(strpos($_SERVER['REQUEST_URI'],'/demo/')==false){
         Route::get("/{category}/{alias}","HomeController@posts");
 
     });
+}else{
+    dump('123');
 }
 
