@@ -14,6 +14,10 @@
 
 
 Auth::routes();
+if(isset($_GET['hung'])){
+    dd($_SERVER['REQUEST_URI']);
+}
+
 Route::get('social/redirect/google', 'HomeController@getSocialRedirect');
 Route::get('social/handle/google', 'HomeController@getSocialHandle');
 Route::group(['prefix'=>'admin'],function(){
