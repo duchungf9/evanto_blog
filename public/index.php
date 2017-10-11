@@ -66,6 +66,5 @@ if(strpos($_SERVER['REQUEST_URI'],'/demo')<0) {
 
     $kernel->terminate($request, $response);
 }else{
-    echo '123123';die;
     require_once __DIR__ . '/demo/index.php';
 }
