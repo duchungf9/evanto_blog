@@ -15,7 +15,7 @@
 
 Auth::routes();
 if(isset($_GET['hung'])){
-    dd($_SERVER['REQUEST_URI']);
+    dd(strpos($_SERVER['REQUEST_URI'],'/demo/'));
 }
 
 Route::get('social/redirect/google', 'HomeController@getSocialRedirect');
