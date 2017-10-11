@@ -81,7 +81,7 @@ $table_prefix  = 'g_';
  */
 define('WP_DEBUG', false);
 define('WP_MEMORY_LIMIT', '64M');
-
+//define('WP_SITEURL','http://nuockhoang365.com/demo');
 /* That's all, stop editing! Happy blogging. */
 
 /** Absolute path to the WordPress directory. */
