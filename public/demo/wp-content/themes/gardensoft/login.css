@@ -1,0 +1,11 @@
+#login h1 a {
+background: url("http://gardensoft.com.vn/wp-content/uploads/2017/04/cropped-LOGOGardensoft_NOBK_110x100-1.png") no-repeat !important;
+width: 300px !important;
+height: 130px !important;
+
+
+}
+body.login {background:#16a29c}
+.login #backtoblog a, .login #nav a {
+	color:white !important;
+}
