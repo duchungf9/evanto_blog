@@ -447,7 +447,7 @@ add_action( 'init', 'create_initial_taxonomies', 0 ); // highest priority
 add_action( 'change_locale', 'create_initial_taxonomies' );
 
 // Canonical
-add_action( 'template_redirect', 'redirect_canonical' );
+//add_action( 'template_redirect', 'redirect_canonical' );
 add_action( 'template_redirect', 'wp_redirect_admin_locations', 1000 );
 
 // Shortcodes
