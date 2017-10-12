@@ -1,0 +1,1572 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Flatsome v2.2.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: Tue Jun 21 2016 09:53:52 GMT+0200 (CEST)\n"
+"Last-Translator: olof <olof@fourlevent.com>\n"
+"Language-Team: \n"
+"Language: Swedish\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Poedit-Language: Swedish\n"
+"X-Poedit-Country: SWEDEN\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes\n"
+"X-Loco-Target-Locale: sv_SE"
+
+#: admin/classes/class.options_machine.php:568
+msgid "Last Backup : "
+msgstr ""
+
+#: admin/front-end/options.php:29
+#: admin/front-end/options.php:43
+msgid "Save All Changes"
+msgstr ""
+
+#: admin/front-end/options.php:44
+msgid "Options Reset"
+msgstr ""
+
+#: admin/index.php:156
+msgid "Fonts"
+msgstr ""
+
+#: archive.php:40
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: archive.php:43
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: archive.php:50
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: archive.php:58
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:61
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:64
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:67
+msgid "Asides"
+msgstr ""
+
+#: archive.php:70
+msgid "Images"
+msgstr ""
+
+#: archive.php:73
+msgid "Videos"
+msgstr ""
+
+#: archive.php:76
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:79
+msgid "Links"
+msgstr ""
+
+#: comments.php:55
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:67
+msgid "Comments are closed."
+msgstr ""
+
+#: content-page.php:17
+#: content-single.php:36
+#: content.php:47
+#: image.php:92
+#: page-left-sidebar-notitle.php:24
+#: page-right-sidebar-notitle.php:24
+msgid "Pages:"
+msgstr ""
+
+#. translators: used between list items, there is a space after the comma
+#: content-single.php:54
+#: content-single.php:57
+#: content.php:58
+#: content.php:66
+#: content.php:109
+#: content.php:157
+#: content.php:177
+msgid ", "
+msgstr ""
+
+#: content-single.php:62
+#, php-format
+msgid "This entry was posted in %1$s and tagged %2$s."
+msgstr ""
+
+#: content-single.php:64
+#, php-format
+msgid ""
+"This entry was posted in %1$s. Bookmark the <a href=\"%3$s\" title=\"Permalink "
+"to %4$s\" rel=\"bookmark\">permalink</a>."
+msgstr ""
+
+#: content-single.php:92
+msgid "by"
+msgstr ""
+
+#: content.php:44
+msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: content.php:61
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: content.php:71
+#: content.php:182
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: content.php:77
+#: content.php:123
+#: content.php:171
+#: inc/widgets/recent-posts.php:59
+msgid "Leave a comment"
+msgstr ""
+
+#: content.php:77
+#: content.php:123
+#: content.php:171
+#: inc/widgets/recent-posts.php:59
+msgid "<strong>1</strong> Comment"
+msgstr ""
+
+#: content.php:77
+#: content.php:123
+#: content.php:171
+#: inc/widgets/recent-posts.php:59
+msgid "<strong>%</strong> Comments"
+msgstr ""
+
+#: content.php:112
+#: content.php:160
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: functions.php:139
+#: inc/class-tgm-plugin-activation.php:161
+msgid "Install Required Plugins"
+msgstr ""
+
+#: functions.php:140
+#: inc/class-tgm-plugin-activation.php:162
+msgid "Install Plugins"
+msgstr ""
+
+#: functions.php:141
+#: inc/class-tgm-plugin-activation.php:163
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: functions.php:142
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: functions.php:143
+#: inc/class-tgm-plugin-activation.php:165
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:144
+#: inc/class-tgm-plugin-activation.php:166
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:145
+#: inc/class-tgm-plugin-activation.php:167
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"installed."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %s plugins."
+" Contact the administrator of this site for help on getting the plugins "
+"installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:146
+#: inc/class-tgm-plugin-activation.php:168
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:147
+#: inc/class-tgm-plugin-activation.php:169
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:148
+#: inc/class-tgm-plugin-activation.php:170
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %s plugin."
+" Contact the administrator of this site for help on getting the plugin "
+"activated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %s "
+"plugins. Contact the administrator of this site for help on getting the "
+"plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:149
+#: inc/class-tgm-plugin-activation.php:171
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:150
+#: inc/class-tgm-plugin-activation.php:172
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %s plugin. "
+"Contact the administrator of this site for help on getting the plugin "
+"updated."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %s plugins. "
+"Contact the administrator of this site for help on getting the plugins "
+"updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:151
+#: inc/class-tgm-plugin-activation.php:173
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:152
+#: inc/class-tgm-plugin-activation.php:174
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: functions.php:153
+#: inc/class-tgm-plugin-activation.php:175
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: functions.php:154
+#: inc/class-tgm-plugin-activation.php:177
+#: inc/class-tgm-plugin-activation.php:1939
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: functions.php:155
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: functions.php:188
+msgid "Main Menu"
+msgstr ""
+
+#: functions.php:189
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:190
+msgid "Top bar Menu"
+msgstr ""
+
+#: functions.php:191
+msgid "My Account Menu"
+msgstr ""
+
+#: functions.php:210
+msgid "Sidebar"
+msgstr ""
+
+#: functions.php:220
+msgid "Shop Sidebar"
+msgstr ""
+
+#: functions.php:229
+msgid "Product Sidebar"
+msgstr ""
+
+#: functions.php:248
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:258
+msgid "Footer 2"
+msgstr ""
+
+#: header.php:231
+msgid "My Account"
+msgstr ""
+
+#: header.php:251
+#: woocommerce/myaccount/form-login.php:27
+#: woocommerce/myaccount/form-login.php:46
+msgid "Login"
+msgstr ""
+
+#: header.php:265
+#: inc/template-tags.php:246
+msgid "Cart"
+msgstr ""
+
+#: header.php:284
+#: inc/template-tags.php:304
+msgid "No products in the cart."
+msgstr ""
+
+#: image.php:25
+#, php-format
+msgid ""
+"Published <span class=\"entry-date\"><time class=\"entry-date\" "
+"datetime=\"%1$s\">%2$s</time></span> at <a href=\"%3$s\" title=\"Link to full-"
+"size image\">%4$s &times; %5$s</a> in <a href=\"%6$s\" title=\"Return to %7$s\" "
+"rel=\"gallery\">%8$s</a>"
+msgstr ""
+
+#: image.php:36
+#: image.php:109
+#: inc/template-tags.php:77
+#: inc/template-tags.php:106
+msgid "Edit"
+msgstr ""
+
+#: image.php:101
+#, php-format
+msgid ""
+"<a class=\"comment-link\" href=\"#respond\" title=\"Post a comment\">Post a "
+"comment</a> or leave a trackback: <a class=\"trackback-link\" href=\"%s\" "
+"title=\"Trackback URL for your post\" rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:103
+#, php-format
+msgid ""
+"Comments are closed, but you can leave a trackback: <a class=\"trackback-"
+"link\" href=\"%s\" title=\"Trackback URL for your post\" "
+"rel=\"trackback\">Trackback URL</a>."
+msgstr ""
+
+#: image.php:105
+msgid ""
+"Trackbacks are closed, but you can <a class=\"comment-link\" href=\"#respond\" "
+"title=\"Post a comment\">post a comment</a>."
+msgstr ""
+
+#: image.php:107
+msgid "Both comments and trackbacks are currently closed."
+msgstr ""
+
+#: image.php:114
+msgid "<span class=\"meta-nav\">&larr;</span> Previous"
+msgstr ""
+
+#: image.php:115
+msgid "Next <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: inc/builder/flatsome-builder.php:9
+#: inc/builder/flatsome-builder.php:16
+msgid "Flatsome Page Builder <em>Beta</em>"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:164
+msgid "Something went wrong."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:176
+msgid "Return to the dashboard"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:179
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:180
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:531
+#: inc/class-tgm-plugin-activation.php:2156
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1166
+msgid "Private Repository"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1169
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1174
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1177
+msgid "Required"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1177
+msgid "Recommended"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1180
+msgid "Not Installed"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1182
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1287
+#: inc/class-tgm-plugin-activation.php:1395
+msgid "Install"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1309
+#: inc/class-tgm-plugin-activation.php:1396
+msgid "Activate"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1358
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\" title=\"Return to the "
+"Dashboard\">Return to the Dashboard</a>"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1374
+msgid "Plugin"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1375
+msgid "Source"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1376
+msgid "Type"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1377
+msgid "Status"
+msgstr ""
+
+#. gettext fix: identical singular and plural forms found, that may be ambiguous! Please check the code!
+#: inc/class-tgm-plugin-activation.php:1630
+#: inc/class-tgm-plugin-activation.php:178
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/class-tgm-plugin-activation.php:1922
+msgid "Install package not available."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1923
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1924
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1925
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1926
+msgid "Plugin install failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1927
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:1938
+msgid "Plugin activation failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2052
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2053
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2053
+#: inc/class-tgm-plugin-activation.php:2062
+msgid "Show Details"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2053
+#: inc/class-tgm-plugin-activation.php:2062
+msgid "Hide Details"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2054
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2055
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2059
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2060
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2061
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2062
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2063
+msgid "All installations have been completed."
+msgstr ""
+
+#: inc/class-tgm-plugin-activation.php:2064
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/custom-wc-fields.php:18
+msgid "\"New\" Bubble"
+msgstr ""
+
+#: inc/custom-wc-fields.php:19
+msgid "Enable a New bubble on this product"
+msgstr ""
+
+#: inc/custom-wc-fields.php:31
+msgid "Custom Tab Title"
+msgstr ""
+
+#: inc/custom-wc-fields.php:34
+msgid "Field description."
+msgstr ""
+
+#: inc/custom-wc-fields.php:42
+msgid "Custom Tab Content"
+msgstr ""
+
+#: inc/custom-wc-fields.php:45
+msgid "Enter content for custom product tab here. Shortcodes are allowed"
+msgstr ""
+
+#: inc/extras.php:138
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/extras.php:157
+msgid "Top Content"
+msgstr ""
+
+#: inc/extras.php:163
+msgid ""
+"Enter a value for this field. Shortcodes are allowed. This will be displayed "
+"at top of the category."
+msgstr ""
+
+#: inc/extras.php:179
+msgid "Bottom Content"
+msgstr ""
+
+#: inc/extras.php:185
+msgid ""
+"Enter a value for this field. Shortcodes are allowed. This will be displayed "
+"at bottom of the category."
+msgstr ""
+
+#: inc/extras.php:791
+msgid "<strong>Maintenance mode</strong> is <strong>active</strong>!"
+msgstr ""
+
+#: inc/extras.php:792
+msgid "Deactivate it, when work is done."
+msgstr ""
+
+#: inc/post-types/blocks.php:6
+msgid "Add block"
+msgstr ""
+
+#: inc/post-types/blocks.php:7
+msgid "Blocks"
+msgstr ""
+
+#: inc/post-types/blocks.php:8
+msgid "Block"
+msgstr ""
+
+#: inc/post-types/blocks.php:9
+msgid "Edit Block"
+msgstr ""
+
+#: inc/post-types/blocks.php:10
+msgid "View Block"
+msgstr ""
+
+#: inc/post-types/blocks.php:11
+msgid "Search Blocks"
+msgstr ""
+
+#: inc/post-types/blocks.php:12
+msgid "No Blocks found"
+msgstr ""
+
+#: inc/post-types/blocks.php:13
+msgid "No Blocks found in Trash"
+msgstr ""
+
+#: inc/post-types/blocks.php:41
+#: inc/widgets/upsell-widget.php:109
+msgid "Title"
+msgstr ""
+
+#: inc/post-types/blocks.php:42
+msgid "Preview"
+msgstr ""
+
+#: inc/post-types/blocks.php:44
+msgid "Shortcode"
+msgstr ""
+
+#: inc/post-types/blocks.php:46
+msgid "Date"
+msgstr ""
+
+#: inc/post-types/featured-items.php:88
+msgid "Featured Items"
+msgstr ""
+
+#: inc/post-types/featured-items.php:89
+msgid "Featured Item"
+msgstr ""
+
+#: inc/post-types/featured-items.php:90
+#: inc/post-types/featured-items.php:91
+msgid "Add New"
+msgstr ""
+
+#: inc/post-types/featured-items.php:92
+msgid "Edit Item"
+msgstr ""
+
+#: inc/post-types/featured-items.php:93
+msgid "Add New  Item"
+msgstr ""
+
+#: inc/post-types/featured-items.php:94
+msgid "View Item"
+msgstr ""
+
+#: inc/post-types/featured-items.php:95
+msgid "Search Items"
+msgstr ""
+
+#: inc/post-types/featured-items.php:96
+msgid "No items found"
+msgstr ""
+
+#: inc/post-types/featured-items.php:97
+msgid "No items found in trash"
+msgstr ""
+
+#: inc/post-types/featured-items.php:132
+#: inc/post-types/featured-items.php:134
+msgid "Tags"
+msgstr ""
+
+#: inc/post-types/featured-items.php:133
+msgid "Tag"
+msgstr ""
+
+#: inc/post-types/featured-items.php:135
+msgid "Edit Tag"
+msgstr ""
+
+#: inc/post-types/featured-items.php:136
+msgid "Update Tag"
+msgstr ""
+
+#: inc/post-types/featured-items.php:137
+msgid "Add New Tag"
+msgstr ""
+
+#: inc/post-types/featured-items.php:138
+msgid "New  Tag Name"
+msgstr ""
+
+#: inc/post-types/featured-items.php:139
+msgid "Parent Tag"
+msgstr ""
+
+#: inc/post-types/featured-items.php:140
+msgid "Parent Tag:"
+msgstr ""
+
+#: inc/post-types/featured-items.php:141
+msgid "All Tags"
+msgstr ""
+
+#: inc/post-types/featured-items.php:142
+msgid "Search  Tags"
+msgstr ""
+
+#: inc/post-types/featured-items.php:143
+msgid "Popular Tags"
+msgstr ""
+
+#: inc/post-types/featured-items.php:144
+msgid "Separate tags with commas"
+msgstr ""
+
+#: inc/post-types/featured-items.php:145
+msgid "Add or remove tags"
+msgstr ""
+
+#: inc/post-types/featured-items.php:146
+msgid "Choose from the most used tags"
+msgstr ""
+
+#: inc/post-types/featured-items.php:147
+msgid "No  tags found."
+msgstr ""
+
+#: inc/post-types/featured-items.php:177
+#: inc/post-types/featured-items.php:179
+msgid "Categories"
+msgstr ""
+
+#: inc/post-types/featured-items.php:178
+msgid "Category"
+msgstr ""
+
+#: inc/post-types/featured-items.php:180
+msgid "Edit Category"
+msgstr ""
+
+#: inc/post-types/featured-items.php:181
+msgid "Update Category"
+msgstr ""
+
+#: inc/post-types/featured-items.php:182
+msgid "Add New Category"
+msgstr ""
+
+#: inc/post-types/featured-items.php:183
+msgid "New Category Name"
+msgstr ""
+
+#: inc/post-types/featured-items.php:184
+msgid "Parent Category"
+msgstr ""
+
+#: inc/post-types/featured-items.php:185
+msgid "Parent Category:"
+msgstr ""
+
+#: inc/post-types/featured-items.php:186
+msgid "All Categories"
+msgstr ""
+
+#: inc/post-types/featured-items.php:187
+msgid "Search Categories"
+msgstr ""
+
+#: inc/post-types/featured-items.php:188
+msgid "Popular Categories"
+msgstr ""
+
+#: inc/post-types/featured-items.php:189
+msgid "Separate categories with commas"
+msgstr ""
+
+#: inc/post-types/featured-items.php:190
+msgid "Add or remove categories"
+msgstr ""
+
+#: inc/post-types/featured-items.php:191
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: inc/post-types/featured-items.php:192
+msgid "No categories found."
+msgstr ""
+
+#: inc/post-types/featured-items.php:306
+msgid "Thumbnail"
+msgstr ""
+
+#: inc/post-types/featured-items.php:383
+msgid "Featured Item Item"
+msgid_plural "Featured Item Items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/post-types/featured-items.php:395
+msgid "Featured Item Item Pending"
+msgid_plural "Featured Item Items Pending"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/shortcodes/product_categories.php:344
+#: woocommerce/content-product_cat.php:49
+msgid "Products"
+msgstr ""
+
+#: inc/shortcodes/share_follow.php:95
+msgid "Subscribe to RSS"
+msgstr ""
+
+#: inc/shortcodes/share_follow.php:98
+msgid "Follow us on LinkedIn"
+msgstr ""
+
+#: inc/shortcodes/share_follow.php:104
+msgid "Flickr"
+msgstr ""
+
+#: inc/shortcodes/share_follow.php:107
+msgid "Follow on VKontakte"
+msgstr ""
+
+#: inc/template-tags.php:43
+msgctxt "Previous post link"
+msgid ""
+msgstr ""
+
+#: inc/template-tags.php:44
+msgctxt "Next post link"
+msgid ""
+msgstr ""
+
+#: inc/template-tags.php:49
+msgid "<span class=\"icon-angle-left\"></span> Older posts"
+msgstr ""
+
+#: inc/template-tags.php:53
+msgid "Newer posts <span class=\"icon-angle-right\"></span>"
+msgstr ""
+
+#: inc/template-tags.php:77
+msgid "Pingback:"
+msgstr ""
+
+#: inc/template-tags.php:93
+#, php-format
+msgid "%s <span class=\"says\">says:</span>"
+msgstr ""
+
+#: inc/template-tags.php:95
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:104
+#, php-format
+msgctxt "1: date, 2: time"
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:141
+#, php-format
+msgid ""
+"<span class=\"meta-author\">by <strong><a class=\"url fn n\" href=\"%5$s\" "
+"title=\"%6$s\" rel=\"author\">%7$s</a></strong>.</span> Posted on <a href=\"%1$s\" "
+"title=\"%2$s\" rel=\"bookmark\"><time class=\"entry-date\" "
+"datetime=\"%3$s\">%4$s</time></a>"
+msgstr ""
+
+#: inc/template-tags.php:147
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: inc/template-tags.php:274
+#: woocommerce/cart/cart.php:52
+msgid "Remove this item"
+msgstr ""
+
+#: inc/template-tags.php:280
+#: woocommerce/cart/cart.php:33
+msgid "Quantity"
+msgstr ""
+
+#: inc/template-tags.php:296
+msgid "Cart Subtotal"
+msgstr ""
+
+#: inc/template-tags.php:299
+msgid "View Cart"
+msgstr ""
+
+#: inc/template-tags.php:301
+#: woocommerce/cart/cart.php:139
+msgid "Proceed to Checkout"
+msgstr ""
+
+#: inc/template-tags.php:343
+#: woocommerce/single-product/review.php:23
+msgid "out of 5"
+msgstr ""
+
+#: inc/template-tags.php:376
+msgid "Previous Post"
+msgstr ""
+
+#: inc/template-tags.php:376
+msgid "Next Post"
+msgstr ""
+
+#: inc/template-tags.php:423
+#, php-format
+msgid "Use commas instead of %s to separate excluded categories."
+msgstr ""
+
+#: inc/widgets/recent-posts.php:17
+msgid "A widget that displays recent posts "
+msgstr ""
+
+#: inc/widgets/recent-posts.php:21
+msgid "Flatsome Recent Posts"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:41
+msgid "Recent Posts"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:95
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/recent-posts.php:98
+msgid "Number of posts to show:"
+msgstr ""
+
+#: inc/widgets/upsell-widget.php:20
+msgid "Add upsell products to product page"
+msgstr ""
+
+#: no-results.php:19
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: page-my-account.php:62
+msgid "Log Out"
+msgstr ""
+
+#: wishlist.php:31
+msgid "Edit title"
+msgstr ""
+
+#: wishlist.php:40
+msgid "Save"
+msgstr ""
+
+#: wishlist.php:44
+msgid "Cancel"
+msgstr ""
+
+#: wishlist.php:60
+msgid "Product Name"
+msgstr ""
+
+#: wishlist.php:66
+msgid "Unit Price"
+msgstr ""
+
+#: wishlist.php:97
+msgid "Remove this product"
+msgstr ""
+
+#: wishlist.php:126
+msgid "Free!"
+msgstr ""
+
+#: wishlist.php:169
+msgid "No products were added to the wishlist"
+msgstr ""
+
+#: wishlist.php:195
+msgid "Ask an estimate of costs"
+msgstr ""
+
+#: woocommerce/cart/cart.php:31
+msgid "Product"
+msgstr ""
+
+#: woocommerce/cart/cart.php:32
+msgid "Price"
+msgstr ""
+
+#: woocommerce/cart/cart.php:34
+msgid "Total"
+msgstr ""
+
+#: woocommerce/cart/cart.php:79
+msgid "Available on backorder"
+msgstr ""
+
+#: woocommerce/cart/cart.php:138
+msgid "Update Cart"
+msgstr ""
+
+#: woocommerce/cart/cart.php:146
+msgid "Coupon"
+msgstr ""
+
+#: woocommerce/cart/cart.php:148
+msgid "Apply Coupon"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:24
+msgid "Calculate Shipping"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:30
+msgid "Select a country&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:47
+#: woocommerce/cart/shipping-calculator.php:53
+#: woocommerce/cart/shipping-calculator.php:65
+msgid "State / county"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:54
+msgid "Select a state&hellip;"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:74
+msgid "City"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:82
+msgid "Postcode / Zip"
+msgstr ""
+
+#: woocommerce/cart/shipping-calculator.php:87
+msgid "Update Totals"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:26
+msgid "You must be logged in to checkout."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:37
+msgid "Returning customer?"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:42
+#: woocommerce/checkout/form-checkout.php:44
+msgid "Click here to login"
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:50
+msgid ""
+"If you have shopped with us before, please enter your details in the boxes "
+"below. If you are a new customer please proceed to the Billing &amp; "
+"Shipping section."
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:89
+msgid "Your order"
+msgstr ""
+
+#: woocommerce/content-product-flipbook.php:40
+msgid "Read More"
+msgstr ""
+
+#: woocommerce/content-single-product-fullwidth.php:7
+#: woocommerce/content-single-product-leftcol.php:7
+#: woocommerce/content-single-product-rightcol-fullheight.php:7
+#: woocommerce/content-single-product-rightcol.php:7
+#: woocommerce/content-single-product.php:18
+msgctxt "slug"
+msgid "product-category"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:69
+msgid "Products tagged &ldquo;"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:97
+#: woocommerce/global/breadcrumb.php:195
+msgid "Search results for &ldquo;"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:151
+msgid "Error 404"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:199
+msgid "Posts tagged &ldquo;"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:204
+msgid "Author:"
+msgstr ""
+
+#: woocommerce/global/breadcrumb.php:209
+msgid "Page"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:21
+msgid "Default sorting"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:22
+msgid "Sort by popularity"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:23
+msgid "Sort by average rating"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:24
+msgid "Sort by newness"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:25
+msgid "Sort by price: low to high"
+msgstr ""
+
+#: woocommerce/loop/orderby.php:26
+msgid "Sort by price: high to low"
+msgstr ""
+
+#: woocommerce/loop/sale-flash.php:29
+#: woocommerce/single-product/sale-flash.php:26
+msgid "Sale!"
+msgstr ""
+
+#: woocommerce/loop/sale-flash.php:51
+#: woocommerce/loop/sale-flash.php:62
+#: woocommerce/single-product/sale-flash.php:48
+#: woocommerce/single-product/sale-flash.php:59
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:34
+msgid "Username or email address"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:38
+#: woocommerce/myaccount/form-login.php:86
+msgid "Password"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:47
+msgid "Lost your password?"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:49
+msgid "Remember me"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:64
+#: woocommerce/myaccount/form-login.php:100
+msgid "Register"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:72
+msgid "Username"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:79
+msgid "Email address"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:93
+msgid "Anti-spam"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:27
+msgid "Choose an option"
+msgstr ""
+
+#: woocommerce/single-product/add-to-cart/variable.php:62
+msgid "Clear selection"
+msgstr ""
+
+#: woocommerce/single-product/related.php:37
+#: woocommerce/single-product/related.php:118
+msgid "Related Products"
+msgstr ""
+
+#: woocommerce/single-product/review.php:22
+#, php-format
+msgid "Rated %d out of 5"
+msgstr ""
+
+#: woocommerce/single-product/review.php:28
+msgid "Your comment is awaiting approval"
+msgstr ""
+
+#: woocommerce/single-product/review.php:34
+msgid "verified owner"
+msgstr ""
+
+#: woocommerce/single-product-reviews.php:25
+#, php-format
+msgid "%s review for %s"
+msgid_plural "%s reviews for %s"
+msgstr[0] ""
+msgstr[1] ""
+
+#: woocommerce/single-product-reviews.php:27
+msgid "Reviews"
+msgstr "Recensioner"
+
+#: woocommerce/single-product-reviews.php:51
+msgid "There are no reviews yet."
+msgstr "Det finns inga recensioner ännu."
+
+#: woocommerce/single-product-reviews.php:70
+msgid "Add a review"
+msgstr "Lägg till en recension"
+
+#: woocommerce/single-product-reviews.php:70
+msgid "Be the first to review"
+msgstr "Bli först med att recensera"
+
+#: woocommerce/single-product-reviews.php:71
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr "Skriv ett svar till %s"
+
+#: woocommerce/single-product-reviews.php:75
+msgid "Name"
+msgstr "Namn"
+
+#: woocommerce/single-product-reviews.php:77
+msgid "Email"
+msgstr "Epost"
+
+#: woocommerce/single-product-reviews.php:80
+msgid "Submit"
+msgstr "Skicka"
+
+#: woocommerce/single-product-reviews.php:86
+msgid "Your Rating"
+msgstr "Ditt betyg"
+
+#: woocommerce/single-product-reviews.php:87
+msgid "Rate&hellip;"
+msgstr "Betygsätt..."
+
+#: woocommerce/single-product-reviews.php:88
+msgid "Perfect"
+msgstr "Perfekt"
+
+#: woocommerce/single-product-reviews.php:89
+msgid "Good"
+msgstr "Bra"
+
+#: woocommerce/single-product-reviews.php:90
+msgid "Average"
+msgstr "Medel"
+
+#: woocommerce/single-product-reviews.php:91
+msgid "Not that bad"
+msgstr "Inte så dålig"
+
+#: woocommerce/single-product-reviews.php:92
+msgid "Very Poor"
+msgstr "Mycket dålig"
+
+#: woocommerce/single-product-reviews.php:96
+msgid "Your Review"
+msgstr "Din recension"
+
+#: woocommerce/single-product-reviews.php:106
+msgid "Only logged in customers who have purchased this product may leave a review."
+msgstr "Endast inloggade kunder som har köpt denna produkt kan skriva en recension."
+
+#: inc/extras.php:808
+msgid "Maintenance"
+msgstr "Inte öppen"
+
+#: product-searchform.php:17
+#: searchform.php:13
+msgid "Search"
+msgstr "Sök"
+
+#: wishlist.php:74
+msgid "Stock Status"
+msgstr "Lagerstatus"
+
+#: wishlist.php:140
+msgid "Out of Stock"
+msgstr "Inte i lager"
+
+#: woocommerce/content-product.php:63
+msgid "Out of stock"
+msgstr "Inte i lager"
+
+#: woocommerce/single-product/add-to-cart/variable.php:93
+msgid "This product is currently out of stock and unavailable."
+msgstr "Den här produkten är tillfälligt slut på lagret."
+
+#: inc/template-tags.php:515
+#: wishlist.php:143
+msgid "In Stock"
+msgstr "I lager"
+
+#: 404.php:22
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Attans! Den sidan finns faktiskt inte."
+
+#: 404.php:27
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Exakt inget kunde hittas här. Kanske kan du prova nån av länkarna i menyn "
+"eller söka lite?"
+
+#: comments.php:29
+#, php-format
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "En tanke om &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s tankar om &ldquo;%2$s&rdquo;"
+
+#: comments.php:36
+#: comments.php:56
+msgid "&larr; Older Comments"
+msgstr "&larr; Äldre kommentarer"
+
+#: comments.php:37
+#: comments.php:57
+msgid "Newer Comments &rarr;"
+msgstr "Nyare kommentarer &rarr;"
+
+#: inc/custom-css.php:202
+#: woocommerce/loop/sale-flash.php:21
+#: woocommerce/single-product/sale-flash.php:18
+msgid "New"
+msgstr "Ny"
+
+#: inc/custom-css.php:203
+msgid "Hot"
+msgstr "Het"
+
+#: inc/custom-css.php:204
+msgid "Sale"
+msgstr "Rea"
+
+#: inc/custom-css.php:205
+msgid "Popular"
+msgstr "Populär"
+
+#: inc/custom-wc-fields.php:12
+msgid "Extra"
+msgstr "Extra"
+
+#: inc/shortcodes/share_follow.php:21
+msgid "Share on Facebook"
+msgstr "Dela på Facebook"
+
+#: inc/shortcodes/share_follow.php:24
+msgid "Share on Twitter"
+msgstr "Dela på Twitter"
+
+#: inc/shortcodes/share_follow.php:27
+msgid "Email to a Friend"
+msgstr "Maila en kompis"
+
+#: inc/shortcodes/share_follow.php:30
+msgid "Pin on Pinterest"
+msgstr "Pinna på Pinterest"
+
+#: inc/shortcodes/share_follow.php:33
+msgid "Share on Google+"
+msgstr "Dela på Google+"
+
+#: inc/shortcodes/share_follow.php:36
+msgid "Share on VKontakte"
+msgstr "Dela på VKontakte"
+
+#: inc/shortcodes/share_follow.php:77
+msgid "Follow us on Facebook"
+msgstr "Följ oss på Facebook"
+
+#: inc/shortcodes/share_follow.php:80
+msgid "Follow us on Twitter"
+msgstr "Följ oss på Twitter"
+
+#: inc/shortcodes/share_follow.php:83
+msgid "Send us an email"
+msgstr "Skicka ett mail till oss"
+
+#: inc/shortcodes/share_follow.php:86
+msgid "Follow us on Pinterest"
+msgstr "Följ oss på Pinterest"
+
+#: inc/shortcodes/share_follow.php:89
+msgid "Follow us on Google+"
+msgstr "Följ oss på Google+"
+
+#: inc/shortcodes/share_follow.php:92
+msgid "Follow us on Instagram"
+msgstr "Följ oss på Instagram"
+
+#: inc/shortcodes/share_follow.php:101
+msgid "Follow us on YouTube"
+msgstr "Följ oss på YouTube"
+
+#: inc/widgets/upsell-widget.php:105
+#: woocommerce/single-product/up-sells.php:40
+msgid "Complete the look"
+msgstr "Fixa hela stilen"
+
+#: no-results.php:13
+msgid "Nothing Found"
+msgstr "Hittade inget"
+
+#: no-results.php:23
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Ledsen, men vi hittade inte det du sökte efter. Prova igen med lite andra "
+"ord."
+
+#: no-results.php:28
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Det verkar som vi inte kan hitta det du letar efter. Kanske en sökning kan "
+"hjälpa?"
+
+#: page-checkout-focused.php:65
+#: page-checkout-focused.php:76
+#: page-checkout.php:19
+#: page-checkout.php:30
+msgid "Shopping Cart"
+msgstr "Varukorg"
+
+#: page-checkout-focused.php:67
+#: page-checkout-focused.php:78
+#: page-checkout.php:21
+#: page-checkout.php:32
+msgid "Checkout details"
+msgstr "Kassan"
+
+#: page-checkout-focused.php:69
+#: page-checkout-focused.php:80
+#: page-checkout.php:23
+#: page-checkout.php:34
+msgid "Order Complete"
+msgstr "Ordern komplett"
+
+#: page-my-account.php:31
+#: woocommerce/checkout/form-checkout.php:41
+msgid "Login / Register with <strong>Facebook</strong>"
+msgstr "Logga in med <strong>Facebook</strong>"
+
+#: search.php:35
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Resultat för: %s"
+
+#: woocommerce/cart/cart.php:147
+msgid "Enter Coupon"
+msgstr "Ange rabattkod"
+
+#: woocommerce/content-product-lookbook.php:26
+#: woocommerce/content-product-pinterest-style.php:33
+#: woocommerce/content-product.php:60
+msgid "Quick View"
+msgstr "Snabbkoll"
+
+#: woocommerce/global/breadcrumb-single-product.php:34
+#: woocommerce/global/breadcrumb.php:33
+msgid "Home"
+msgstr "Hem"
+
+#: woocommerce/single-product/product-image.php:135
+msgid "Zoom"
+msgstr "Zooma"
