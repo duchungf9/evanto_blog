@@ -1,7 +1,5 @@
 <?php
-if(isset($_GET['demo'])){
-	require_once __DIR__.'/demo/index.php';
-}
+
 /**
  * Laravel - A PHP Framework For Web Artisans
  *
