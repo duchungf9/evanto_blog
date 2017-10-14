@@ -21,7 +21,7 @@
 <?php do_action('flatsome_before_header'); ?>
 
 <header id="header" class="header <?php flatsome_header_classes();  ?>">
-    <div class="change_lang" style="    position: absolute;   top: 1px;   left: 50%;   z-index: 99;"><a href="http://139.59.250.144"><img src="https://i.imgur.com/9rmIBYP.png" alt="" width="25px;"></a></div>
+    <div class="change_lang" style="    position: absolute;   top: 1px;   left: 87%;   z-index: 99;"><a href="http://139.59.250.144" style="font-size: 12px; font-weight: 100;"><img src="https://i.imgur.com/9rmIBYP.png" alt="" width="25px;">&nbsp;Vietnamese</a></div>
    <div class="header-wrapper">
 	<?php
 		get_template_part('template-parts/header/header', 'wrapper');
