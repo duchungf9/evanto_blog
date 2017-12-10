@@ -32,7 +32,7 @@ Hệ thống KCS đang được áp dụng tại công ty chúng tôi theo chứ
 Nước uống tinh khiết VINAWA, tuân thủ nghiêm ngặt theo tiêu chuẩn về công nghệ và chất lượng của cơ quan Quản lý Không gian, Hàng không quốc gia HOA KỲ - NASA.
  
 Nước uống tinh khiết VINAWA đảm bảo chất lượng cao. Vì sức khỏe và sự hài lòng của Quý khách hàng chính là phương châm và động lực phát triển của Chúng tôi.',
-            'image2' =>'http://vinawa.com.vn/vnt_upload/product/11_2013/thumbs/160_crop_MG_1643_resized_2.jpg'
+            'image2' =>'http://nuockhoang365.com/images/posts/thung-vinawa-500ml-350ml.jpg'
         ]
     ];
 
