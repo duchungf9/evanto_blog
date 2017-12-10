@@ -285,8 +285,9 @@ a{
         .image{
           width: 100%;
           height: 300px;
-          -webkit-background-size: cover;
-          background-size:cover;
+          -webkit-background-size: contain;
+          background-size: contain;
+          background-repeat: no-repeat;
           background-position: center center;
           img{
             opacity: 0;
@@ -810,7 +811,6 @@ a{
   .center{
     width: 54%;
     text-align: justify;
-    font-size: 1.5vw;
   }
   @media(max-width: 768px) {
     .left,.right{
