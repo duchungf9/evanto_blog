@@ -584,4 +584,38 @@ a {
     .wrapper .hot-line-bottom {
       padding-bottom: 40px; } }
 
+.intro {
+  width: 100%;
+  display: flex;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin-bottom: 20px;
+  position: relative; }
+  .intro.intro3 .left {
+    width: 225px; }
+  .intro.intro3 .right {
+    width: 180px; }
+  .intro .left, .intro .right {
+    max-width: 22%; }
+    .intro .left img, .intro .right img {
+      display: block;
+      margin: auto;
+      max-width: 100%; }
+  .intro .center {
+    width: 54%;
+    text-align: justify;
+    font-size: 1.5vw; }
+  @media (max-width: 768px) {
+    .intro .left, .intro .right {
+      max-width: 50%; }
+    .intro .right {
+      position: absolute;
+      top: 0;
+      right: 0; }
+    .intro .center {
+      width: 100%;
+      margin-top: 20px; } }
+
 /*# sourceMappingURL=home.css.map */
