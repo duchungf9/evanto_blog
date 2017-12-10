@@ -271,7 +271,7 @@ a {
       font-size: 14px; }
 .wrapper #content .pk-title {
   margin: 20px 0;
-  font-size: 3.5vw;
+  font-size: 2.5vw;
   font-weight: normal;
   display: block;
   text-align: center; }
@@ -616,6 +616,6 @@ a {
       right: 0; }
     .intro .center {
       width: 100%;
-      margin-top: 20px; } }
+      padding-top: 20px; } }
 
 /*# sourceMappingURL=home.css.map */
