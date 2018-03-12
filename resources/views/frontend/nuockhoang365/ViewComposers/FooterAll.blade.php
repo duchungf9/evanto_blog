@@ -32,7 +32,7 @@
         <div class="company">
             <h4>Đơn vị chủ quản</h4>
             <div class="textwidget"><h4 class="title"></h4>
-                <p><strong>CÔNG TY CT TNHH DVTM TỔNG HỢP HỒNG HÀ</strong></p>
+                <p><strong>CÔNG TY TNHH DVTM TỔNG HỢP HỒNG HÀ</strong></p>
                 <p>
                     Nhà phân phối La Vie cấp 1<br>
                     Mã Số Doanh Nghiệp 0107785544 <br>Nơi cấp: Sở KH-ĐT TP.Hà Nội<br>74A ngõ 295 phố bạch mai quận HBT tp HN
