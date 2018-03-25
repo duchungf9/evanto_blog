@@ -269,15 +269,13 @@ a{
   #content{
     .showProduct, .show-equiment{
       @extend %disFlex;
-      -webkit-justify-content: space-around;
-      justify-content: space-around;
       -webkit-align-items: flex-start;
       align-items: flex-start;
       -webkit-flex-flow: row wrap;
       flex-flow: row wrap;
       .product{
         width: 236px;
-        margin: 2% 10px;
+        margin: 2% 1%;
         @extend %disFlex;
         -webkit-flex-flow: row wrap;
         flex-flow: row wrap;
@@ -288,7 +286,7 @@ a{
           -webkit-background-size: contain;
           background-size: contain;
           background-repeat: no-repeat;
-          background-position: center center;
+          background-position: center top;
           img{
             opacity: 0;
             width: 100%;
@@ -359,13 +357,41 @@ a{
     }
     .show-equiment{
       .product{
-        width: 33%;
+        width: 23%;
+        @media(max-width: 930px) {
+          width: 31%;
+        }
       }
     }
     @media(max-width: 768px){
       .showProduct, .show-equiment{
         .product{
+          .image{
+            height: 282px;
+          }
+          h2{
+            font-size: 3.8vw;
+          }
+          .price{
+            font-size: 5vw;
+          }
+          img{
+            max-height: inherit;
+            height: auto;
+          }
+        }
+      }
+      .pk-title{
+        font-size: 5.5vw;
+      }
+    }
+    @media(max-width: 670px){
+      .showProduct, .show-equiment{
+        .product{
           width: 48%;
+          .image{
+            height: 230px;
+          }
           h2{
             font-size: 3.8vw;
           }
