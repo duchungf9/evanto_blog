@@ -214,15 +214,13 @@ a {
       .wrapper header nav h1 .hotline-top {
         font-size: 18px; } }
 .wrapper #content .showProduct, .wrapper #content .show-equiment {
-  -webkit-justify-content: space-around;
-  justify-content: space-around;
   -webkit-align-items: flex-start;
   align-items: flex-start;
   -webkit-flex-flow: row wrap;
   flex-flow: row wrap; }
   .wrapper #content .showProduct .product, .wrapper #content .show-equiment .product {
     width: 236px;
-    margin: 2% 10px;
+    margin: 2% 1%;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     text-align: center; }
@@ -232,7 +230,7 @@ a {
       -webkit-background-size: contain;
       background-size: contain;
       background-repeat: no-repeat;
-      background-position: center center; }
+      background-position: center top; }
       .wrapper #content .showProduct .product .image img, .wrapper #content .show-equiment .product .image img {
         opacity: 0;
         width: 100%;
@@ -287,10 +285,27 @@ a {
       display: inline-block;
       vertical-align: middle; }
 .wrapper #content .show-equiment .product {
-  width: 33%; }
+  width: 23%; }
+  @media (max-width: 930px) {
+    .wrapper #content .show-equiment .product {
+      width: 31%; } }
 @media (max-width: 768px) {
+  .wrapper #content .showProduct .product .image, .wrapper #content .show-equiment .product .image {
+    height: 282px; }
+  .wrapper #content .showProduct .product h2, .wrapper #content .show-equiment .product h2 {
+    font-size: 3.8vw; }
+  .wrapper #content .showProduct .product .price, .wrapper #content .show-equiment .product .price {
+    font-size: 5vw; }
+  .wrapper #content .showProduct .product img, .wrapper #content .show-equiment .product img {
+    max-height: inherit;
+    height: auto; }
+  .wrapper #content .pk-title {
+    font-size: 5.5vw; } }
+@media (max-width: 670px) {
   .wrapper #content .showProduct .product, .wrapper #content .show-equiment .product {
     width: 48%; }
+    .wrapper #content .showProduct .product .image, .wrapper #content .show-equiment .product .image {
+      height: 230px; }
     .wrapper #content .showProduct .product h2, .wrapper #content .show-equiment .product h2 {
       font-size: 3.8vw; }
     .wrapper #content .showProduct .product .price, .wrapper #content .show-equiment .product .price {

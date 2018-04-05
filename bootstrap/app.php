@@ -20,9 +20,9 @@ $_ENV['CAUHINH'] = [
         'domain'=>'evanto.com.vn',
         'name'=>'cms',
         'db_user'=>'root',
-        'db_name'=>'myblog',
-        'db_password'=>'hungdaica',
-        'db_host'=>'139.59.250.144'
+        'db_name'=>'my_blog2',
+        'db_password'=>'',
+        'db_host'=>'localhost'
     ],
 
     [
