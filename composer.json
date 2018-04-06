@@ -21,7 +21,10 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database",
+            "app/Http/Lib",
+            "app/Http/Controllers",
+            "app/Http/Model"
         ],
         "psr-4": {
             "App\\": "app/"
